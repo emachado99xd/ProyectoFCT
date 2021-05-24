@@ -1,29 +1,37 @@
 VERSION 5.00
 Begin VB.Form Form1 
    Caption         =   "Form1"
-   ClientHeight    =   6375
+   ClientHeight    =   5415
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   10830
+   ClientWidth     =   7920
    LinkTopic       =   "Form1"
-   ScaleHeight     =   6375
-   ScaleWidth      =   10830
+   ScaleHeight     =   5415
+   ScaleWidth      =   7920
    StartUpPosition =   3  'Windows Default
+   Begin VB.TextBox Text1 
+      Height          =   495
+      Left            =   480
+      TabIndex        =   2
+      Text            =   "Text1"
+      Top             =   2160
+      Width           =   1455
+   End
    Begin VB.CommandButton Command1 
       Caption         =   "Command1"
-      Height          =   1335
-      Left            =   5640
+      Height          =   735
+      Left            =   2400
       TabIndex        =   1
-      Top             =   1440
-      Width           =   2415
+      Top             =   1560
+      Width           =   1935
    End
-   Begin VB.TextBox Text1 
-      Height          =   1215
+   Begin VB.Label Label1 
+      Caption         =   "Label1"
+      Height          =   615
       Left            =   480
       TabIndex        =   0
-      Text            =   "Text1"
-      Top             =   840
-      Width           =   3615
+      Top             =   1080
+      Width           =   1575
    End
 End
 Attribute VB_Name = "Form1"
