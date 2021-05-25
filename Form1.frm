@@ -10,6 +10,13 @@ Begin VB.Form Form1
    ScaleHeight     =   8265
    ScaleWidth      =   11250
    StartUpPosition =   3  'Windows Default
+   Begin VB.TextBox txtid 
+      Height          =   375
+      Left            =   840
+      TabIndex        =   7
+      Top             =   840
+      Width           =   1215
+   End
    Begin MSAdodcLib.Adodc Adodc1 
       Height          =   375
       Left            =   840
@@ -56,9 +63,240 @@ Begin VB.Form Form1
       EndProperty
       _Version        =   393216
    End
+   Begin VB.Label lbltelefono 
+      AutoSize        =   -1  'True
+      BeginProperty Font 
+         Name            =   "Verdana"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   270
+      Left            =   9720
+      TabIndex        =   12
+      Top             =   1440
+      Width           =   90
+   End
+   Begin VB.Label lbldireccion 
+      AutoSize        =   -1  'True
+      BeginProperty Font 
+         Name            =   "Verdana"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   270
+      Left            =   9960
+      TabIndex        =   11
+      Top             =   840
+      Width           =   90
+   End
+   Begin VB.Label lblcedula 
+      AutoSize        =   -1  'True
+      BeginProperty Font 
+         Name            =   "Verdana"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   270
+      Left            =   5760
+      TabIndex        =   10
+      Top             =   1440
+      Width           =   90
+   End
+   Begin VB.Label lblapellido 
+      AutoSize        =   -1  'True
+      BeginProperty Font 
+         Name            =   "Verdana"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   270
+      Left            =   6000
+      TabIndex        =   9
+      Top             =   840
+      Width           =   90
+   End
+   Begin VB.Label lblnombre 
+      AutoSize        =   -1  'True
+      BeginProperty Font 
+         Name            =   "Verdana"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   270
+      Left            =   1440
+      TabIndex        =   8
+      Top             =   1440
+      Width           =   90
+   End
+   Begin VB.Label Label7 
+      AutoSize        =   -1  'True
+      Caption         =   "Teléfono:"
+      BeginProperty Font 
+         Name            =   "Unispace"
+         Size            =   12.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   300
+      Left            =   8280
+      TabIndex        =   6
+      Top             =   1440
+      Width           =   1350
+   End
+   Begin VB.Label Label6 
+      AutoSize        =   -1  'True
+      Caption         =   "Dirección:"
+      BeginProperty Font 
+         Name            =   "Unispace"
+         Size            =   12.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   300
+      Left            =   8280
+      TabIndex        =   5
+      Top             =   840
+      Width           =   1500
+   End
+   Begin VB.Label Label5 
+      AutoSize        =   -1  'True
+      Caption         =   "Cedula:"
+      BeginProperty Font 
+         Name            =   "Unispace"
+         Size            =   12.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   300
+      Left            =   4560
+      TabIndex        =   4
+      Top             =   1440
+      Width           =   1050
+   End
+   Begin VB.Label Label4 
+      AutoSize        =   -1  'True
+      Caption         =   "Apellido:"
+      BeginProperty Font 
+         Name            =   "Unispace"
+         Size            =   12.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   300
+      Left            =   4560
+      TabIndex        =   3
+      Top             =   840
+      Width           =   1350
+   End
+   Begin VB.Label Label3 
+      AutoSize        =   -1  'True
+      Caption         =   "Nombre:"
+      BeginProperty Font 
+         Name            =   "Unispace"
+         Size            =   12.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   300
+      Left            =   240
+      TabIndex        =   2
+      Top             =   1440
+      Width           =   1050
+   End
+   Begin VB.Label Label2 
+      AutoSize        =   -1  'True
+      Caption         =   "Id:"
+      BeginProperty Font 
+         Name            =   "Unispace"
+         Size            =   12.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   300
+      Left            =   240
+      TabIndex        =   1
+      Top             =   840
+      Width           =   450
+   End
+   Begin VB.Label Label1 
+      AutoSize        =   -1  'True
+      Caption         =   "Factura"
+      BeginProperty Font 
+         Name            =   "Unispace"
+         Size            =   15.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   480
+      TabIndex        =   0
+      Top             =   240
+      Width           =   1365
+   End
 End
 Attribute VB_Name = "Form1"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub Form_Load()
+ Cliente
+End Sub
+
+
+
+Private Sub txtid_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then
+        With RsCliente
+            .Requery
+            .Find "Id_Cliente='" & Trim(txtid.Text) & "'"
+            If .BOF Or .EOF Then Exit Sub
+            lblnombre.Caption = !Nombre
+            lblapellido.Caption = !Apellido
+            lblcedula.Caption = !Cedula
+            lbldireccion.Caption = !Direccion
+            lbltelefono.Caption = !Telefono
+        End With
+    End If
+End Sub
