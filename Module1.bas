@@ -5,12 +5,12 @@ Global RsDetalleFactura As New Recordset
 Global RsFactura As New Recordset
 Global RsProductos As New Recordset
 Global RsTipoProducto As New Recordset
-
 Sub main()
     With Base
         .CursorLocation = adUseClient
-        .Open "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & App.Path & "\Base\Base.accdb;Persist Security Info=False"
+        .Open "Provider = Microsoft.ACE.OLEDB.12.0; Data Source= " & App.Path & "\Base\Base.accdb;Persist Security Info=False"
         Form1.Show
+    'C:\Users\FAMILIA AGUILAR\OneDrive\Escritorio\practicas03\ProyectoFCT\Base
     End With
 End Sub
 Sub Cliente()
