@@ -13,59 +13,10 @@ Begin VB.Form Form1
    Begin VB.CommandButton Command2 
       Caption         =   "Nuevo"
       Height          =   735
-      Left            =   7200
-      TabIndex        =   19
-      Top             =   7320
-      Width           =   1335
-   End
-   Begin VB.CommandButton Command1 
-      Caption         =   "Guardar"
-      Enabled         =   0   'False
-      Height          =   855
-      Left            =   8760
-      TabIndex        =   18
-      Top             =   7200
-      Width           =   1935
-   End
-   Begin VB.TextBox txttel 
-      Enabled         =   0   'False
-      Height          =   495
-      Left            =   6600
-      TabIndex        =   17
-      Top             =   4080
-      Width           =   1695
-   End
-   Begin VB.TextBox txtdir 
-      Enabled         =   0   'False
-      Height          =   735
-      Left            =   6600
-      TabIndex        =   16
-      Top             =   2880
-      Width           =   1575
-   End
-   Begin VB.TextBox txtced 
-      Enabled         =   0   'False
-      Height          =   615
-      Left            =   4080
-      TabIndex        =   15
-      Top             =   3960
-      Width           =   1575
-   End
-   Begin VB.TextBox txtape 
-      Enabled         =   0   'False
-      Height          =   615
-      Left            =   4080
-      TabIndex        =   14
-      Top             =   3000
-      Width           =   1575
-   End
-   Begin VB.TextBox txtnom 
-      Enabled         =   0   'False
-      Height          =   615
-      Left            =   1200
+      Left            =   9120
       TabIndex        =   13
-      Top             =   3600
-      Width           =   1575
+      Top             =   7200
+      Width           =   1335
    End
    Begin VB.TextBox txtid 
       Height          =   375
@@ -100,8 +51,8 @@ Begin VB.Form Form1
       ForeColor       =   -2147483640
       Orientation     =   0
       Enabled         =   -1
-      Connect         =   "Provider = Microsoft.ACE.OLEDB.12.0; Data Source= "" & App.Path & ""\Base\Base.accdb;Persist Security Info=False"
-      OLEDBString     =   "Provider = Microsoft.ACE.OLEDB.12.0; Data Source= "" & App.Path & ""\Base\Base.accdb;Persist Security Info=False"
+      Connect         =   $"Form1.frx":0000
+      OLEDBString     =   $"Form1.frx":0098
       OLEDBFile       =   ""
       DataSourceName  =   ""
       OtherAttributes =   ""
@@ -337,45 +288,16 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Sub Command1_Click()
-    With RsCliente
-        .Requery
-        .AddNew
-        !Nombre = Val(txtnom.Text)
-        !Apellido = Val(txtape.Caption)
-        !Cedula = Val(txtced.Text)
-        !Direccion = Val(txtdir.Text)
-        !Telefono = Val(txttel.Text)
-        .UpdateBatch
-    End With
-    txnom.Enabled = False
-    txtape.Enabled = False
-    txtced.Enabled = False
-    txtdir.Enabled = False
-    txttel.Enabled = False
-    txnom.Text = ""
-    txtape.Text = ""
-    txtced.Text = ""
-    txtdi.Text = ""
-    txttel.Text = ""
-    Command1.Enabled = False
-    Command2.Enabled = True
-End Sub
 Private Sub Command2_Click()
-    Command2.Enabled = False
-    Command1.Enabled = True
-    txnom.Enabled = True
-    txtape.Enabled = True
-    txtced.Enabled = True
-    txtdir.Enabled = True
-    txttel.Enabled = True
+    Cliente.Show
 End Sub
 
 Private Sub Form_Load()
- Cliente
+ Clientes
 End Sub
 Private Sub txtid_KeyPress(KeyAscii As Integer)
     If KeyAscii = 13 Then
+        If txtid.Text = "" Then Exit Sub
         With RsCliente
             .Requery
             .Find "Id_Cliente='" & Trim(txtid.Text) & "'"

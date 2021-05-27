@@ -13,7 +13,7 @@ Sub main()
     'C:\Users\FAMILIA AGUILAR\OneDrive\Escritorio\practicas03\ProyectoFCT\Base
     End With
 End Sub
-Sub Cliente()
+Sub Clientes()
     With RsCliente
         If .State = 1 Then .Close
             .Open "select * from Cliente", Base, adOpenStatic, adLockBatchOptimistic
