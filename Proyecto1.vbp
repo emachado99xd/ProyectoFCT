@@ -8,6 +8,7 @@ Object={CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0; MSDATGRD.OCX
 Form=Form1.frm
 Module=Module1; Module1.bas
 Form=Cliente.frm
+Form=Productos.frm
 IconForm="Form1"
 Startup="Sub Main"
 HelpFile=""

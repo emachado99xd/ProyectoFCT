@@ -10,12 +10,20 @@ Begin VB.Form Form1
    ScaleHeight     =   8265
    ScaleWidth      =   11250
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton Command1 
+      Caption         =   "Command1"
+      Height          =   735
+      Left            =   8520
+      TabIndex        =   14
+      Top             =   7200
+      Width           =   1575
+   End
    Begin VB.CommandButton Command2 
       Caption         =   "Nuevo"
       Height          =   735
-      Left            =   9120
+      Left            =   6600
       TabIndex        =   13
-      Top             =   7200
+      Top             =   7320
       Width           =   1335
    End
    Begin VB.TextBox txtid 
@@ -288,6 +296,10 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub Command1_Click()
+Productos.Show
+End Sub
+
 Private Sub Command2_Click()
     Cliente.Show
 End Sub

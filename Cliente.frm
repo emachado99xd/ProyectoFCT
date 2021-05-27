@@ -91,7 +91,7 @@ Begin VB.Form Cliente
       AutoSize        =   -1  'True
       Caption         =   "Dirección:"
       BeginProperty Font 
-         Name            =   "Unispace"
+         Name            =   "Arial"
          Size            =   15.75
          Charset         =   0
          Weight          =   700
@@ -109,7 +109,7 @@ Begin VB.Form Cliente
       AutoSize        =   -1  'True
       Caption         =   "APELLIDO:"
       BeginProperty Font 
-         Name            =   "Unispace"
+         Name            =   "Arial"
          Size            =   15.75
          Charset         =   0
          Weight          =   700
@@ -127,7 +127,7 @@ Begin VB.Form Cliente
       AutoSize        =   -1  'True
       Caption         =   "Teléfono:"
       BeginProperty Font 
-         Name            =   "Unispace"
+         Name            =   "Arial"
          Size            =   15.75
          Charset         =   0
          Weight          =   700
@@ -145,7 +145,7 @@ Begin VB.Form Cliente
       AutoSize        =   -1  'True
       Caption         =   "Cédula:"
       BeginProperty Font 
-         Name            =   "Unispace"
+         Name            =   "Arial"
          Size            =   15.75
          Charset         =   0
          Weight          =   700
@@ -163,7 +163,7 @@ Begin VB.Form Cliente
       AutoSize        =   -1  'True
       Caption         =   "Nombre:"
       BeginProperty Font 
-         Name            =   "Unispace"
+         Name            =   "Arial"
          Size            =   15.75
          Charset         =   0
          Weight          =   700
