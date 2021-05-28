@@ -11,7 +11,7 @@ Begin VB.Form Form1
    ScaleWidth      =   11250
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton Command1 
-      Caption         =   "Command1"
+      Caption         =   "Productos"
       Height          =   735
       Left            =   8520
       TabIndex        =   14
@@ -19,11 +19,11 @@ Begin VB.Form Form1
       Width           =   1575
    End
    Begin VB.CommandButton Command2 
-      Caption         =   "Nuevo"
+      Caption         =   "Nuevo cliente"
       Height          =   735
-      Left            =   6600
+      Left            =   6840
       TabIndex        =   13
-      Top             =   7320
+      Top             =   7200
       Width           =   1335
    End
    Begin VB.TextBox txtid 

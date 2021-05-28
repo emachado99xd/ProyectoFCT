@@ -10,7 +10,6 @@ Sub main()
         .CursorLocation = adUseClient
         .Open "Provider = Microsoft.ACE.OLEDB.12.0; Data Source= " & App.Path & "\Base\Base.accdb;Persist Security Info=False"
         Form1.Show
-    'C:\Users\FAMILIA AGUILAR\OneDrive\Escritorio\practicas03\ProyectoFCT\Base
     End With
 End Sub
 Sub Clientes()
@@ -22,7 +21,7 @@ End Sub
 Sub DetalleFactura()
     With RsDetalleFactura
         If .State = 1 Then .Close
-            .Open "select * from Detalle Factura", Base, adOpenStatic, adLockBatchOptimistic
+            .Open "select * from Detalle_Factura", Base, adOpenStatic, adLockBatchOptimistic
     End With
 End Sub
 Sub Factura()
@@ -32,7 +31,7 @@ Sub Factura()
     End With
 End Sub
 Sub Producto()
-    With RsProducto
+    With RsProductos
          If .State = 1 Then .Close
             .Open "select * from Producto", Base, adOpenStatic, adLockBatchOptimistic
     End With
@@ -40,7 +39,7 @@ End Sub
 Sub TipoProducto()
 With RsTipoProducto
          If .State = 1 Then .Close
-            .Open "select * from Tipo Producto", Base, adOpenStatic, adLockBatchOptimistic
+            .Open "select * from Tipo_Producto", Base, adOpenStatic, adLockBatchOptimistic
     End With
 End Sub
 

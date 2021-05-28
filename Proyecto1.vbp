@@ -9,6 +9,7 @@ Form=Form1.frm
 Module=Module1; Module1.bas
 Form=Cliente.frm
 Form=Productos.frm
+Object={F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0; MSDATLST.OCX
 IconForm="Form1"
 Startup="Sub Main"
 HelpFile=""

@@ -1,4 +1,5 @@
 VERSION 5.00
+Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDATLST.OCX"
 Begin VB.Form Productos 
    Caption         =   "Form2"
    ClientHeight    =   4560
@@ -9,14 +10,33 @@ Begin VB.Form Productos
    ScaleHeight     =   4560
    ScaleWidth      =   9000
    StartUpPosition =   3  'Windows Default
-   Begin VB.TextBox Txttipo 
-      Height          =   285
-      Left            =   6240
-      TabIndex        =   11
-      Top             =   2520
+   Begin VB.TextBox txtproducto 
+      Height          =   375
+      Left            =   2040
+      TabIndex        =   15
+      Top             =   960
       Width           =   1695
    End
-   Begin VB.TextBox Txtprecio 
+   Begin VB.CommandButton Command1 
+      Caption         =   "Cerrar"
+      Height          =   495
+      Left            =   7560
+      TabIndex        =   13
+      Top             =   3840
+      Width           =   1095
+   End
+   Begin MSDataListLib.DataCombo dc1 
+      Height          =   315
+      Left            =   6000
+      TabIndex        =   11
+      Top             =   3360
+      Width           =   1695
+      _ExtentX        =   2990
+      _ExtentY        =   556
+      _Version        =   393216
+      Text            =   ""
+   End
+   Begin VB.TextBox txtprecio 
       BeginProperty Font 
          Name            =   "MV Boli"
          Size            =   9.75
@@ -32,7 +52,7 @@ Begin VB.Form Productos
       Top             =   3360
       Width           =   1335
    End
-   Begin VB.TextBox Txttamaño 
+   Begin VB.TextBox txttamaño 
       Height          =   375
       Left            =   2160
       TabIndex        =   8
@@ -41,14 +61,14 @@ Begin VB.Form Productos
    End
    Begin VB.TextBox txtstock 
       Height          =   285
-      Left            =   6240
+      Left            =   6480
       TabIndex        =   7
-      Top             =   1200
+      Top             =   2280
       Width           =   975
    End
-   Begin VB.TextBox Txtcolor 
+   Begin VB.TextBox txtcolor 
       Height          =   285
-      Left            =   2040
+      Left            =   6360
       TabIndex        =   6
       Top             =   1200
       Width           =   1095
@@ -72,6 +92,31 @@ Begin VB.Form Productos
       Top             =   3960
       Width           =   2295
    End
+   Begin VB.Label Label2 
+      Caption         =   "Producto"
+      BeginProperty Font 
+         Name            =   "MV Boli"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   240
+      TabIndex        =   14
+      Top             =   960
+      Width           =   1575
+   End
+   Begin VB.Label lbltipo 
+      AutoSize        =   -1  'True
+      Height          =   195
+      Left            =   8040
+      TabIndex        =   12
+      Top             =   600
+      Width           =   45
+   End
    Begin VB.Label Label7 
       Caption         =   "Tipo"
       BeginProperty Font 
@@ -84,9 +129,9 @@ Begin VB.Form Productos
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   4200
+      Left            =   4320
       TabIndex        =   10
-      Top             =   2400
+      Top             =   3360
       Width           =   1455
    End
    Begin VB.Label Label6 
@@ -118,7 +163,7 @@ Begin VB.Form Productos
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   240
+      Left            =   5040
       TabIndex        =   3
       Top             =   1080
       Width           =   1335
@@ -152,9 +197,9 @@ Begin VB.Form Productos
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   4440
+      Left            =   4920
       TabIndex        =   1
-      Top             =   1080
+      Top             =   2280
       Width           =   1215
    End
    Begin VB.Label Label1 
@@ -182,21 +227,54 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub Command1_Click()
+    Unload Me
+End Sub
+
+Private Sub dc1_Change()
+    With RsTipoProducto
+        .Requery
+        .Find "Tipo='" & Trim(dc1.Text) & "'"
+        If .BOF Or .EOF Then Exit Sub
+        lbltipo.Caption = !Id_Tipoproducto
+    End With
+End Sub
+
 Private Sub Form_Load()
-Producto
-With RsProductos
-If .EOF Or .BOF Then Exit Sub
-End With
+    Producto
+    TipoProducto
+    Set dc1.RowSource = RsTipoProducto
+    dc1.BoundColumn = "Tipo"
+    dc1.ListField = "Tipo"
 End Sub
 Private Sub guardar_Click()
-With RsProductos
-    .Requery
-    .AddNew
-    !Color = Txtcolor.Text
-    !stock = txtstock.Text
-    !Precio = Txtprecio.Text
-    !Tipo = Txttipo.Text
-    !Tamaño = Txttamaño.Text
+    If txtproducto.Text = "" Then MsgBox "Ingrese el NOMBRE del producto", vbInformation, "Aviso": txtproducto.SetFocus: Exit Sub
+    If txtcolor.Text = "" Then MsgBox "Ingrese el COLOR del producto", vbInformation, "Aviso": txtcolor.SetFocus: Exit Sub
+    If Val(txtstock.Text) = 0 Then MsgBox "Ingrese el STOCK del producto", vbInformation, "Aviso": txtstock.SetFocus: Exit Sub
+    If txttamaño.Text = "" Then MsgBox "Ingrese el TAMAÑO del producto", vbInformation, "Aviso": txttamaño.SetFocus: Exit Sub
+    If Val(txtprecio.Text) = 0 Then MsgBox "Ingrese el PRECIO del producto", vbInformation, "Aviso": txtprecio.SetFocus: Exit Sub
+    If dc1.Text = "" Then MsgBox "Seleccione el TIPO del producto", vbInformation, "Aviso": dc1.SetFocus: Exit Sub
+    With RsProductos
+        .Requery
+        .AddNew
+        !Producto = txtproducto.Text
+        !Color = txtcolor.Text
+        !Stock = txtstock.Text
+        !Precio = txtprecio.Text
+        !Tamaño = txttamaño.Text
+        !Id_Tipoproducto = lbltipo.Caption
+        .UpdateBatch
 End With
+MsgBox "El producto ha sido registrado correctamente", vbInformation, "Aviso"
+limpiar
+End Sub
+
+Sub limpiar()
+    txtproducto.Text = ""
+    txtcolor.Text = ""
+    txtstock.Text = ""
+    txtprecio.Text = ""
+    txttamaño.Text = ""
+    dc1.Text = ""
 End Sub
 

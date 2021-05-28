@@ -9,6 +9,14 @@ Begin VB.Form Cliente
    ScaleHeight     =   6435
    ScaleWidth      =   9390
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton Command1 
+      Caption         =   "Cerrar"
+      Height          =   495
+      Left            =   7800
+      TabIndex        =   13
+      Top             =   5040
+      Width           =   975
+   End
    Begin VB.TextBox txttelefono 
       Height          =   375
       Left            =   3480
@@ -184,7 +192,12 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdguardar_Click()
-     With RsCliente
+    If txtnombre.Text = "" Then MsgBox "Ingrese el NOMBRE del cliente", vbInformation, "Aviso": txtnombre.SetFocus: Exit Sub
+    If txtapellido.Text = "" Then MsgBox "Ingrese el APELLIDO del cliente", vbInformation, "Aviso": txtapellido.SetFocus: Exit Sub
+    If txtcedula.Text = "" Then MsgBox "Ingrese la CEDULA del cliente", vbInformation, "Aviso": txtcedula.SetFocus: Exit Sub
+    If txtdireccion.Text = "" Then MsgBox "Ingrese la DIRECCIÓN del cliente", vbInformation, "Aviso": txtdireccion.SetFocus: Exit Sub
+    If txttelefono.Text = "" Then MsgBox "Ingrese el TELÉFONO del cliente", vbInformation, "Aviso": txttelefono.SetFocus: Exit Sub
+    With RsCliente
         .Requery
         .AddNew
         !Nombre = txtnombre.Text
@@ -194,9 +207,23 @@ Private Sub cmdguardar_Click()
         !Telefono = txttelefono.Text
         .UpdateBatch
     End With
+    limpiar
+    MsgBox "El Cliente ha sido registrado correctamente", vbInformation, "Aviso"
+End Sub
+
+Private Sub Command1_Click()
+    Unload Me
 End Sub
 
 Private Sub Form_Load()
     Clientes
 End Sub
 
+Sub limpiar()
+    txtnombre.Text = ""
+    txtapellido.Text = ""
+    txtcedula.Text = ""
+    txtdireccion.Text = ""
+    txttelefono.Text = ""
+    
+End Sub
