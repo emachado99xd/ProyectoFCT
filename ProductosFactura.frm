@@ -11,31 +11,46 @@ Begin VB.Form ProductosFactura
    ScaleHeight     =   7935
    ScaleWidth      =   11010
    StartUpPosition =   3  'Windows Default
-   Begin VB.TextBox txtstock 
+   Begin VB.TextBox txttotal 
       Height          =   375
-      Left            =   1200
+      Left            =   7680
+      TabIndex        =   18
+      Top             =   5280
+      Width           =   1815
+   End
+   Begin VB.TextBox txtdescripcion 
+      Height          =   375
+      Left            =   1680
       TabIndex        =   15
       Top             =   5880
-      Width           =   1695
+      Width           =   1575
+   End
+   Begin VB.CommandButton cmdagregar 
+      Caption         =   "Agregar"
+      Height          =   615
+      Left            =   4440
+      TabIndex        =   14
+      Top             =   6840
+      Width           =   1335
+   End
+   Begin VB.TextBox txtcantidad 
+      Height          =   375
+      Left            =   4800
+      TabIndex        =   13
+      Top             =   5880
+      Width           =   1575
    End
    Begin VB.TextBox txtprecio 
       Height          =   375
-      Left            =   5520
-      TabIndex        =   14
+      Left            =   4680
+      TabIndex        =   11
       Top             =   4560
-      Width           =   1575
-   End
-   Begin VB.TextBox txtt 
-      Height          =   375
-      Left            =   5640
-      TabIndex        =   13
-      Top             =   6000
       Width           =   1575
    End
    Begin VB.TextBox txtp 
       Height          =   375
       Left            =   1560
-      TabIndex        =   12
+      TabIndex        =   10
       Top             =   4560
       Width           =   1815
    End
@@ -170,6 +185,76 @@ Begin VB.Form ProductosFactura
          EndProperty
       EndProperty
    End
+   Begin VB.Label lblfactura 
+      AutoSize        =   -1  'True
+      Height          =   195
+      Left            =   240
+      TabIndex        =   20
+      Top             =   0
+      Width           =   45
+   End
+   Begin VB.Label lblidproducto 
+      AutoSize        =   -1  'True
+      Height          =   195
+      Left            =   9600
+      TabIndex        =   19
+      Top             =   240
+      Width           =   45
+   End
+   Begin VB.Label Label7 
+      AutoSize        =   -1  'True
+      Caption         =   "Total:"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   12.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   285
+      Left            =   6960
+      TabIndex        =   17
+      Top             =   5280
+      Width           =   675
+   End
+   Begin VB.Label Label6 
+      AutoSize        =   -1  'True
+      Caption         =   "Descripción:"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   12.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   285
+      Left            =   120
+      TabIndex        =   16
+      Top             =   5880
+      Width           =   1485
+   End
+   Begin VB.Label Label9 
+      AutoSize        =   -1  'True
+      Caption         =   "Cantidad:"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   12.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   285
+      Left            =   3600
+      TabIndex        =   12
+      Top             =   5880
+      Width           =   1140
+   End
    Begin VB.Label Label8 
       AutoSize        =   -1  'True
       Caption         =   "Producto:"
@@ -184,45 +269,9 @@ Begin VB.Form ProductosFactura
       EndProperty
       Height          =   285
       Left            =   240
-      TabIndex        =   11
+      TabIndex        =   9
       Top             =   4560
       Width           =   1185
-   End
-   Begin VB.Label Label7 
-      AutoSize        =   -1  'True
-      Caption         =   "Stock:"
-      BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   12.75
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   285
-      Left            =   360
-      TabIndex        =   10
-      Top             =   5880
-      Width           =   765
-   End
-   Begin VB.Label Label6 
-      AutoSize        =   -1  'True
-      Caption         =   "Tamaño:"
-      BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   12.75
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   285
-      Left            =   4560
-      TabIndex        =   9
-      Top             =   6000
-      Width           =   1020
    End
    Begin VB.Label Label2 
       AutoSize        =   -1  'True
@@ -237,7 +286,7 @@ Begin VB.Form ProductosFactura
          Strikethrough   =   0   'False
       EndProperty
       Height          =   285
-      Left            =   4680
+      Left            =   3720
       TabIndex        =   8
       Top             =   4560
       Width           =   840
@@ -320,20 +369,40 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub cmdagregar_Click()
+    With RsDetalleFactura
+        .Requery
+        .AddNew
+        !Id_Factura = Val(lblfactura.Caption)
+        !Id_Producto = Val(lblidproducto.Caption)
+        !Cantidad = Val(txtcantidad.Text)
+        !Precio = Val(txtprecio.Text)
+        .UpdateBatch
+    End With
+End Sub
+
 Private Sub DataGrid1_Click()
     txtp.Text = DataGrid1.Columns(2).Text
-    txtstock.Text = DataGrid1.Columns(3).Text
-    txtprecio.Text = DataGrid1.Columns(6).Text
-    txtt.Text = DataGrid1.Columns(5).Text
-End Sub
+    txtdescripcion.Text = DataGrid1.Columns(6).Text
+    txtprecio.Text = DataGrid1.Columns(7).Text
+    lblidproducto.Caption = DataGrid1.Columns(0).Text
+    End Sub
 
 Private Sub Form_Load()
     Producto
+    DetalleFactura
     Adodc1.CursorLocation = adUseClient
     Adodc1.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source= " & App.Path & "\Base\Base.accdb;Persist Security Info=False"
     Adodc1.RecordSource = "SELECT * FROM Producto"
     Adodc1.Refresh
     Set DataGrid1.DataSource = Adodc1
+    With Form1
+        lblfactura.Caption = .lblfactura.Caption
+    End With
+End Sub
+
+Private Sub txtcantidad_Change()
+    txttotal.Text = Val(txtprecio.Text) * Val(txtcantidad.Text)
 End Sub
 
 Private Sub txtid_Change()
