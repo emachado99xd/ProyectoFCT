@@ -11,6 +11,14 @@ Begin VB.Form Form1
    ScaleHeight     =   8265
    ScaleWidth      =   11250
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton Command4 
+      Caption         =   "Modificar Cliente"
+      Height          =   615
+      Left            =   4680
+      TabIndex        =   18
+      Top             =   7200
+      Width           =   1815
+   End
    Begin VB.CommandButton Command3 
       Caption         =   "++"
       Height          =   615
@@ -390,12 +398,15 @@ Private Sub Command3_Click()
     ProductosFactura.Show
 End Sub
 
+Private Sub Command4_Click()
+    ModificarCliente.Show
+End Sub
+
 Private Sub Form_Load()
  Clientes
  Factura
  DetalleFactura
  Producto
- DataGrid1.DataSource = RsDetalleFactura
 End Sub
 
 

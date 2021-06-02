@@ -393,7 +393,7 @@ Private Sub Form_Load()
     DetalleFactura
     Adodc1.CursorLocation = adUseClient
     Adodc1.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source= " & App.Path & "\Base\Base.accdb;Persist Security Info=False"
-    Adodc1.RecordSource = "SELECT * FROM Producto"
+    Adodc1.RecordSource = "SELECT * FROM Cliente"
     Adodc1.Refresh
     Set DataGrid1.DataSource = Adodc1
     With Form1
