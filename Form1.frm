@@ -11,6 +11,14 @@ Begin VB.Form Form1
    ScaleHeight     =   8265
    ScaleWidth      =   11250
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton Command5 
+      Caption         =   "Modoficar Productos"
+      Height          =   495
+      Left            =   8400
+      TabIndex        =   19
+      Top             =   6120
+      Width           =   1335
+   End
    Begin VB.CommandButton Command4 
       Caption         =   "Modificar Cliente"
       Height          =   615
@@ -402,6 +410,10 @@ Private Sub Command4_Click()
     ModificarCliente.Show
 End Sub
 
+Private Sub Command5_Click()
+    ModificarProducto.Show
+End Sub
+
 Private Sub Form_Load()
  Clientes
  Factura
@@ -412,10 +424,10 @@ End Sub
 
 Private Sub txtid_KeyPress(KeyAscii As Integer)
     If KeyAscii = 13 Then
-        If txtid.Text = "" Then Exit Sub
+        If Txtid.Text = "" Then Exit Sub
         With RsCliente
             .Requery
-            .Find "Cedula='" & Trim(txtid.Text) & "'"
+            .Find "Cedula='" & Trim(Txtid.Text) & "'"
             If .BOF Or .EOF Then Exit Sub
             lblnombre.Caption = !Nombre
             lblapellido.Caption = !Apellido
