@@ -4,4 +4,4 @@ Cliente = 171, 375, 1058, 817, C, 35, -25, 922, 458, C
 Productos = -145, 51, 1073, 493, C, 191, 348, 1078, 790, C
 ProductosFactura = -310, 97, 983, 747, C, -220, 127, 1073, 776, C
 ModificarCliente = 0, 0, 0, 0, C, 0, 0, 0, 0, C
-ModificarProducto = 146, 113, 1093, 539, , 0, 16, 1003, 600, C
+ModificarProducto = 146, 113, 1093, 539, C, 0, 16, 1003, 600, C
