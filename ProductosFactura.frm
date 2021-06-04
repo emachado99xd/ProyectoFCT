@@ -6,25 +6,25 @@ Begin VB.Form ProductosFactura
    ClientHeight    =   7935
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   11145
+   ClientWidth     =   11040
    LinkTopic       =   "Form2"
    ScaleHeight     =   7935
-   ScaleWidth      =   11145
+   ScaleWidth      =   11040
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton Command1 
       Caption         =   "Cerrar"
       Height          =   495
-      Left            =   8760
+      Left            =   7080
       TabIndex        =   21
-      Top             =   6840
-      Width           =   1575
+      Top             =   6720
+      Width           =   1215
    End
    Begin VB.TextBox txttotal 
       Height          =   375
-      Left            =   7680
+      Left            =   7560
       Locked          =   -1  'True
       TabIndex        =   18
-      Top             =   5280
+      Top             =   4680
       Width           =   1815
    End
    Begin VB.TextBox txtdescripcion 
@@ -38,9 +38,9 @@ Begin VB.Form ProductosFactura
    Begin VB.CommandButton cmdagregar 
       Caption         =   "Agregar"
       Height          =   615
-      Left            =   4440
+      Left            =   3960
       TabIndex        =   14
-      Top             =   6840
+      Top             =   6720
       Width           =   1335
    End
    Begin VB.TextBox txtcantidad 
@@ -226,9 +226,9 @@ Begin VB.Form ProductosFactura
          Strikethrough   =   0   'False
       EndProperty
       Height          =   285
-      Left            =   6960
+      Left            =   6840
       TabIndex        =   17
-      Top             =   5280
+      Top             =   4680
       Width           =   675
    End
    Begin VB.Label Label6 
@@ -381,38 +381,38 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Dim Subtotal, Iva As Integer
-Dim Total As Double
+Dim Subtotal As Integer
+Dim Total, Iva As Double
 Private Sub cmdagregar_Click()
-    If txtp.Text = "" Then MsgBox "Seleccione un producto", vbInformation, "Aviso": Exit Sub
+    If Txtp.Text = "" Then MsgBox "Seleccione un producto", vbInformation, "Aviso": Exit Sub
     If txtcantidad.Text = "" Then MsgBox "Indique la cantidad que desea comprar", vbInformation, "Aviso": txtcantidad.SetFocus: Exit Sub
      With RsTemporal
         .Requery
-        .Find "Id_Producto='" & Trim(lblidproducto.Caption) & "'"
+        .Find "Id_Producto='" & Trim(lblIdProducto.Caption) & "'"
         If .EOF Then
             .AddNew
             !Id_Factura = Val(lblfactura.Caption)
-            !Id_Producto = Val(lblidproducto.Caption)
-            !Producto = txtp.Text
+            !Id_Producto = Val(lblIdProducto.Caption)
+            !Producto = Txtp.Text
             !Cantidad = Val(txtcantidad.Text)
-            !Precio = Val(txtprecio.Text)
+            !Precio = Val(Txtprecio.Text)
         Else
-            If Val(!Id_Producto) = Val(lblidproducto.Caption) Then
+            If Val(!Id_Producto) = Val(lblIdProducto.Caption) Then
                 !Cantidad = !Cantidad + Val(txtcantidad.Text)
             End If
         End If
         .UpdateBatch
-        .Requery
-        .MoveLast
-        txttotal.Text = Val(txttotal.Text) + Val(!Total)
+        txttotal.Text = Val(txttotal.Text) + Val(Txtprecio.Text) * Val(txtcantidad.Text)
         Subtotal = Val(txttotal.Text)
         Iva = Subtotal * 0.12
         Total = Subtotal + Iva
     End With
     limpiar
+    DataGrid
 End Sub
 Private Sub Command1_Click()
     With Form1
+        RsTemporal.Requery
         Set .DataGrid1.DataSource = RsTemporal
         .txtsubtotal = Subtotal
         .txtiva = Iva
@@ -422,10 +422,10 @@ Private Sub Command1_Click()
 End Sub
 
 Private Sub DataGrid1_Click()
-    txtp.Text = DataGrid1.Columns(2).Text
-    txtdescripcion.Text = DataGrid1.Columns(6).Text
-    txtprecio.Text = DataGrid1.Columns(7).Text
-    lblidproducto.Caption = DataGrid1.Columns(0).Text
+    Txtp.Text = DataGrid1.Columns(2).Text
+    Txtdescripcion.Text = DataGrid1.Columns(6).Text
+    Txtprecio.Text = DataGrid1.Columns(7).Text
+    lblIdProducto.Caption = DataGrid1.Columns(0).Text
     End Sub
 
 Private Sub Form_Load()
@@ -438,12 +438,18 @@ Private Sub Form_Load()
     Set DataGrid1.DataSource = Adodc1
     With Form1
         lblfactura.Caption = .lblfactura.Caption
+        If Val(.txtsubtotal.Text) = 0 Then
+            Subtotal = 0
+        End If
     End With
+    txttotal.Text = Subtotal
+    DataGrid
 End Sub
 
 
 Private Sub Form_Unload(Cancel As Integer)
     With Form1
+        RsTemporal.Requery
         Set .DataGrid1.DataSource = RsTemporal
         .txtsubtotal = Subtotal
         .txtiva = Iva
@@ -456,24 +462,37 @@ Private Sub txtid_Change()
     buscar = "%" & txtid.Text & "%"
     Adodc1.RecordSource = "SELECT *FROM Producto Where [Id_Producto]Like '" & buscar & "'"
     Adodc1.Refresh
+    DataGrid
 End Sub
 
 Private Sub txtproducto_Change()
     Dim buscar As String
-    buscar = "%" & txtproducto.Text & "%"
+    buscar = "%" & Txtproducto.Text & "%"
     Adodc1.RecordSource = "SELECT *FROM Producto Where [Producto]Like '" & buscar & "'"
     Adodc1.Refresh
+    DataGrid
 End Sub
 
 Private Sub txttamaño_Change()
     Dim buscar As String
-    buscar = "%" & txttamaño.Text & "%"
+    buscar = "%" & Txttamaño.Text & "%"
     Adodc1.RecordSource = "SELECT *FROM Producto Where [Tamaño]Like '" & buscar & "'"
     Adodc1.Refresh
+    DataGrid
 End Sub
 Sub limpiar()
-    txtp.Text = ""
-    txtdescripcion.Text = ""
-    txtprecio.Text = ""
+    Txtp.Text = ""
+    Txtdescripcion.Text = ""
+    Txtprecio.Text = ""
     txtcantidad.Text = ""
+End Sub
+Sub DataGrid()
+    DataGrid1.Columns(0).Width = 0
+    DataGrid1.Columns(1).Width = 0
+    DataGrid1.Columns(2).Width = 2620
+    DataGrid1.Columns(3).Width = 600
+    DataGrid1.Columns(4).Width = 1800
+    DataGrid1.Columns(5).Width = 1800
+    DataGrid1.Columns(6).Width = 2600
+    DataGrid1.Columns(7).Width = 600
 End Sub
