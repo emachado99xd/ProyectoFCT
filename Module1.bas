@@ -5,6 +5,7 @@ Global RsDetalleFactura As New Recordset
 Global RsFactura As New Recordset
 Global RsProductos As New Recordset
 Global RsTipoProducto As New Recordset
+Global RsTemporal As New Recordset
 Sub main()
     With Base
         .CursorLocation = adUseClient
@@ -42,6 +43,10 @@ With RsTipoProducto
             .Open "select * from Tipo_Producto", Base, adOpenStatic, adLockBatchOptimistic
     End With
 End Sub
-
-
+Sub Temporal()
+    With RsTemporal
+        If .State = 1 Then Close
+            .Open "select * from Temporal", Base, adOpenStatic, adLockBatchOptimistic
+    End With
+End Sub
 

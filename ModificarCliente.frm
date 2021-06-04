@@ -7,12 +7,12 @@ Begin VB.Form ModificarCliente
    ClientHeight    =   6660
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   12630
+   ClientWidth     =   11430
    FillColor       =   &H00FFFFFF&
    ForeColor       =   &H8000000D&
    LinkTopic       =   "Form2"
    ScaleHeight     =   6660
-   ScaleWidth      =   12630
+   ScaleWidth      =   11430
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton Command1 
       Caption         =   "Guardar"
@@ -59,10 +59,10 @@ Begin VB.Form ModificarCliente
    End
    Begin MSAdodcLib.Adodc Adodc1 
       Height          =   495
-      Left            =   9360
-      Top             =   1440
-      Width           =   2535
-      _ExtentX        =   4471
+      Left            =   11640
+      Top             =   1080
+      Width           =   1200
+      _ExtentX        =   2117
       _ExtentY        =   873
       ConnectMode     =   0
       CursorLocation  =   3
@@ -108,8 +108,8 @@ Begin VB.Form ModificarCliente
       Left            =   1800
       TabIndex        =   5
       Top             =   2160
-      Width           =   7695
-      _ExtentX        =   13573
+      Width           =   8295
+      _ExtentX        =   14631
       _ExtentY        =   3201
       _Version        =   393216
       HeadLines       =   1
@@ -183,9 +183,9 @@ Begin VB.Form ModificarCliente
    End
    Begin VB.Label lblid 
       Height          =   255
-      Left            =   10680
+      Left            =   12000
       TabIndex        =   17
-      Top             =   2160
+      Top             =   1920
       Width           =   135
    End
    Begin VB.Label Label8 
@@ -352,7 +352,7 @@ With RsCliente
     .UpdateBatch
     End With
     MsgBox "El registro ha sido modificado correctamente", vbInformation, "Aviso"
-    
+    Adodc1.Refresh
 End Sub
 
 Private Sub DataGrid1_Click()

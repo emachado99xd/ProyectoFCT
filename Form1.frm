@@ -3,29 +3,50 @@ Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form Form1 
    Caption         =   "Form1"
-   ClientHeight    =   8265
+   ClientHeight    =   8520
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   11250
+   ClientWidth     =   10740
    LinkTopic       =   "Form1"
-   ScaleHeight     =   8265
-   ScaleWidth      =   11250
+   ScaleHeight     =   8520
+   ScaleWidth      =   10740
    StartUpPosition =   3  'Windows Default
+   Begin VB.TextBox txttotal 
+      Height          =   375
+      Left            =   4800
+      TabIndex        =   25
+      Top             =   7080
+      Width           =   1455
+   End
+   Begin VB.TextBox txtiva 
+      Height          =   405
+      Left            =   1440
+      TabIndex        =   24
+      Top             =   7560
+      Width           =   1455
+   End
+   Begin VB.TextBox txtsubtotal 
+      Height          =   375
+      Left            =   1440
+      TabIndex        =   23
+      Top             =   6600
+      Width           =   1455
+   End
    Begin VB.CommandButton Command5 
-      Caption         =   "Modoficar Productos"
-      Height          =   495
-      Left            =   8400
+      Caption         =   "Modificar Productos"
+      Height          =   735
+      Left            =   8760
       TabIndex        =   19
-      Top             =   6120
-      Width           =   1335
+      Top             =   6480
+      Width           =   1695
    End
    Begin VB.CommandButton Command4 
       Caption         =   "Modificar Cliente"
-      Height          =   615
-      Left            =   4680
+      Height          =   735
+      Left            =   7200
       TabIndex        =   18
-      Top             =   7200
-      Width           =   1815
+      Top             =   6480
+      Width           =   1455
    End
    Begin VB.CommandButton Command3 
       Caption         =   "++"
@@ -100,20 +121,20 @@ Begin VB.Form Form1
       EndProperty
    End
    Begin VB.CommandButton Command1 
-      Caption         =   "Productos"
+      Caption         =   "Nuevos Productos"
       Height          =   735
-      Left            =   8520
+      Left            =   8760
       TabIndex        =   12
       Top             =   7200
-      Width           =   1575
+      Width           =   1695
    End
    Begin VB.CommandButton Command2 
-      Caption         =   "Nuevo cliente"
+      Caption         =   "Nuevos Clientes"
       Height          =   735
-      Left            =   6840
+      Left            =   7200
       TabIndex        =   11
       Top             =   7200
-      Width           =   1335
+      Width           =   1455
    End
    Begin VB.TextBox txtid 
       Height          =   375
@@ -124,8 +145,8 @@ Begin VB.Form Form1
    End
    Begin MSAdodcLib.Adodc Adodc1 
       Height          =   375
-      Left            =   840
-      Top             =   7320
+      Left            =   11520
+      Top             =   4320
       Width           =   1200
       _ExtentX        =   2117
       _ExtentY        =   661
@@ -168,13 +189,67 @@ Begin VB.Form Form1
       EndProperty
       _Version        =   393216
    End
+   Begin VB.Label Label10 
+      AutoSize        =   -1  'True
+      Caption         =   "Subtotal:"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   12.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   285
+      Left            =   360
+      TabIndex        =   22
+      Top             =   6600
+      Width           =   1080
+   End
+   Begin VB.Label Label9 
+      AutoSize        =   -1  'True
+      Caption         =   "Iva:"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   12.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   285
+      Left            =   960
+      TabIndex        =   21
+      Top             =   7560
+      Width           =   420
+   End
+   Begin VB.Label Label2 
+      AutoSize        =   -1  'True
+      Caption         =   "Total:"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   12.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   285
+      Left            =   4080
+      TabIndex        =   20
+      Top             =   7080
+      Width           =   675
+   End
    Begin VB.Label lblid 
       AutoSize        =   -1  'True
       BorderStyle     =   1  'Fixed Single
       Height          =   255
-      Left            =   7680
+      Left            =   12480
       TabIndex        =   17
-      Top             =   240
+      Top             =   720
       Width           =   105
    End
    Begin VB.Label lblfactura 
@@ -403,6 +478,7 @@ Private Sub Command2_Click()
 End Sub
 
 Private Sub Command3_Click()
+    If txtid.Text = "" Then MsgBox "Ingrese un cliente", vbInformation, "Aviso": txtid.SetFocus: Exit Sub
     ProductosFactura.Show
 End Sub
 
@@ -414,20 +490,22 @@ Private Sub Command5_Click()
     ModificarProducto.Show
 End Sub
 
+
 Private Sub Form_Load()
- Clientes
- Factura
- DetalleFactura
- Producto
+Clientes
+Factura
+Producto
 End Sub
+
+
 
 
 Private Sub txtid_KeyPress(KeyAscii As Integer)
     If KeyAscii = 13 Then
-        If Txtid.Text = "" Then Exit Sub
+        If txtid.Text = "" Then Exit Sub
         With RsCliente
             .Requery
-            .Find "Cedula='" & Trim(Txtid.Text) & "'"
+            .Find "Cedula='" & Trim(txtid.Text) & "'"
             If .BOF Or .EOF Then Exit Sub
             lblnombre.Caption = !Nombre
             lblapellido.Caption = !Apellido
