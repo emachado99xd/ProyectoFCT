@@ -3,7 +3,7 @@ Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDATLST.OCX"
 Begin VB.Form ModificarProducto 
-   BackColor       =   &H80000016&
+   BackColor       =   &H8000000C&
    Caption         =   "Form2"
    ClientHeight    =   7560
    ClientLeft      =   120
@@ -24,9 +24,9 @@ Begin VB.Form ModificarProducto
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton cmdguardar 
       BackColor       =   &H80000005&
-      Caption         =   "guardar"
+      Caption         =   "Guardar"
       BeginProperty Font 
-         Name            =   "MV Boli"
+         Name            =   "Palatino Linotype"
          Size            =   12
          Charset         =   0
          Weight          =   700
@@ -36,7 +36,7 @@ Begin VB.Form ModificarProducto
       EndProperty
       Height          =   615
       Left            =   9120
-      TabIndex        =   23
+      TabIndex        =   22
       Top             =   6840
       Width           =   1335
    End
@@ -302,35 +302,27 @@ Begin VB.Form ModificarProducto
       Caption         =   "Label12"
       Height          =   15
       Left            =   9480
-      TabIndex        =   24
+      TabIndex        =   23
       Top             =   3360
       Width           =   495
    End
    Begin VB.Label Label11 
       BackColor       =   &H80000005&
-      Caption         =   "tipo"
-      Height          =   375
-      Left            =   2160
-      TabIndex        =   22
-      Top             =   6480
-      Width           =   855
-   End
-   Begin VB.Label Label10 
-      Caption         =   "Label10"
+      Caption         =   "Tipo"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Name            =   "Palatino Linotype"
+         Size            =   12
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   255
-      Left            =   9120
+      Height          =   375
+      Left            =   2160
       TabIndex        =   21
-      Top             =   1560
-      Width           =   2295
+      Top             =   6480
+      Width           =   855
    End
    Begin VB.Label lblIdTipo 
       BackColor       =   &H80000005&
@@ -369,6 +361,15 @@ Begin VB.Form ModificarProducto
    Begin VB.Label Label3 
       BackColor       =   &H80000005&
       Caption         =   "Prodcuto"
+      BeginProperty Font 
+         Name            =   "Palatino Linotype"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Left            =   4320
       TabIndex        =   15
@@ -378,15 +379,33 @@ Begin VB.Form ModificarProducto
    Begin VB.Label Label9 
       BackColor       =   &H80000005&
       Caption         =   "Descripción"
+      BeginProperty Font 
+         Name            =   "Palatino Linotype"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   255
       Left            =   4440
       TabIndex        =   8
       Top             =   4560
-      Width           =   1095
+      Width           =   1455
    End
    Begin VB.Label Label8 
       BackColor       =   &H80000005&
       Caption         =   "Precio"
+      BeginProperty Font 
+         Name            =   "Palatino Linotype"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Left            =   4440
       TabIndex        =   7
@@ -395,7 +414,16 @@ Begin VB.Form ModificarProducto
    End
    Begin VB.Label Label7 
       BackColor       =   &H80000005&
-      Caption         =   "tamaño"
+      Caption         =   "Tamaño"
+      BeginProperty Font 
+         Name            =   "Palatino Linotype"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Left            =   240
       TabIndex        =   6
@@ -404,7 +432,16 @@ Begin VB.Form ModificarProducto
    End
    Begin VB.Label Label6 
       BackColor       =   &H80000005&
-      Caption         =   "color"
+      Caption         =   "Color"
+      BeginProperty Font 
+         Name            =   "Palatino Linotype"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Left            =   4440
       TabIndex        =   5
@@ -413,7 +450,16 @@ Begin VB.Form ModificarProducto
    End
    Begin VB.Label Label5 
       BackColor       =   &H80000005&
-      Caption         =   "stock"
+      Caption         =   "Stock"
+      BeginProperty Font 
+         Name            =   "Palatino Linotype"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Left            =   240
       TabIndex        =   4
@@ -423,6 +469,15 @@ Begin VB.Form ModificarProducto
    Begin VB.Label Label4 
       BackColor       =   &H80000005&
       Caption         =   "Producto"
+      BeginProperty Font 
+         Name            =   "Palatino Linotype"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Left            =   240
       TabIndex        =   3
@@ -432,6 +487,15 @@ Begin VB.Form ModificarProducto
    Begin VB.Label Label2 
       BackColor       =   &H80000005&
       Caption         =   "ID"
+      BeginProperty Font 
+         Name            =   "Palatino Linotype"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Left            =   240
       TabIndex        =   1
@@ -442,8 +506,8 @@ Begin VB.Form ModificarProducto
       BackColor       =   &H80000005&
       Caption         =   "Modificar producto"
       BeginProperty Font 
-         Name            =   "MV Boli"
-         Size            =   12
+         Name            =   "Algerian"
+         Size            =   14.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -454,7 +518,7 @@ Begin VB.Form ModificarProducto
       Left            =   3480
       TabIndex        =   0
       Top             =   120
-      Width           =   2775
+      Width           =   3255
    End
 End
 Attribute VB_Name = "ModificarProducto"
@@ -466,12 +530,12 @@ Private Sub cmdguardar_Click()
     With RsProductos
         .Requery
         .Find "Id_producto ='" & Trim(lblIdTipo.Caption) & "'"
-        !Producto = Txtp.Text
+        !Producto = txtp.Text
         !Stock = Val(Txtstock.Text)
         !Color = Txtcolor.Text
-        !Tamaño = Txttamaño.Text
-        !Descripción = Txtdescripcion.Text
-        !Precio = Val(Txtprecio.Text)
+        !Tamaño = txttamaño.Text
+        !Descripción = txtdescripcion.Text
+        !Precio = Val(txtprecio.Text)
         With RsTipoProducto
             .Requery
             .Find "tipo ='" & Trim(DataCombo1.Text) & "'"
@@ -489,13 +553,13 @@ Private Sub DataCombo1_Click(Area As Integer)
 End Sub
 
 Private Sub DataGrid1_Click()
-    Txtp.Text = DataGrid1.Columns(2).Text
+    txtp.Text = DataGrid1.Columns(2).Text
     Txtstock.Text = DataGrid1.Columns(3).Text
     Txtcolor.Text = DataGrid1.Columns(4).Text
-    Txttamaño.Text = DataGrid1.Columns(5).Text
-    Txtdescripcion.Text = DataGrid1.Columns(6).Text
-    Txtprecio.Text = DataGrid1.Columns(7).Text
-    lblIdProducto.Caption = DataGrid1.Columns(0).Text
+    txttamaño.Text = DataGrid1.Columns(5).Text
+    txtdescripcion.Text = DataGrid1.Columns(6).Text
+    txtprecio.Text = DataGrid1.Columns(7).Text
+    lblidproducto.Caption = DataGrid1.Columns(0).Text
     lblIdTipo.Caption = DataGrid1.Columns(1).Text
     With RsTipoProducto
         .Requery
@@ -519,14 +583,14 @@ End Sub
 
 Private Sub txtid_Change()
     Dim buscar As String
-    buscar = "%" & Txtid.Text & "%"
+    buscar = "%" & txtid.Text & "%"
     Adodc1.RecordSource = "SELECT *FROM Producto Where [Id_Producto]Like '" & buscar & "'"
     Adodc1.Refresh
 End Sub
 
 Private Sub txtproducto_Change()
     Dim buscar As String
-    buscar = "%" & Txtproducto.Text & "%"
+    buscar = "%" & txtproducto.Text & "%"
     Adodc1.RecordSource = "SELECT *FROM Producto Where [Producto]Like '" & buscar & "'"
     Adodc1.Refresh
 End Sub
