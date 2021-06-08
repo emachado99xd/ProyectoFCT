@@ -7,54 +7,63 @@ Begin VB.Form ModificarCliente
    ClientHeight    =   6660
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   11430
+   ClientWidth     =   8715
    FillColor       =   &H00FFFFFF&
    ForeColor       =   &H8000000D&
    LinkTopic       =   "Form2"
    ScaleHeight     =   6660
-   ScaleWidth      =   11430
+   ScaleWidth      =   8715
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton Command1 
       Caption         =   "Guardar"
-      Height          =   495
-      Left            =   4920
+      BeginProperty Font 
+         Name            =   "Garamond"
+         Size            =   15.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Left            =   7080
       TabIndex        =   16
-      Top             =   5880
-      Width           =   1335
+      Top             =   5760
+      Width           =   1455
    End
    Begin VB.TextBox txttel 
       Height          =   375
-      Left            =   6960
+      Left            =   5160
       TabIndex        =   15
-      Top             =   4680
+      Top             =   4200
       Width           =   2295
    End
    Begin VB.TextBox txtdir 
       Height          =   375
-      Left            =   6960
+      Left            =   5400
       TabIndex        =   14
-      Top             =   5160
+      Top             =   4800
       Width           =   2295
    End
    Begin VB.TextBox txtced 
       Height          =   375
-      Left            =   2880
+      Left            =   1440
       TabIndex        =   13
-      Top             =   5160
+      Top             =   5400
       Width           =   2295
    End
    Begin VB.TextBox txtape 
       Height          =   375
-      Left            =   2880
+      Left            =   1440
       TabIndex        =   12
-      Top             =   4680
+      Top             =   4800
       Width           =   2295
    End
    Begin VB.TextBox txtnom 
       Height          =   375
-      Left            =   2880
+      Left            =   1440
       TabIndex        =   11
-      Top             =   4080
+      Top             =   4200
       Width           =   2295
    End
    Begin MSAdodcLib.Adodc Adodc1 
@@ -105,7 +114,7 @@ Begin VB.Form ModificarCliente
    End
    Begin MSDataGridLib.DataGrid DataGrid1 
       Height          =   1815
-      Left            =   1800
+      Left            =   240
       TabIndex        =   5
       Top             =   2160
       Width           =   8295
@@ -169,14 +178,14 @@ Begin VB.Form ModificarCliente
    End
    Begin VB.TextBox txtcedula 
       Height          =   375
-      Left            =   7200
+      Left            =   5640
       TabIndex        =   4
-      Top             =   1560
+      Top             =   1440
       Width           =   2055
    End
    Begin VB.TextBox txtnombre 
       Height          =   375
-      Left            =   2880
+      Left            =   1800
       TabIndex        =   3
       Top             =   1440
       Width           =   2415
@@ -201,9 +210,9 @@ Begin VB.Form ModificarCliente
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   5400
+      Left            =   3960
       TabIndex        =   10
-      Top             =   4680
+      Top             =   4200
       Width           =   1215
    End
    Begin VB.Label Label7 
@@ -219,9 +228,9 @@ Begin VB.Form ModificarCliente
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   5400
+      Left            =   3960
       TabIndex        =   9
-      Top             =   5160
+      Top             =   4800
       Width           =   1575
    End
    Begin VB.Label Label6 
@@ -237,9 +246,9 @@ Begin VB.Form ModificarCliente
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   1800
+      Left            =   240
       TabIndex        =   8
-      Top             =   5160
+      Top             =   5400
       Width           =   1575
    End
    Begin VB.Label Label5 
@@ -255,9 +264,9 @@ Begin VB.Form ModificarCliente
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   1800
+      Left            =   240
       TabIndex        =   7
-      Top             =   4680
+      Top             =   4800
       Width           =   1335
    End
    Begin VB.Label Label4 
@@ -273,7 +282,7 @@ Begin VB.Form ModificarCliente
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   1800
+      Left            =   240
       TabIndex        =   6
       Top             =   4200
       Width           =   1335
@@ -291,14 +300,14 @@ Begin VB.Form ModificarCliente
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   6000
+      Left            =   4560
       TabIndex        =   2
-      Top             =   1680
+      Top             =   1440
       Width           =   975
    End
    Begin VB.Label Label2 
       BackStyle       =   0  'Transparent
-      Caption         =   "nombre"
+      Caption         =   "Nombre"
       BeginProperty Font 
          Name            =   "Rockwell"
          Size            =   14.25
@@ -309,7 +318,7 @@ Begin VB.Form ModificarCliente
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   1560
+      Left            =   600
       TabIndex        =   1
       Top             =   1440
       Width           =   1215
@@ -318,19 +327,19 @@ Begin VB.Form ModificarCliente
       BackStyle       =   0  'Transparent
       Caption         =   "Modificar cliente"
       BeginProperty Font 
-         Name            =   "Showcard Gothic"
-         Size            =   24
+         Name            =   "Sweet Story"
+         Size            =   48
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   855
-      Left            =   3480
+      Height          =   1095
+      Left            =   1920
       TabIndex        =   0
-      Top             =   360
-      Width           =   5655
+      Top             =   120
+      Width           =   5775
    End
 End
 Attribute VB_Name = "ModificarCliente"

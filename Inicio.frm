@@ -1,5 +1,6 @@
 VERSION 5.00
 Begin VB.Form Inicio 
+   BackColor       =   &H80000010&
    Caption         =   "Form2"
    ClientHeight    =   5895
    ClientLeft      =   120
@@ -95,10 +96,11 @@ Begin VB.Form Inicio
       Width           =   3735
    End
    Begin VB.Label Label1 
+      BackStyle       =   0  'Transparent
       Caption         =   "¿Qué acción desea realizar?"
       BeginProperty Font 
-         Name            =   "Unispace"
-         Size            =   18
+         Name            =   "Garamond"
+         Size            =   21.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -106,9 +108,9 @@ Begin VB.Form Inicio
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   360
+      Left            =   960
       TabIndex        =   0
-      Top             =   240
+      Top             =   360
       Width           =   6255
    End
 End

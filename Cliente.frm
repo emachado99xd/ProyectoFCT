@@ -1,46 +1,56 @@
 VERSION 5.00
 Begin VB.Form Cliente 
+   BackColor       =   &H00C0C0C0&
    Caption         =   "Form2"
-   ClientHeight    =   6435
+   ClientHeight    =   4980
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   9390
+   ClientWidth     =   8250
    LinkTopic       =   "Form2"
-   ScaleHeight     =   6435
-   ScaleWidth      =   9390
+   ScaleHeight     =   4980
+   ScaleWidth      =   8250
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton Command1 
       Caption         =   "Cerrar"
-      Height          =   495
-      Left            =   7800
+      BeginProperty Font 
+         Name            =   "Perpetua Titling MT"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   735
+      Left            =   4800
       TabIndex        =   13
-      Top             =   5040
-      Width           =   975
+      Top             =   4080
+      Width           =   1215
    End
    Begin VB.TextBox txttelefono 
       Height          =   375
-      Left            =   3480
+      Left            =   3240
       TabIndex        =   11
       Top             =   3480
       Width           =   2535
    End
    Begin VB.TextBox txtdireccion 
       Height          =   375
-      Left            =   6720
+      Left            =   5640
       TabIndex        =   10
       Top             =   2640
       Width           =   2535
    End
    Begin VB.TextBox txtapellido 
       Height          =   375
-      Left            =   6600
+      Left            =   5640
       TabIndex        =   9
       Top             =   1560
       Width           =   2295
    End
    Begin VB.TextBox txtcedula 
       Height          =   375
-      Left            =   1680
+      Left            =   1560
       TabIndex        =   8
       Top             =   2640
       Width           =   2175
@@ -54,10 +64,19 @@ Begin VB.Form Cliente
    End
    Begin VB.CommandButton cmdguardar 
       Caption         =   "Guardar Cliente"
+      BeginProperty Font 
+         Name            =   "Perpetua Titling MT"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   735
-      Left            =   3960
+      Left            =   1560
       TabIndex        =   5
-      Top             =   4800
+      Top             =   4080
       Width           =   1455
    End
    Begin VB.Label lblidcliente 
@@ -72,114 +91,120 @@ Begin VB.Form Cliente
          Strikethrough   =   0   'False
       EndProperty
       Height          =   570
-      Left            =   7440
+      Left            =   8280
       TabIndex        =   12
-      Top             =   360
+      Top             =   1800
       Width           =   120
    End
    Begin VB.Label Label6 
       AutoSize        =   -1  'True
-      Caption         =   "Nuevo cliente"
+      BackStyle       =   0  'Transparent
+      Caption         =   "nuevo cliente"
       BeginProperty Font 
-         Name            =   "Trebuchet MS"
-         Size            =   27.75
-         Charset         =   0
-         Weight          =   700
+         Name            =   "Moonbright Demo"
+         Size            =   54.75
+         Charset         =   238
+         Weight          =   400
          Underline       =   0   'False
-         Italic          =   0   'False
+         Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   690
-      Left            =   2400
+      Height          =   1110
+      Left            =   1440
       TabIndex        =   6
-      Top             =   360
-      Width           =   3600
+      Top             =   120
+      Width           =   5160
    End
    Begin VB.Label Label5 
       AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
       Caption         =   "Dirección:"
       BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   15.75
+         Name            =   "Garamond"
+         Size            =   18
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   375
-      Left            =   4800
+      Height          =   405
+      Left            =   3960
       TabIndex        =   4
       Top             =   2640
-      Width           =   1950
+      Width           =   1590
    End
    Begin VB.Label Label4 
       AutoSize        =   -1  'True
-      Caption         =   "APELLIDO:"
+      BackStyle       =   0  'Transparent
+      Caption         =   "Apellido:"
       BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   15.75
+         Name            =   "Garamond"
+         Size            =   18
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   375
-      Left            =   4800
+      Height          =   405
+      Left            =   4200
       TabIndex        =   3
       Top             =   1560
-      Width           =   1755
+      Width           =   1365
    End
    Begin VB.Label Label3 
       AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
       Caption         =   "Teléfono:"
       BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   15.75
+         Name            =   "Garamond"
+         Size            =   18
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   375
+      Height          =   405
       Left            =   1680
       TabIndex        =   2
       Top             =   3480
-      Width           =   1755
+      Width           =   1455
    End
    Begin VB.Label Label2 
       AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
       Caption         =   "Cédula:"
       BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   15.75
+         Name            =   "Garamond"
+         Size            =   18
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   375
+      Height          =   405
       Left            =   240
       TabIndex        =   1
       Top             =   2640
-      Width           =   1365
+      Width           =   1155
    End
    Begin VB.Label Label1 
       AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
       Caption         =   "Nombre:"
       BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   15.75
+         Name            =   "Garamond"
+         Size            =   18
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   375
+      Height          =   405
       Left            =   240
       TabIndex        =   0
       Top             =   1560
