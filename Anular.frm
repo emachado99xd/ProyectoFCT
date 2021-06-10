@@ -11,10 +11,18 @@ Begin VB.Form Anular
    ScaleHeight     =   8670
    ScaleWidth      =   11460
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton Command2 
+      Caption         =   "Validar"
+      Height          =   735
+      Left            =   5280
+      TabIndex        =   10
+      Top             =   6120
+      Width           =   1335
+   End
    Begin VB.CommandButton Command1 
       Caption         =   "Anular"
       Height          =   735
-      Left            =   4080
+      Left            =   3360
       TabIndex        =   8
       Top             =   6120
       Width           =   1455
@@ -298,11 +306,20 @@ Begin VB.Form Anular
    Begin VB.Label Label1 
       AutoSize        =   -1  'True
       Caption         =   "Facturas"
-      Height          =   195
-      Left            =   3600
+      BeginProperty Font 
+         Name            =   "Unispace"
+         Size            =   15.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   4440
       TabIndex        =   1
       Top             =   240
-      Width           =   615
+      Width           =   1560
    End
 End
 Attribute VB_Name = "Anular"
@@ -310,7 +327,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Dim IdProducto, Cantidad As Integer
+Dim IdProducto, Cantidad, f As Integer
 Private Sub Command1_Click()
     With RsFactura
         .Requery
@@ -338,7 +355,59 @@ Private Sub Command1_Click()
             If .BOF Then Exit Sub
         Next
     End With
+    With RsFactura
+        .Requery
+        .Find "Id_Factura='" & Trim(f) & "'"
+        If .BOF Or .EOF Then Exit Sub
+        If !Validar = True Then
+            l.Caption = "Valida"
+        Else
+            l.Caption = "No válida"
+        End If
+        .Requery
+    End With
     MsgBox "La factura a sido anulada", vbInformation, "Aviso"
+End Sub
+
+Private Sub Command2_Click()
+    With RsFactura
+        .Requery
+        .Find "Id_Factura='" & Trim(lblfactura.Caption) & "'"
+        If !Validar = True Then MsgBox "Esta factura ya es válida", vbInformation, "Aviso": Exit Sub
+        !Validar = True
+        .UpdateBatch
+    End With
+    Dim buscar As String
+    buscar = "%" & lblfactura.Caption & "%"
+    Adodc2.RecordSource = "SELECT *FROM Detalle_Factura Where [Id_Factura]Like '" & buscar & "'"
+    Adodc2.Refresh
+    Set RsDetalleFactura.DataSource = Adodc2
+    With RsDetalleFactura
+        For x = 1 To .RecordCount
+            IdProducto = !Id_Producto
+            Cantidad = !Cantidad
+            With RsProductos
+                .Requery
+                .Find "Id_Producto='" & Trim(IdProducto) & "'"
+                !Stock = Val(!Stock) - Cantidad
+                .UpdateBatch
+            End With
+            .MoveNext
+            If .BOF Then Exit Sub
+        Next
+    End With
+    With RsFactura
+        .Requery
+        .Find "Id_Factura='" & Trim(f) & "'"
+        If .BOF Or .EOF Then Exit Sub
+        If !Validar = True Then
+            l.Caption = "Valida"
+        Else
+            l.Caption = "No válida"
+        End If
+        .Requery
+    End With
+    MsgBox "La factura a sido validada", vbInformation, "Aviso"
 End Sub
 
 Private Sub DataGrid1_Click()
@@ -348,19 +417,26 @@ Private Sub DataGrid1_Click()
     Adodc2.RecordSource = "SELECT *FROM Detalle_Factura Where [Id_Factura]Like '" & buscar & "'"
     Adodc2.Refresh
     Set DataGrid2.DataSource = Adodc2
+    f = DataGrid1.Columns(0).Text
     With RsFactura
+        .Requery
+        .Find "Id_Factura='" & Trim(f) & "'"
+        If .BOF Or .EOF Then Exit Sub
         If !Validar = True Then
             l.Caption = "Valida"
         Else
             l.Caption = "No válida"
         End If
+        .Requery
     End With
+    DataGrid2.Enabled = True
 End Sub
 
 Private Sub Form_Load()
     Clientes
     Factura
     DetalleFactura
+    Producto
     Adodc1.CursorLocation = adUseClient
     Adodc1.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source= " & App.Path & "\Base\Base.accdb;Persist Security Info=False"
     Adodc1.RecordSource = "SELECT * FROM Factura"
@@ -370,6 +446,8 @@ Private Sub Form_Load()
     Adodc2.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source= " & App.Path & "\Base\Base.accdb;Persist Security Info=False"
     Adodc2.RecordSource = "SELECT * FROM Detalle_Factura"
     Adodc2.Refresh
+    DataGrid1.Enabled = False
+    DataGrid2.Enabled = False
 End Sub
 
 
@@ -385,4 +463,5 @@ Private Sub txtcedula_KeyPress(KeyAscii As Integer)
     buscar = "%" & lblid.Caption & "%"
     Adodc1.RecordSource = "SELECT *FROM Factura Where [Id_Cliente]Like '" & buscar & "'"
     Adodc1.Refresh
+    DataGrid1.Enabled = True
 End Sub

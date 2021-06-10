@@ -512,6 +512,7 @@ Dim Productos As Integer
     borrar
     limpiar
     DataGrid
+    Command1.Enabled = True
 End Sub
 
 
