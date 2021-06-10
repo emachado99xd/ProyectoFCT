@@ -2,58 +2,73 @@ VERSION 5.00
 Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form Form1 
-   BackColor       =   &H00C0C0C0&
    Caption         =   "Form1"
    ClientHeight    =   8520
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   11370
+   ClientWidth     =   11010
    LinkTopic       =   "Form1"
    ScaleHeight     =   8520
-   ScaleWidth      =   11370
+   ScaleWidth      =   11010
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton Command1 
+      Caption         =   "Cerrar"
+      Height          =   375
+      Left            =   9720
+      TabIndex        =   24
+      Top             =   120
+      Width           =   1215
+   End
+   Begin VB.CommandButton Command2 
+      Caption         =   "Cancelar"
+      Height          =   375
+      Left            =   7680
+      TabIndex        =   23
+      Top             =   7920
+      Width           =   855
+   End
    Begin VB.CommandButton cmdguardar 
       Caption         =   "Guardar Factura"
-      Height          =   615
-      Left            =   7200
+      Height          =   855
+      Left            =   7320
       TabIndex        =   22
-      Top             =   7320
-      Width           =   2415
+      Top             =   6840
+      Width           =   1695
    End
    Begin VB.TextBox txttotal 
       Height          =   375
-      Left            =   5280
+      Left            =   4800
       TabIndex        =   21
-      Top             =   7320
+      Top             =   7080
       Width           =   1455
    End
    Begin VB.TextBox txtiva 
       Height          =   405
-      Left            =   1080
+      Left            =   1440
       TabIndex        =   20
-      Top             =   7920
+      Top             =   7560
       Width           =   1455
    End
    Begin VB.TextBox txtsubtotal 
       Height          =   375
-      Left            =   1800
+      Left            =   1440
       TabIndex        =   19
-      Top             =   7320
+      Top             =   6600
       Width           =   1455
    End
    Begin VB.CommandButton Command3 
       Caption         =   "++"
       Height          =   615
-      Left            =   240
+      Left            =   480
       TabIndex        =   13
-      Top             =   2880
+      Top             =   2160
       Width           =   735
    End
    Begin MSDataGridLib.DataGrid DataGrid1 
       Height          =   3135
-      Left            =   240
+      Left            =   480
       TabIndex        =   11
-      Top             =   3720
+      Top             =   2880
       Width           =   9975
       _ExtentX        =   17595
       _ExtentY        =   5530
@@ -115,10 +130,10 @@ Begin VB.Form Form1
    End
    Begin VB.TextBox txtid 
       Height          =   375
-      Left            =   1560
+      Left            =   1200
       TabIndex        =   6
-      Top             =   1680
-      Width           =   1575
+      Top             =   840
+      Width           =   1215
    End
    Begin MSAdodcLib.Adodc Adodc1 
       Height          =   375
@@ -168,60 +183,57 @@ Begin VB.Form Form1
    End
    Begin VB.Label Label10 
       AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
       Caption         =   "Subtotal:"
       BeginProperty Font 
-         Name            =   "Garamond"
-         Size            =   18
+         Name            =   "Arial"
+         Size            =   12.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   405
-      Left            =   240
+      Height          =   285
+      Left            =   360
       TabIndex        =   18
-      Top             =   7320
-      Width           =   1365
+      Top             =   6600
+      Width           =   1080
    End
    Begin VB.Label Label9 
       AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
       Caption         =   "Iva:"
       BeginProperty Font 
-         Name            =   "Garamond"
-         Size            =   18
+         Name            =   "Arial"
+         Size            =   12.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   405
-      Left            =   240
+      Height          =   285
+      Left            =   960
       TabIndex        =   17
-      Top             =   7920
-      Width           =   585
+      Top             =   7560
+      Width           =   420
    End
    Begin VB.Label Label2 
       AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
       Caption         =   "Total:"
       BeginProperty Font 
-         Name            =   "Garamond"
-         Size            =   18
+         Name            =   "Arial"
+         Size            =   12.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   405
+      Height          =   285
       Left            =   4080
       TabIndex        =   16
-      Top             =   7320
-      Width           =   930
+      Top             =   7080
+      Width           =   675
    End
    Begin VB.Label lblid 
       AutoSize        =   -1  'True
@@ -251,22 +263,21 @@ Begin VB.Form Form1
    End
    Begin VB.Label Label8 
       AutoSize        =   -1  'True
-      BackColor       =   &H8000000B&
       Caption         =   "Productos"
       BeginProperty Font 
-         Name            =   "Baskerville Old Face"
-         Size            =   20.25
+         Name            =   "Arial"
+         Size            =   15.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   465
-      Left            =   4560
+      Height          =   360
+      Left            =   4680
       TabIndex        =   12
-      Top             =   3120
-      Width           =   2010
+      Top             =   2400
+      Width           =   1575
    End
    Begin VB.Label lbltelefono 
       AutoSize        =   -1  'True
@@ -280,9 +291,9 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   270
-      Left            =   5040
+      Left            =   6000
       TabIndex        =   10
-      Top             =   1680
+      Top             =   1440
       Width           =   90
    End
    Begin VB.Label lbldireccion 
@@ -297,9 +308,9 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   270
-      Left            =   8040
+      Left            =   9960
       TabIndex        =   9
-      Top             =   1800
+      Top             =   840
       Width           =   90
    End
    Begin VB.Label lblapellido 
@@ -314,9 +325,9 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   270
-      Left            =   5400
+      Left            =   6000
       TabIndex        =   8
-      Top             =   2520
+      Top             =   840
       Width           =   90
    End
    Begin VB.Label lblnombre 
@@ -331,124 +342,118 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   270
-      Left            =   1680
+      Left            =   1440
       TabIndex        =   7
-      Top             =   2400
+      Top             =   1440
       Width           =   90
    End
    Begin VB.Label Label7 
       AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
       Caption         =   "Teléfono:"
       BeginProperty Font 
-         Name            =   "Garamond"
-         Size            =   18
+         Name            =   "Arial"
+         Size            =   12.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   405
-      Left            =   3720
+      Height          =   300
+      Left            =   4440
       TabIndex        =   5
-      Top             =   2400
-      Width           =   1455
+      Top             =   1440
+      Width           =   1350
    End
    Begin VB.Label Label6 
       AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
       Caption         =   "Dirección:"
       BeginProperty Font 
-         Name            =   "Garamond"
-         Size            =   18
+         Name            =   "Arial"
+         Size            =   12.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   405
-      Left            =   6360
+      Height          =   300
+      Left            =   8280
       TabIndex        =   4
-      Top             =   1680
-      Width           =   1590
+      Top             =   840
+      Width           =   1500
    End
    Begin VB.Label Label5 
       AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
       Caption         =   "Cedula:"
       BeginProperty Font 
-         Name            =   "Garamond"
-         Size            =   18
+         Name            =   "Arial"
+         Size            =   12.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   405
+      Height          =   300
       Left            =   240
       TabIndex        =   3
-      Top             =   1680
-      Width           =   1155
+      Top             =   840
+      Width           =   1050
    End
    Begin VB.Label Label4 
       AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
       Caption         =   "Apellido:"
       BeginProperty Font 
-         Name            =   "Garamond"
-         Size            =   18
+         Name            =   "Arial"
+         Size            =   12.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   405
-      Left            =   3600
+      Height          =   300
+      Left            =   4560
       TabIndex        =   2
-      Top             =   1680
-      Width           =   1365
+      Top             =   840
+      Width           =   1350
    End
    Begin VB.Label Label3 
       AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
       Caption         =   "Nombre:"
       BeginProperty Font 
-         Name            =   "Garamond"
-         Size            =   18
+         Name            =   "Arial"
+         Size            =   12.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   405
+      Height          =   300
       Left            =   240
       TabIndex        =   1
-      Top             =   2280
-      Width           =   1365
+      Top             =   1440
+      Width           =   1050
    End
    Begin VB.Label Label1 
       AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
-      Caption         =   "factura"
+      Caption         =   "Factura"
       BeginProperty Font 
-         Name            =   "Moonbright Demo"
-         Size            =   62.25
-         Charset         =   238
-         Weight          =   400
+         Name            =   "Arial"
+         Size            =   15.75
+         Charset         =   0
+         Weight          =   700
          Underline       =   0   'False
-         Italic          =   -1  'True
+         Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1260
-      Left            =   3480
+      Height          =   375
+      Left            =   480
       TabIndex        =   0
-      Top             =   120
-      Width           =   3600
+      Top             =   240
+      Width           =   1365
    End
 End
 Attribute VB_Name = "Form1"
@@ -456,6 +461,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Dim IdProducto, Cantidad As Integer
 Private Sub cmdguardar_Click()
 Dim Productos As Integer
     With RsFactura
@@ -466,6 +472,7 @@ Dim Productos As Integer
         !Subtotal = Val(txtsubtotal.Text)
         !Iva = Val(txtiva.Text)
         !Total = Val(txttotal.Text)
+        !Validar = True
         .UpdateBatch
     End With
     Productos = RsTemporal.RecordCount
@@ -487,34 +494,56 @@ Dim Productos As Integer
     Next
     MsgBox "La factura ha sido creada", vbInformation, "Aviso"
     Subtotal = 0
+    With RsTemporal
+        .Requery
+        For x = 1 To .RecordCount
+            IdProducto = !Id_Producto
+            Cantidad = !Cantidad
+            With RsProductos
+                .Requery
+                .Find "Id_Producto='" & Trim(IdProducto) & "'"
+                !Stock = Val(!Stock) - Cantidad
+                .UpdateBatch
+            End With
+            .MoveNext
+            If .BOF Then Exit Sub
+        Next
+    End With
     borrar
     limpiar
     DataGrid
 End Sub
 
+
+
 Private Sub Command1_Click()
-Productos.Show
+    Unload Me
 End Sub
 
 Private Sub Command2_Click()
-    Cliente.Show
+    With RsFactura
+     .Requery
+     .Find "Id_Factura='" & Trim(lblfactura.Caption) & "'"
+     .Delete
+     .UpdateBatch
+    End With
+    borrar
+    limpiar
+    DataGrid
+    Command1.Enabled = True
 End Sub
 
 Private Sub Command3_Click()
-    If lblnombre.Caption = "" Then MsgBox "Ingrese un cliente", vbInformation, "Aviso": Txtid.SetFocus: Exit Sub
+    If lblnombre.Caption = "" Then MsgBox "Ingrese un cliente", vbInformation, "Aviso": txtid.SetFocus: Exit Sub
     If RsTemporal.State = 1 Then RsTemporal.Close
     ProductosFactura.Show
 End Sub
 
-Private Sub Command4_Click()
-    ModificarCliente.Show
+
+
+Private Sub Form_Activate()
+    DataGrid
 End Sub
-
-Private Sub Command5_Click()
-    ModificarProducto.Show
-End Sub
-
-
 
 Private Sub Form_Load()
 Clientes
@@ -526,12 +555,17 @@ Set DataGrid1.DataSource = RsTemporal
 borrar
 DataGrid
 End Sub
+
+Private Sub Form_Unload(Cancel As Integer)
+    If RsTemporal.State = 1 Then RsTemporal.Close
+End Sub
+
 Private Sub txtid_KeyPress(KeyAscii As Integer)
     If KeyAscii = 13 Then
-        If Txtid.Text = "" Then Exit Sub
+        If txtid.Text = "" Then Exit Sub
         With RsCliente
             .Requery
-            .Find "Cedula='" & Trim(Txtid.Text) & "'"
+            .Find "Cedula='" & Trim(txtid.Text) & "'"
             If .BOF Or .EOF Then Exit Sub
             lblnombre.Caption = !Nombre
             lblapellido.Caption = !Apellido
@@ -547,6 +581,7 @@ Private Sub txtid_KeyPress(KeyAscii As Integer)
             lblfactura.Caption = !Id_Factura
         End With
     End If
+    Command1.Enabled = False
 End Sub
 
 Sub borrar()
@@ -571,7 +606,7 @@ Sub DataGrid()
     DataGrid1.Columns(6).Width = 1500
 End Sub
 Sub limpiar()
-    Txtid.Text = ""
+    txtid.Text = ""
     lblnombre.Caption = ""
     lblapellido.Caption = ""
     lbltelefono.Caption = ""
@@ -582,4 +617,5 @@ Sub limpiar()
     txtiva.Text = ""
     txttotal.Text = ""
 End Sub
+
 

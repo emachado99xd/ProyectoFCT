@@ -2,79 +2,60 @@ VERSION 5.00
 Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form ProductosFactura 
-   BackColor       =   &H00FFC0C0&
    Caption         =   "Form2"
-   ClientHeight    =   6900
+   ClientHeight    =   7935
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   10740
+   ClientWidth     =   11595
    LinkTopic       =   "Form2"
-   ScaleHeight     =   6900
-   ScaleWidth      =   10740
+   ScaleHeight     =   7935
+   ScaleWidth      =   11595
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton Command1 
       Caption         =   "Cerrar"
-      BeginProperty Font 
-         Name            =   "Garamond"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
       Height          =   495
-      Left            =   6840
+      Left            =   7080
       TabIndex        =   21
-      Top             =   6240
+      Top             =   6720
       Width           =   1215
    End
    Begin VB.TextBox txttotal 
       Height          =   375
-      Left            =   7680
+      Left            =   7560
       Locked          =   -1  'True
       TabIndex        =   18
-      Top             =   4800
+      Top             =   4680
       Width           =   1815
    End
    Begin VB.TextBox txtdescripcion 
       Height          =   375
-      Left            =   2040
+      Left            =   1680
       Locked          =   -1  'True
       TabIndex        =   15
-      Top             =   5640
-      Width           =   2175
+      Top             =   5880
+      Width           =   1575
    End
    Begin VB.CommandButton cmdagregar 
       Caption         =   "Agregar"
-      BeginProperty Font 
-         Name            =   "Garamond"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   495
-      Left            =   3000
+      Height          =   735
+      Left            =   3960
       TabIndex        =   14
-      Top             =   6240
-      Width           =   1335
+      Top             =   6600
+      Width           =   1455
    End
    Begin VB.TextBox txtcantidad 
       Height          =   375
-      Left            =   6000
+      Left            =   4800
       TabIndex        =   13
-      Top             =   5640
+      Top             =   5880
       Width           =   1575
    End
    Begin VB.TextBox txtprecio 
       Height          =   375
-      Left            =   4800
+      Left            =   4680
       Locked          =   -1  'True
       TabIndex        =   11
-      Top             =   4800
+      Top             =   4560
       Width           =   1575
    End
    Begin VB.TextBox txtp 
@@ -82,7 +63,7 @@ Begin VB.Form ProductosFactura
       Left            =   1560
       Locked          =   -1  'True
       TabIndex        =   10
-      Top             =   4800
+      Top             =   4560
       Width           =   1815
    End
    Begin MSAdodcLib.Adodc Adodc1 
@@ -133,30 +114,30 @@ Begin VB.Form ProductosFactura
    End
    Begin VB.TextBox txtproducto 
       Height          =   375
-      Left            =   4320
+      Left            =   4920
       TabIndex        =   7
-      Top             =   1080
+      Top             =   840
       Width           =   2055
    End
-   Begin VB.TextBox txttamaño 
+   Begin VB.TextBox txttipo 
       Height          =   375
-      Left            =   8400
+      Left            =   8760
       TabIndex        =   6
-      Top             =   1080
+      Top             =   840
       Width           =   1815
    End
    Begin VB.TextBox txtid 
       Height          =   375
-      Left            =   840
+      Left            =   720
       TabIndex        =   5
-      Top             =   1080
+      Top             =   840
       Width           =   855
    End
    Begin MSDataGridLib.DataGrid DataGrid1 
       Height          =   2775
       Left            =   240
       TabIndex        =   0
-      Top             =   1800
+      Top             =   1440
       Width           =   10335
       _ExtentX        =   18230
       _ExtentY        =   4895
@@ -234,143 +215,153 @@ Begin VB.Form ProductosFactura
    End
    Begin VB.Label Label7 
       AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
       Caption         =   "Total:"
       BeginProperty Font 
-         Name            =   "Garamond"
-         Size            =   15.75
+         Name            =   "Arial"
+         Size            =   12.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   360
-      Left            =   6720
+      Height          =   285
+      Left            =   6840
       TabIndex        =   17
-      Top             =   4800
-      Width           =   780
+      Top             =   4680
+      Width           =   675
    End
    Begin VB.Label Label6 
       AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
       Caption         =   "Descripción:"
       BeginProperty Font 
-         Name            =   "Garamond"
-         Size            =   15.75
+         Name            =   "Arial"
+         Size            =   12.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   360
+      Height          =   285
       Left            =   120
       TabIndex        =   16
-      Top             =   5640
-      Width           =   1710
+      Top             =   5880
+      Width           =   1485
    End
    Begin VB.Label Label9 
       AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
       Caption         =   "Cantidad:"
       BeginProperty Font 
-         Name            =   "Garamond"
-         Size            =   15.75
+         Name            =   "Arial"
+         Size            =   12.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   360
-      Left            =   4440
+      Height          =   285
+      Left            =   3600
       TabIndex        =   12
-      Top             =   5640
-      Width           =   1320
+      Top             =   5880
+      Width           =   1140
    End
    Begin VB.Label Label8 
       AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
       Caption         =   "Producto:"
       BeginProperty Font 
-         Name            =   "Garamond"
-         Size            =   15.75
+         Name            =   "Arial"
+         Size            =   12.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   360
-      Left            =   120
+      Height          =   285
+      Left            =   240
       TabIndex        =   9
-      Top             =   4800
-      Width           =   1320
+      Top             =   4560
+      Width           =   1185
    End
    Begin VB.Label Label2 
       AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
       Caption         =   "Precio:"
       BeginProperty Font 
-         Name            =   "Garamond"
-         Size            =   15.75
+         Name            =   "Arial"
+         Size            =   12.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   360
+      Height          =   285
       Left            =   3720
       TabIndex        =   8
-      Top             =   4800
-      Width           =   930
+      Top             =   4560
+      Width           =   840
    End
    Begin VB.Label Label5 
       AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
       Caption         =   "Id:"
       BeginProperty Font 
-         Name            =   "Garamond"
-         Size            =   15.75
+         Name            =   "Arial"
+         Size            =   12.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   360
+      Height          =   300
       Left            =   240
       TabIndex        =   4
-      Top             =   1080
-      Width           =   375
+      Top             =   840
+      Width           =   450
    End
    Begin VB.Label Label4 
       AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
       Caption         =   "Producto:"
       BeginProperty Font 
-         Name            =   "Garamond"
-         Size            =   15.75
+         Name            =   "Arial"
+         Size            =   12.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   360
-      Left            =   2760
+      Height          =   285
+      Left            =   3720
       TabIndex        =   3
-      Top             =   1080
-      Width           =   1320
+      Top             =   840
+      Width           =   1185
    End
    Begin VB.Label Label3 
       AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
-      Caption         =   "Tamaño:"
+      Caption         =   "Tipo:"
       BeginProperty Font 
-         Name            =   "Garamond"
+         Name            =   "Arial"
+         Size            =   12.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   285
+      Left            =   7680
+      TabIndex        =   2
+      Top             =   840
+      Width           =   600
+   End
+   Begin VB.Label Label1 
+      AutoSize        =   -1  'True
+      Caption         =   "Productos para la Factura"
+      BeginProperty Font 
+         Name            =   "Arial"
          Size            =   15.75
          Charset         =   0
          Weight          =   700
@@ -379,29 +370,10 @@ Begin VB.Form ProductosFactura
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Left            =   6840
-      TabIndex        =   2
-      Top             =   1080
-      Width           =   1185
-   End
-   Begin VB.Label Label1 
-      AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
-      Caption         =   "productos para la factura"
-      BeginProperty Font 
-         Name            =   "Garden Grown US B"
-         Size            =   33.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   1020
-      Left            =   2400
+      Left            =   3000
       TabIndex        =   1
-      Top             =   0
-      Width           =   5430
+      Top             =   120
+      Width           =   3930
    End
 End
 Attribute VB_Name = "ProductosFactura"
@@ -412,25 +384,25 @@ Attribute VB_Exposed = False
 Dim Subtotal As Integer
 Dim Total, Iva As Double
 Private Sub cmdagregar_Click()
-    If Txtp.Text = "" Then MsgBox "Seleccione un producto", vbInformation, "Aviso": Exit Sub
+    If txtp.Text = "" Then MsgBox "Seleccione un producto", vbInformation, "Aviso": Exit Sub
     If txtcantidad.Text = "" Then MsgBox "Indique la cantidad que desea comprar", vbInformation, "Aviso": txtcantidad.SetFocus: Exit Sub
      With RsTemporal
         .Requery
-        .Find "Id_Producto='" & Trim(lblIdProducto.Caption) & "'"
+        .Find "Id_Producto='" & Trim(lblidproducto.Caption) & "'"
         If .EOF Then
             .AddNew
             !Id_Factura = Val(lblfactura.Caption)
-            !Id_Producto = Val(lblIdProducto.Caption)
-            !Producto = Txtp.Text
+            !Id_Producto = Val(lblidproducto.Caption)
+            !Producto = txtp.Text
             !Cantidad = Val(txtcantidad.Text)
-            !Precio = Val(Txtprecio.Text)
+            !Precio = Val(txtprecio.Text)
         Else
-            If Val(!Id_Producto) = Val(lblIdProducto.Caption) Then
+            If Val(!Id_Producto) = Val(lblidproducto.Caption) Then
                 !Cantidad = !Cantidad + Val(txtcantidad.Text)
             End If
         End If
         .UpdateBatch
-        txttotal.Text = Val(txttotal.Text) + Val(Txtprecio.Text) * Val(txtcantidad.Text)
+        txttotal.Text = Val(txttotal.Text) + Val(txtprecio.Text) * Val(txtcantidad.Text)
         Subtotal = Val(txttotal.Text)
         Iva = Subtotal * 0.12
         Total = Subtotal + Iva
@@ -445,15 +417,16 @@ Private Sub Command1_Click()
         .txtsubtotal = Subtotal
         .txtiva = Iva
         .txttotal = Total
+        
     End With
     Unload Me
 End Sub
 
 Private Sub DataGrid1_Click()
-    Txtp.Text = DataGrid1.Columns(2).Text
-    Txtdescripcion.Text = DataGrid1.Columns(6).Text
-    Txtprecio.Text = DataGrid1.Columns(7).Text
-    lblIdProducto.Caption = DataGrid1.Columns(0).Text
+    txtp.Text = DataGrid1.Columns(2).Text
+    txtdescripcion.Text = DataGrid1.Columns(6).Text
+    txtprecio.Text = DataGrid1.Columns(8).Text
+    lblidproducto.Caption = DataGrid1.Columns(0).Text
     End Sub
 
 Private Sub Form_Load()
@@ -468,6 +441,8 @@ Private Sub Form_Load()
         lblfactura.Caption = .lblfactura.Caption
         If Val(.txtsubtotal.Text) = 0 Then
             Subtotal = 0
+            Iva = 0
+            Total = 0
         End If
     End With
     txttotal.Text = Subtotal
@@ -487,7 +462,7 @@ End Sub
 
 Private Sub txtid_Change()
     Dim buscar As String
-    buscar = "%" & Txtid.Text & "%"
+    buscar = "%" & txtid.Text & "%"
     Adodc1.RecordSource = "SELECT *FROM Producto Where [Id_Producto]Like '" & buscar & "'"
     Adodc1.Refresh
     DataGrid
@@ -495,32 +470,35 @@ End Sub
 
 Private Sub txtproducto_Change()
     Dim buscar As String
-    buscar = "%" & Txtproducto.Text & "%"
+    buscar = "%" & txtproducto.Text & "%"
     Adodc1.RecordSource = "SELECT *FROM Producto Where [Producto]Like '" & buscar & "'"
     Adodc1.Refresh
     DataGrid
 End Sub
 
-Private Sub txttamaño_Change()
-    Dim buscar As String
-    buscar = "%" & Txttamaño.Text & "%"
-    Adodc1.RecordSource = "SELECT *FROM Producto Where [Tamaño]Like '" & buscar & "'"
-    Adodc1.Refresh
-    DataGrid
-End Sub
+
 Sub limpiar()
-    Txtp.Text = ""
-    Txtdescripcion.Text = ""
-    Txtprecio.Text = ""
+    txtp.Text = ""
+    txtdescripcion.Text = ""
+    txtprecio.Text = ""
     txtcantidad.Text = ""
 End Sub
 Sub DataGrid()
     DataGrid1.Columns(0).Width = 0
     DataGrid1.Columns(1).Width = 0
-    DataGrid1.Columns(2).Width = 2620
-    DataGrid1.Columns(3).Width = 600
-    DataGrid1.Columns(4).Width = 1800
-    DataGrid1.Columns(5).Width = 1800
-    DataGrid1.Columns(6).Width = 2600
-    DataGrid1.Columns(7).Width = 600
+    DataGrid1.Columns(2).Width = 1900
+    DataGrid1.Columns(3).Width = 1450
+    DataGrid1.Columns(4).Width = 1550
+    DataGrid1.Columns(5).Width = 1410
+    DataGrid1.Columns(6).Width = 1400
+    DataGrid1.Columns(7).Width = 1400
+    DataGrid1.Columns(8).Width = 900
+End Sub
+
+Private Sub txttipo_Change()
+    Dim buscar As String
+    buscar = "%" & txttipo.Text & "%"
+    Adodc1.RecordSource = "SELECT *FROM Producto Where [Tipo]Like '" & buscar & "'"
+    Adodc1.Refresh
+    DataGrid
 End Sub

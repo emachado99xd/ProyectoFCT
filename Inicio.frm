@@ -1,82 +1,64 @@
 VERSION 5.00
 Begin VB.Form Inicio 
-   BackColor       =   &H80000010&
    Caption         =   "Form2"
-   ClientHeight    =   5895
+   ClientHeight    =   4125
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   6810
+   ClientWidth     =   6795
    LinkTopic       =   "Form2"
-   ScaleHeight     =   5895
-   ScaleWidth      =   6810
+   ScaleHeight     =   4125
+   ScaleWidth      =   6795
    StartUpPosition =   3  'Windows Default
-   Begin VB.CommandButton Command5 
-      Caption         =   "Modificar Producto"
+   Begin VB.CommandButton Command2 
+      Caption         =   "Facturas"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   12
+         Name            =   "Unispace"
+         Size            =   14.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   735
-      Left            =   3840
-      TabIndex        =   5
-      Top             =   4080
-      Width           =   2175
+      Height          =   495
+      Left            =   2400
+      TabIndex        =   4
+      Top             =   3480
+      Width           =   1815
+   End
+   Begin VB.CommandButton Command5 
+      Caption         =   "Control de productos"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   15
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   975
+      Left            =   3720
+      TabIndex        =   3
+      Top             =   2280
+      Width           =   2415
    End
    Begin VB.CommandButton Command4 
-      Caption         =   "Modificar Cliente"
+      Caption         =   "Control de clientes"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   12
+         Size            =   15
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   735
-      Left            =   720
-      TabIndex        =   4
-      Top             =   4080
-      Width           =   1815
-   End
-   Begin VB.CommandButton Command3 
-      Caption         =   "Nuevo Producto"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   12
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   735
-      Left            =   3960
-      TabIndex        =   3
-      Top             =   2400
-      Width           =   2055
-   End
-   Begin VB.CommandButton Command2 
-      Caption         =   "Nuevo Cliente"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   12
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   735
+      Height          =   975
       Left            =   720
       TabIndex        =   2
-      Top             =   2400
-      Width           =   1815
+      Top             =   2280
+      Width           =   2175
    End
    Begin VB.CommandButton Command1 
       Caption         =   "Facturación"
@@ -96,11 +78,10 @@ Begin VB.Form Inicio
       Width           =   3735
    End
    Begin VB.Label Label1 
-      BackStyle       =   0  'Transparent
       Caption         =   "¿Qué acción desea realizar?"
       BeginProperty Font 
-         Name            =   "Garamond"
-         Size            =   21.75
+         Name            =   "Unispace"
+         Size            =   18
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -108,9 +89,9 @@ Begin VB.Form Inicio
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   960
+      Left            =   360
       TabIndex        =   0
-      Top             =   360
+      Top             =   240
       Width           =   6255
    End
 End
@@ -123,12 +104,12 @@ Private Sub Command1_Click()
     Form1.Show
 End Sub
 
-Private Sub Command2_Click()
-    Cliente.Show
-End Sub
 
-Private Sub Command3_Click()
-    Productos.Show
+
+
+
+Private Sub Command2_Click()
+    Anular.Show
 End Sub
 
 Private Sub Command4_Click()

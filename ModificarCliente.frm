@@ -4,123 +4,42 @@ Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form ModificarCliente 
    BackColor       =   &H80000010&
    Caption         =   "Form2"
-   ClientHeight    =   6660
+   ClientHeight    =   7950
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   8715
+   ClientWidth     =   10725
    FillColor       =   &H00FFFFFF&
    ForeColor       =   &H8000000D&
    LinkTopic       =   "Form2"
-   ScaleHeight     =   6660
-   ScaleWidth      =   8715
+   ScaleHeight     =   7950
+   ScaleWidth      =   10725
    StartUpPosition =   3  'Windows Default
-   Begin VB.CommandButton Command1 
-      Caption         =   "Guardar"
-      BeginProperty Font 
-         Name            =   "Garamond"
-         Size            =   15.75
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   615
-      Left            =   7080
-      TabIndex        =   16
-      Top             =   5760
-      Width           =   1455
+   Begin VB.CommandButton Command5 
+      Caption         =   "Eliminar"
+      Height          =   735
+      Left            =   8160
+      TabIndex        =   22
+      Top             =   6960
+      Width           =   1575
    End
-   Begin VB.TextBox txttel 
-      Height          =   375
-      Left            =   5160
-      TabIndex        =   15
-      Top             =   4200
-      Width           =   2295
-   End
-   Begin VB.TextBox txtdir 
-      Height          =   375
-      Left            =   5400
-      TabIndex        =   14
-      Top             =   4800
-      Width           =   2295
-   End
-   Begin VB.TextBox txtced 
-      Height          =   375
-      Left            =   1440
-      TabIndex        =   13
-      Top             =   5400
-      Width           =   2295
-   End
-   Begin VB.TextBox txtape 
-      Height          =   375
-      Left            =   1440
-      TabIndex        =   12
-      Top             =   4800
-      Width           =   2295
-   End
-   Begin VB.TextBox txtnom 
-      Height          =   375
-      Left            =   1440
-      TabIndex        =   11
-      Top             =   4200
-      Width           =   2295
-   End
-   Begin MSAdodcLib.Adodc Adodc1 
+   Begin VB.CommandButton Command4 
+      Caption         =   "Cerrar"
       Height          =   495
-      Left            =   11640
-      Top             =   1080
-      Width           =   1200
-      _ExtentX        =   2117
-      _ExtentY        =   873
-      ConnectMode     =   0
-      CursorLocation  =   3
-      IsolationLevel  =   -1
-      ConnectionTimeout=   15
-      CommandTimeout  =   30
-      CursorType      =   3
-      LockType        =   3
-      CommandType     =   8
-      CursorOptions   =   0
-      CacheSize       =   50
-      MaxRecords      =   0
-      BOFAction       =   0
-      EOFAction       =   0
-      ConnectStringType=   1
-      Appearance      =   1
-      BackColor       =   -2147483643
-      ForeColor       =   -2147483640
-      Orientation     =   0
-      Enabled         =   -1
-      Connect         =   $"ModificarCliente.frx":0000
-      OLEDBString     =   $"ModificarCliente.frx":00A2
-      OLEDBFile       =   ""
-      DataSourceName  =   ""
-      OtherAttributes =   ""
-      UserName        =   ""
-      Password        =   ""
-      RecordSource    =   ""
-      Caption         =   "Adodc1"
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      _Version        =   393216
+      Left            =   8400
+      TabIndex        =   21
+      Top             =   240
+      Width           =   1095
    End
    Begin MSDataGridLib.DataGrid DataGrid1 
       Height          =   1815
       Left            =   240
-      TabIndex        =   5
-      Top             =   2160
+      TabIndex        =   1
+      Top             =   2040
       Width           =   8295
       _ExtentX        =   14631
       _ExtentY        =   3201
       _Version        =   393216
+      BackColor       =   -2147483644
       HeadLines       =   1
       RowHeight       =   15
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -176,170 +95,342 @@ Begin VB.Form ModificarCliente
          EndProperty
       EndProperty
    End
-   Begin VB.TextBox txtcedula 
-      Height          =   375
-      Left            =   5640
-      TabIndex        =   4
-      Top             =   1440
-      Width           =   2055
+   Begin VB.CommandButton Command3 
+      Caption         =   "Modificar Cliente"
+      Height          =   735
+      Left            =   8160
+      TabIndex        =   20
+      Top             =   5040
+      Width           =   1575
    End
-   Begin VB.TextBox txtnombre 
-      Height          =   375
-      Left            =   1800
-      TabIndex        =   3
-      Top             =   1440
-      Width           =   2415
+   Begin VB.CommandButton Command2 
+      Caption         =   "Nuevo Cliente"
+      Height          =   735
+      Left            =   8160
+      TabIndex        =   19
+      Top             =   4080
+      Width           =   1575
+   End
+   Begin VB.Frame Frame1 
+      Caption         =   "Buscar cliente"
+      BeginProperty Font 
+         Name            =   "Myanmar Text"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   1215
+      Left            =   360
+      TabIndex        =   14
+      Top             =   720
+      Width           =   7815
+      Begin VB.TextBox txtcedula 
+         Height          =   495
+         Left            =   5160
+         TabIndex        =   18
+         Top             =   480
+         Width           =   2055
+      End
+      Begin VB.TextBox txtnombre 
+         Height          =   495
+         Left            =   1680
+         TabIndex        =   15
+         Top             =   480
+         Width           =   2055
+      End
+      Begin VB.Label Label3 
+         AutoSize        =   -1  'True
+         Caption         =   "Cédula:"
+         BeginProperty Font 
+            Name            =   "Unispace"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   4080
+         TabIndex        =   17
+         Top             =   600
+         Width           =   1050
+      End
+      Begin VB.Label Label2 
+         AutoSize        =   -1  'True
+         Caption         =   "Nombre:"
+         BeginProperty Font 
+            Name            =   "Unispace"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   600
+         TabIndex        =   16
+         Top             =   600
+         Width           =   1050
+      End
+   End
+   Begin VB.CommandButton Command1 
+      Caption         =   "Guardar"
+      Height          =   735
+      Left            =   8160
+      TabIndex        =   12
+      Top             =   6000
+      Width           =   1575
+   End
+   Begin VB.TextBox txttel 
+      BeginProperty Font 
+         Name            =   "Unispace"
+         Size            =   24
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Left            =   2880
+      TabIndex        =   11
+      Top             =   6240
+      Width           =   4815
+   End
+   Begin VB.TextBox txtdir 
+      BeginProperty Font 
+         Name            =   "Unispace"
+         Size            =   24
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Left            =   3000
+      TabIndex        =   10
+      Top             =   6960
+      Width           =   4695
+   End
+   Begin VB.TextBox txtced 
+      BeginProperty Font 
+         Name            =   "Unispace"
+         Size            =   24
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Left            =   2520
+      TabIndex        =   9
+      Top             =   5520
+      Width           =   5175
+   End
+   Begin VB.TextBox txtape 
+      BeginProperty Font 
+         Name            =   "Unispace"
+         Size            =   24
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Left            =   2760
+      TabIndex        =   8
+      Top             =   4800
+      Width           =   4935
+   End
+   Begin VB.TextBox txtnom 
+      BeginProperty Font 
+         Name            =   "Unispace"
+         Size            =   24
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Left            =   2760
+      TabIndex        =   7
+      Top             =   4080
+      Width           =   4935
+   End
+   Begin MSAdodcLib.Adodc Adodc1 
+      Height          =   495
+      Left            =   11640
+      Top             =   1080
+      Width           =   1200
+      _ExtentX        =   2117
+      _ExtentY        =   873
+      ConnectMode     =   0
+      CursorLocation  =   3
+      IsolationLevel  =   -1
+      ConnectionTimeout=   15
+      CommandTimeout  =   30
+      CursorType      =   3
+      LockType        =   3
+      CommandType     =   8
+      CursorOptions   =   0
+      CacheSize       =   50
+      MaxRecords      =   0
+      BOFAction       =   0
+      EOFAction       =   0
+      ConnectStringType=   1
+      Appearance      =   1
+      BackColor       =   -2147483643
+      ForeColor       =   -2147483640
+      Orientation     =   0
+      Enabled         =   -1
+      Connect         =   $"ModificarCliente.frx":0000
+      OLEDBString     =   $"ModificarCliente.frx":00A2
+      OLEDBFile       =   ""
+      DataSourceName  =   ""
+      OtherAttributes =   ""
+      UserName        =   ""
+      Password        =   ""
+      RecordSource    =   ""
+      Caption         =   "Adodc1"
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      _Version        =   393216
    End
    Begin VB.Label lblid 
       Height          =   255
       Left            =   12000
-      TabIndex        =   17
+      TabIndex        =   13
       Top             =   1920
       Width           =   135
    End
    Begin VB.Label Label8 
+      AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "Telefono"
+      Caption         =   "Teléfono:"
       BeginProperty Font 
          Name            =   "Rockwell"
-         Size            =   14.25
+         Size            =   26.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   495
-      Left            =   3960
-      TabIndex        =   10
-      Top             =   4200
-      Width           =   1215
+      Height          =   570
+      Left            =   600
+      TabIndex        =   6
+      Top             =   6240
+      Width           =   2205
    End
    Begin VB.Label Label7 
+      AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "Direccion"
+      Caption         =   "Dirección:"
       BeginProperty Font 
          Name            =   "Rockwell"
-         Size            =   14.25
+         Size            =   26.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   495
-      Left            =   3960
-      TabIndex        =   9
-      Top             =   4800
-      Width           =   1575
+      Height          =   570
+      Left            =   600
+      TabIndex        =   5
+      Top             =   6960
+      Width           =   2445
    End
    Begin VB.Label Label6 
+      AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "Cedula"
+      Caption         =   "Cedula:"
       BeginProperty Font 
          Name            =   "Rockwell"
-         Size            =   14.25
+         Size            =   26.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   615
-      Left            =   240
-      TabIndex        =   8
-      Top             =   5400
-      Width           =   1575
+      Height          =   570
+      Left            =   600
+      TabIndex        =   4
+      Top             =   5520
+      Width           =   1845
    End
    Begin VB.Label Label5 
+      AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "Apellido"
+      Caption         =   "Apellido:"
       BeginProperty Font 
          Name            =   "Rockwell"
-         Size            =   14.25
+         Size            =   26.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   615
-      Left            =   240
-      TabIndex        =   7
+      Height          =   570
+      Left            =   600
+      TabIndex        =   3
       Top             =   4800
-      Width           =   1335
+      Width           =   2160
    End
    Begin VB.Label Label4 
+      AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "Nombre"
+      Caption         =   "Nombre:"
       BeginProperty Font 
          Name            =   "Rockwell"
-         Size            =   14.25
+         Size            =   26.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   495
-      Left            =   240
-      TabIndex        =   6
-      Top             =   4200
-      Width           =   1335
-   End
-   Begin VB.Label Label3 
-      BackStyle       =   0  'Transparent
-      Caption         =   "Cedula"
-      BeginProperty Font 
-         Name            =   "Rockwell"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   4560
-      TabIndex        =   2
-      Top             =   1440
-      Width           =   975
-   End
-   Begin VB.Label Label2 
-      BackStyle       =   0  'Transparent
-      Caption         =   "Nombre"
-      BeginProperty Font 
-         Name            =   "Rockwell"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
+      Height          =   570
       Left            =   600
-      TabIndex        =   1
-      Top             =   1440
-      Width           =   1215
+      TabIndex        =   2
+      Top             =   4080
+      Width           =   2085
    End
    Begin VB.Label Label1 
       BackStyle       =   0  'Transparent
-      Caption         =   "Modificar cliente"
+      Caption         =   "Control de clientes"
       BeginProperty Font 
-         Name            =   "Sweet Story"
-         Size            =   48
+         Name            =   "Showcard Gothic"
+         Size            =   24
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1095
-      Left            =   1920
+      Height          =   855
+      Left            =   1320
       TabIndex        =   0
-      Top             =   120
-      Width           =   5775
+      Top             =   0
+      Width           =   5655
    End
 End
 Attribute VB_Name = "ModificarCliente"
@@ -362,6 +453,60 @@ With RsCliente
     End With
     MsgBox "El registro ha sido modificado correctamente", vbInformation, "Aviso"
     Adodc1.Refresh
+    bloquear True
+    txtnombre.Locked = False
+    txtcedula.Locked = False
+    limpiar
+    DataGrid
+    Command1.Enabled = False
+    Command2.Enabled = True
+    Command3.Enabled = True
+    Command5.Caption = "Eliminar"
+End Sub
+
+Private Sub Command2_Click()
+    Cliente.Show
+    limpiar
+End Sub
+
+Private Sub Command3_Click()
+    If txtnom.Text = "" Then MsgBox "Seleccione un cliente", vbInformation, "Aviso": Exit Sub
+    bloquear False
+    txtnom.SetFocus
+    txtnombre.Locked = True
+    txtcedula.Locked = True
+    Command1.Enabled = True
+    Command2.Enabled = False
+    Command3.Enabled = False
+    Command5.Caption = "Cancelar"
+End Sub
+
+Private Sub Command4_Click()
+Unload Me
+End Sub
+
+Private Sub Command5_Click()
+    If txtnom.Text = "" Then MsgBox "Seleccione un cliente", vbInformation, "Aviso": Exit Sub
+    If Command5.Caption = "Eliminar" Then
+        With RsCliente
+            .Requery
+            .Find "Id_Cliente='" & Trim(lblid.Caption) & "'"
+            If .EOF Then Exit Sub
+            .Delete
+            .UpdateBatch
+            .Requery
+        End With
+        limpiar
+        Adodc1.Refresh
+        DataGrid
+    Else
+        Command1.Enabled = False
+        Command2.Enabled = True
+        Command3.Enabled = True
+        Command5.Caption = "Eliminar"
+        bloquear True
+        limpiar
+    End If
 End Sub
 
 Private Sub DataGrid1_Click()
@@ -371,9 +516,19 @@ Private Sub DataGrid1_Click()
     txtdir.Text = DataGrid1.Columns(4).Text
     txttel.Text = DataGrid1.Columns(5).Text
     lblid.Caption = DataGrid1.Columns(0).Text
-    
+    DataGrid
+    Command1.Enabled = False
+    Command2.Enabled = True
+    Command3.Enabled = True
+    Command5.Caption = "Eliminar"
+    bloquear True
+    txtnombre.Locked = False
+    txtcedula.Locked = False
 End Sub
-
+Private Sub Form_Activate()
+    Adodc1.Refresh
+    DataGrid
+End Sub
 Private Sub Form_Load()
     Clientes
     Adodc1.CursorLocation = adUseClient
@@ -381,6 +536,10 @@ Private Sub Form_Load()
     Adodc1.RecordSource = "SELECT * FROM Cliente"
     Adodc1.Refresh
     Set DataGrid1.DataSource = Adodc1
+    bloquear True
+    limpiar
+    DataGrid
+    Command1.Enabled = False
 End Sub
 
 Private Sub txtcedula_Change()
@@ -388,6 +547,7 @@ Private Sub txtcedula_Change()
     buscar = "%" & txtcedula.Text & "%"
     Adodc1.RecordSource = "SELECT *FROM Cliente Where [Cedula]Like '" & buscar & "'"
     Adodc1.Refresh
+    DataGrid
 End Sub
 
 Private Sub txtnombre_Change()
@@ -395,4 +555,31 @@ Private Sub txtnombre_Change()
     buscar = "%" & txtnombre.Text & "%"
     Adodc1.RecordSource = "SELECT *FROM Cliente Where [Nombre]Like '" & buscar & "'"
     Adodc1.Refresh
+    DataGrid
+End Sub
+
+Sub bloquear(estado As Boolean)
+    txtnom.Locked = estado
+    txtape.Locked = estado
+    txtced.Locked = estado
+    txttel.Locked = estado
+    txtdir.Locked = estado
+End Sub
+Sub limpiar()
+    txtnombre.Text = ""
+    txtcedula.Text = ""
+    txtnom.Text = ""
+    txtape.Text = ""
+    txtced.Text = ""
+    txttel.Text = ""
+    txtdir.Text = ""
+End Sub
+
+Sub DataGrid()
+    DataGrid1.Columns(0).Width = 0
+    DataGrid1.Columns(1).Width = 1600
+    DataGrid1.Columns(2).Width = 1600
+    DataGrid1.Columns(3).Width = 1600
+    DataGrid1.Columns(4).Width = 1600
+    DataGrid1.Columns(5).Width = 1550
 End Sub
