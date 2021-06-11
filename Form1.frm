@@ -38,6 +38,7 @@ Begin VB.Form Form1
    Begin VB.TextBox txttotal 
       Height          =   375
       Left            =   4800
+      Locked          =   -1  'True
       TabIndex        =   21
       Top             =   7080
       Width           =   1455
@@ -45,6 +46,7 @@ Begin VB.Form Form1
    Begin VB.TextBox txtiva 
       Height          =   405
       Left            =   1440
+      Locked          =   -1  'True
       TabIndex        =   20
       Top             =   7560
       Width           =   1455
@@ -52,6 +54,7 @@ Begin VB.Form Form1
    Begin VB.TextBox txtsubtotal 
       Height          =   375
       Left            =   1440
+      Locked          =   -1  'True
       TabIndex        =   19
       Top             =   6600
       Width           =   1455
@@ -73,6 +76,7 @@ Begin VB.Form Form1
       _ExtentX        =   17595
       _ExtentY        =   5530
       _Version        =   393216
+      Enabled         =   0   'False
       HeadLines       =   1
       RowHeight       =   15
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -513,6 +517,10 @@ Dim Productos As Integer
     limpiar
     DataGrid
     Command1.Enabled = True
+    cmdguardar.Enabled = False
+    Command2.Enabled = False
+    txtid.Locked = False
+    txtid.SetFocus
 End Sub
 
 
@@ -532,6 +540,10 @@ Private Sub Command2_Click()
     limpiar
     DataGrid
     Command1.Enabled = True
+    Command2.Enabled = False
+    txtid.Locked = False
+    cmdguardar.Enabled = False
+    txtid.SetFocus
 End Sub
 
 Private Sub Command3_Click()
@@ -544,6 +556,10 @@ End Sub
 
 Private Sub Form_Activate()
     DataGrid
+    If txtsubtotal.Text = "" Then
+    Else
+        cmdguardar.Enabled = True
+    End If
 End Sub
 
 Private Sub Form_Load()
@@ -554,6 +570,8 @@ Temporal
 DetalleFactura
 Set DataGrid1.DataSource = RsTemporal
 borrar
+cmdguardar.Enabled = False
+Command2.Enabled = False
 DataGrid
 End Sub
 
@@ -581,8 +599,10 @@ Private Sub txtid_KeyPress(KeyAscii As Integer)
             .UpdateBatch
             lblfactura.Caption = !Id_Factura
         End With
+        txtid.Locked = True
+        Command2.Enabled = True
+        Command1.Enabled = False
     End If
-    Command1.Enabled = False
 End Sub
 
 Sub borrar()
