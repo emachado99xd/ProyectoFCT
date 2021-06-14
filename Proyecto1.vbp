@@ -16,6 +16,7 @@ Reference=*\G{00025E01-0000-0000-C000-000000000046}#4.0#0#..\..\..\..\..\..\Prog
 Form=ModificarProducto.frm
 Form=Inicio.frm
 Form=Anular.frm
+Designer=DataReport1.Dsr
 IconForm="Form1"
 Startup="Sub Main"
 HelpFile=""
