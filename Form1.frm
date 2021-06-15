@@ -521,7 +521,6 @@ Dim Productos As Integer
     Command2.Enabled = False
     txtid.Locked = False
     txtid.SetFocus
-    DataReport1.Show
     lblfactura.Caption = ""
     lblid.Caption = ""
 End Sub
