@@ -20,6 +20,7 @@ Designer=DataReport1.Dsr
 IconForm="Form1"
 Startup="Sub Main"
 HelpFile=""
+ExeName32="Proyecto final.exe"
 Command32=""
 Name="Proyecto1"
 HelpContextID="0"
