@@ -2,20 +2,30 @@ VERSION 5.00
 Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form ModificarCliente 
-   BackColor       =   &H80000010&
+   BackColor       =   &H8000000B&
    Caption         =   "Form2"
    ClientHeight    =   7950
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   10725
+   ClientWidth     =   9915
    FillColor       =   &H00FFFFFF&
    ForeColor       =   &H8000000D&
    LinkTopic       =   "Form2"
    ScaleHeight     =   7950
-   ScaleWidth      =   10725
+   ScaleWidth      =   9915
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton Command5 
+      BackColor       =   &H000080FF&
       Caption         =   "Eliminar"
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   735
       Left            =   8160
       TabIndex        =   22
@@ -24,8 +34,17 @@ Begin VB.Form ModificarCliente
    End
    Begin VB.CommandButton Command4 
       Caption         =   "Cerrar"
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   495
-      Left            =   8400
+      Left            =   8520
       TabIndex        =   21
       Top             =   240
       Width           =   1095
@@ -96,7 +115,17 @@ Begin VB.Form ModificarCliente
       EndProperty
    End
    Begin VB.CommandButton Command3 
+      BackColor       =   &H000080FF&
       Caption         =   "Modificar Cliente"
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   735
       Left            =   8160
       TabIndex        =   20
@@ -104,7 +133,17 @@ Begin VB.Form ModificarCliente
       Width           =   1575
    End
    Begin VB.CommandButton Command2 
+      BackColor       =   &H000080FF&
       Caption         =   "Nuevo Cliente"
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   735
       Left            =   8160
       TabIndex        =   19
@@ -114,7 +153,7 @@ Begin VB.Form ModificarCliente
    Begin VB.Frame Frame1 
       Caption         =   "Buscar cliente"
       BeginProperty Font 
-         Name            =   "Myanmar Text"
+         Name            =   "Showcard Gothic"
          Size            =   12
          Charset         =   0
          Weight          =   400
@@ -122,12 +161,23 @@ Begin VB.Form ModificarCliente
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H000080FF&
       Height          =   1215
       Left            =   360
       TabIndex        =   14
       Top             =   720
       Width           =   7815
       Begin VB.TextBox txtcedula 
+         Appearance      =   0  'Flat
+         BeginProperty Font 
+            Name            =   "Showcard Gothic"
+            Size            =   14.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   495
          Left            =   5160
          TabIndex        =   18
@@ -135,8 +185,18 @@ Begin VB.Form ModificarCliente
          Width           =   2055
       End
       Begin VB.TextBox txtnombre 
+         Appearance      =   0  'Flat
+         BeginProperty Font 
+            Name            =   "Showcard Gothic"
+            Size            =   14.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   495
-         Left            =   1680
+         Left            =   1800
          TabIndex        =   15
          Top             =   480
          Width           =   2055
@@ -145,41 +205,53 @@ Begin VB.Form ModificarCliente
          AutoSize        =   -1  'True
          Caption         =   "Cédula:"
          BeginProperty Font 
-            Name            =   "Unispace"
+            Name            =   "Showcard Gothic"
             Size            =   12
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   285
+         ForeColor       =   &H000080FF&
+         Height          =   300
          Left            =   4080
          TabIndex        =   17
          Top             =   600
-         Width           =   1050
+         Width           =   975
       End
       Begin VB.Label Label2 
          AutoSize        =   -1  'True
          Caption         =   "Nombre:"
          BeginProperty Font 
-            Name            =   "Unispace"
+            Name            =   "Showcard Gothic"
             Size            =   12
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   285
+         ForeColor       =   &H000080FF&
+         Height          =   300
          Left            =   600
          TabIndex        =   16
          Top             =   600
-         Width           =   1050
+         Width           =   1110
       End
    End
    Begin VB.CommandButton Command1 
+      BackColor       =   &H000080FF&
       Caption         =   "Guardar"
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   735
       Left            =   8160
       TabIndex        =   12
@@ -187,11 +259,12 @@ Begin VB.Form ModificarCliente
       Width           =   1575
    End
    Begin VB.TextBox txttel 
+      Appearance      =   0  'Flat
       BeginProperty Font 
-         Name            =   "Unispace"
+         Name            =   "Showcard Gothic"
          Size            =   24
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
@@ -203,11 +276,12 @@ Begin VB.Form ModificarCliente
       Width           =   4815
    End
    Begin VB.TextBox txtdir 
+      Appearance      =   0  'Flat
       BeginProperty Font 
-         Name            =   "Unispace"
+         Name            =   "Showcard Gothic"
          Size            =   24
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
@@ -219,11 +293,12 @@ Begin VB.Form ModificarCliente
       Width           =   4695
    End
    Begin VB.TextBox txtced 
+      Appearance      =   0  'Flat
       BeginProperty Font 
-         Name            =   "Unispace"
+         Name            =   "Showcard Gothic"
          Size            =   24
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
@@ -235,11 +310,12 @@ Begin VB.Form ModificarCliente
       Width           =   5175
    End
    Begin VB.TextBox txtape 
+      Appearance      =   0  'Flat
       BeginProperty Font 
-         Name            =   "Unispace"
+         Name            =   "Showcard Gothic"
          Size            =   24
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
@@ -251,11 +327,12 @@ Begin VB.Form ModificarCliente
       Width           =   4935
    End
    Begin VB.TextBox txtnom 
+      Appearance      =   0  'Flat
       BeginProperty Font 
-         Name            =   "Unispace"
+         Name            =   "Showcard Gothic"
          Size            =   24
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
@@ -324,113 +401,120 @@ Begin VB.Form ModificarCliente
       BackStyle       =   0  'Transparent
       Caption         =   "Teléfono:"
       BeginProperty Font 
-         Name            =   "Rockwell"
+         Name            =   "Showcard Gothic"
          Size            =   26.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
-         Italic          =   -1  'True
+         Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   570
-      Left            =   600
+      ForeColor       =   &H000080FF&
+      Height          =   660
+      Left            =   120
       TabIndex        =   6
-      Top             =   6240
-      Width           =   2205
+      Top             =   6120
+      Width           =   2730
    End
    Begin VB.Label Label7 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
       Caption         =   "Dirección:"
       BeginProperty Font 
-         Name            =   "Rockwell"
+         Name            =   "Showcard Gothic"
          Size            =   26.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
-         Italic          =   -1  'True
+         Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   570
-      Left            =   600
+      ForeColor       =   &H000080FF&
+      Height          =   660
+      Left            =   120
       TabIndex        =   5
-      Top             =   6960
-      Width           =   2445
+      Top             =   6840
+      Width           =   2925
    End
    Begin VB.Label Label6 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
       Caption         =   "Cedula:"
       BeginProperty Font 
-         Name            =   "Rockwell"
+         Name            =   "Showcard Gothic"
          Size            =   26.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
-         Italic          =   -1  'True
+         Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   570
-      Left            =   600
+      ForeColor       =   &H000080FF&
+      Height          =   660
+      Left            =   120
       TabIndex        =   4
-      Top             =   5520
-      Width           =   1845
+      Top             =   5400
+      Width           =   2145
    End
    Begin VB.Label Label5 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
       Caption         =   "Apellido:"
       BeginProperty Font 
-         Name            =   "Rockwell"
+         Name            =   "Showcard Gothic"
          Size            =   26.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
-         Italic          =   -1  'True
+         Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   570
-      Left            =   600
+      ForeColor       =   &H000080FF&
+      Height          =   660
+      Left            =   120
       TabIndex        =   3
-      Top             =   4800
-      Width           =   2160
+      Top             =   4680
+      Width           =   2655
    End
    Begin VB.Label Label4 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
       Caption         =   "Nombre:"
       BeginProperty Font 
-         Name            =   "Rockwell"
+         Name            =   "Showcard Gothic"
          Size            =   26.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
-         Italic          =   -1  'True
+         Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   570
-      Left            =   600
+      ForeColor       =   &H000080FF&
+      Height          =   660
+      Left            =   120
       TabIndex        =   2
-      Top             =   4080
-      Width           =   2085
+      Top             =   3960
+      Width           =   2310
    End
    Begin VB.Label Label1 
+      AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
       Caption         =   "Control de clientes"
       BeginProperty Font 
          Name            =   "Showcard Gothic"
-         Size            =   24
+         Size            =   26.25
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
-         Italic          =   -1  'True
+         Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   855
+      ForeColor       =   &H000080FF&
+      Height          =   660
       Left            =   1320
       TabIndex        =   0
       Top             =   0
-      Width           =   5655
+      Width           =   5820
    End
 End
 Attribute VB_Name = "ModificarCliente"
@@ -530,6 +614,7 @@ Private Sub Form_Activate()
     DataGrid
 End Sub
 Private Sub Form_Load()
+    ModificarCliente.Picture = LoadPicture(App.Path & "\IMG\Fondo1.jpg")
     Clientes
     Adodc1.CursorLocation = adUseClient
     Adodc1.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source= " & App.Path & "\Base\Base.accdb;Persist Security Info=False"

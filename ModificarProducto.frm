@@ -5,10 +5,10 @@ Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDATLST.OCX"
 Begin VB.Form ModificarProducto 
    BackColor       =   &H80000016&
    Caption         =   "Form2"
-   ClientHeight    =   8730
+   ClientHeight    =   9255
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   12045
+   ClientWidth     =   9945
    BeginProperty Font 
       Name            =   "MV Boli"
       Size            =   9.75
@@ -19,94 +19,96 @@ Begin VB.Form ModificarProducto
       Strikethrough   =   0   'False
    EndProperty
    LinkTopic       =   "Form2"
-   ScaleHeight     =   8730
-   ScaleWidth      =   12045
+   ScaleHeight     =   9255
+   ScaleWidth      =   9945
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton Command1 
       Caption         =   "Cerrar"
       BeginProperty Font 
-         Name            =   "Unispace"
-         Size            =   12
+         Name            =   "Showcard Gothic"
+         Size            =   9.75
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   8640
+      Left            =   7440
       TabIndex        =   27
-      Top             =   120
+      Top             =   240
       Width           =   1215
    End
    Begin VB.CommandButton cmdeliminar 
       Caption         =   "Eliminar"
       BeginProperty Font 
-         Name            =   "Unispace"
-         Size            =   11.25
+         Name            =   "Showcard Gothic"
+         Size            =   9.75
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   7920
+      Left            =   8280
       TabIndex        =   26
-      Top             =   6240
+      Top             =   3000
       Width           =   1575
    End
    Begin VB.CommandButton cmdmodificar 
       Caption         =   "Modificar Porducto"
       BeginProperty Font 
-         Name            =   "Unispace"
-         Size            =   11.25
+         Name            =   "Showcard Gothic"
+         Size            =   9.75
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   7920
+      Left            =   8280
       TabIndex        =   25
-      Top             =   4800
+      Top             =   1560
       Width           =   1575
    End
    Begin VB.CommandButton cmdnuevo 
       Caption         =   "Nuevo Producto"
       BeginProperty Font 
-         Name            =   "Unispace"
-         Size            =   11.25
+         Name            =   "Showcard Gothic"
+         Size            =   9.75
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   7920
+      Left            =   8280
       TabIndex        =   24
-      Top             =   4080
+      Top             =   840
       Width           =   1575
    End
    Begin VB.Frame Frame1 
       Caption         =   "Buscar Productos"
       BeginProperty Font 
-         Name            =   "Unispace"
-         Size            =   9.75
+         Name            =   "Showcard Gothic"
+         Size            =   12
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H000080FF&
       Height          =   975
       Left            =   240
       TabIndex        =   19
-      Top             =   600
-      Width           =   11535
+      Top             =   720
+      Width           =   7935
       Begin VB.TextBox txttipo 
+         Appearance      =   0  'Flat
          BeginProperty Font 
             Name            =   "Unispace"
             Size            =   12
@@ -117,12 +119,13 @@ Begin VB.Form ModificarProducto
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         Left            =   8400
+         Left            =   6120
          TabIndex        =   29
          Top             =   360
-         Width           =   2655
+         Width           =   1575
       End
       Begin VB.TextBox txtproducto 
+         Appearance      =   0  'Flat
          BeginProperty Font 
             Name            =   "Unispace"
             Size            =   14.25
@@ -133,12 +136,13 @@ Begin VB.Form ModificarProducto
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         Left            =   4320
+         Left            =   3120
          TabIndex        =   23
          Top             =   360
-         Width           =   2415
+         Width           =   1935
       End
       Begin VB.TextBox txtid 
+         Appearance      =   0  'Flat
          BeginProperty Font 
             Name            =   "Unispace"
             Size            =   14.25
@@ -148,8 +152,8 @@ Begin VB.Form ModificarProducto
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   375
-         Left            =   1440
+         Height          =   405
+         Left            =   480
          TabIndex        =   22
          Top             =   360
          Width           =   735
@@ -158,73 +162,76 @@ Begin VB.Form ModificarProducto
          AutoSize        =   -1  'True
          Caption         =   "Tipo:"
          BeginProperty Font 
-            Name            =   "Unispace"
-            Size            =   14.25
+            Name            =   "Showcard Gothic"
+            Size            =   12
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   345
-         Left            =   7440
+         ForeColor       =   &H000080FF&
+         Height          =   300
+         Left            =   5400
          TabIndex        =   28
          Top             =   360
-         Width           =   900
+         Width           =   660
       End
       Begin VB.Label Label12 
          AutoSize        =   -1  'True
          Caption         =   "Producto:"
          BeginProperty Font 
-            Name            =   "Unispace"
-            Size            =   14.25
+            Name            =   "Showcard Gothic"
+            Size            =   12
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   345
-         Left            =   2640
+         ForeColor       =   &H000080FF&
+         Height          =   300
+         Left            =   1680
          TabIndex        =   21
          Top             =   360
-         Width           =   1620
+         Width           =   1410
       End
       Begin VB.Label Label10 
          AutoSize        =   -1  'True
          Caption         =   "Id:"
          BeginProperty Font 
-            Name            =   "Unispace"
-            Size            =   14.25
+            Name            =   "Showcard Gothic"
+            Size            =   12
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   345
-         Left            =   840
+         ForeColor       =   &H000080FF&
+         Height          =   300
+         Left            =   120
          TabIndex        =   20
          Top             =   360
-         Width           =   540
+         Width           =   345
       End
    End
    Begin VB.CommandButton cmdguardar 
       BackColor       =   &H80000005&
       Caption         =   "Guardar"
       BeginProperty Font 
-         Name            =   "Unispace"
-         Size            =   11.25
+         Name            =   "Showcard Gothic"
+         Size            =   9.75
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   7920
+      Left            =   8280
       TabIndex        =   18
-      Top             =   5520
+      Top             =   2280
       Width           =   1575
    End
    Begin MSAdodcLib.Adodc Adodc1 
@@ -274,18 +281,18 @@ Begin VB.Form ModificarProducto
       _Version        =   393216
    End
    Begin MSDataListLib.DataCombo DataCombo1 
-      Height          =   315
+      Height          =   720
       Left            =   1680
       TabIndex        =   16
       Top             =   8040
-      Width           =   2895
-      _ExtentX        =   5106
-      _ExtentY        =   556
+      Width           =   6495
+      _ExtentX        =   11456
+      _ExtentY        =   1270
       _Version        =   393216
       Text            =   ""
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Name            =   "Showcard Gothic"
+         Size            =   24
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -294,106 +301,112 @@ Begin VB.Form ModificarProducto
       EndProperty
    End
    Begin VB.TextBox Txtprecio 
+      Appearance      =   0  'Flat
       BeginProperty Font 
-         Name            =   "Verdana"
-         Size            =   18
+         Name            =   "Showcard Gothic"
+         Size            =   26.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   525
-      Left            =   2160
+      Height          =   645
+      Left            =   2280
       TabIndex        =   13
-      Top             =   7200
-      Width           =   1695
+      Top             =   7320
+      Width           =   5895
    End
    Begin VB.TextBox Txtdescripcion 
+      Appearance      =   0  'Flat
       BeginProperty Font 
-         Name            =   "Verdana"
-         Size            =   18
+         Name            =   "Showcard Gothic"
+         Size            =   26.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   495
-      Left            =   3480
+      Height          =   615
+      Left            =   3840
       TabIndex        =   12
-      Top             =   6480
-      Width           =   3855
+      Top             =   6600
+      Width           =   4335
    End
    Begin VB.TextBox Txtcolor 
+      Appearance      =   0  'Flat
       BeginProperty Font 
-         Name            =   "Verdana"
-         Size            =   18
+         Name            =   "Showcard Gothic"
+         Size            =   26.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   525
-      Left            =   1920
+      Height          =   645
+      Left            =   2160
       TabIndex        =   11
-      Top             =   5760
-      Width           =   2175
+      Top             =   5880
+      Width           =   6015
    End
    Begin VB.TextBox Txtstock 
+      Appearance      =   0  'Flat
       BeginProperty Font 
-         Name            =   "Verdana"
-         Size            =   18
+         Name            =   "Showcard Gothic"
+         Size            =   26.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   525
-      Left            =   1920
+      Height          =   615
+      Left            =   2160
       TabIndex        =   10
-      Top             =   5040
-      Width           =   2175
+      Top             =   5160
+      Width           =   6015
    End
    Begin VB.TextBox Txttamaño 
+      Appearance      =   0  'Flat
       BeginProperty Font 
-         Name            =   "Verdana"
-         Size            =   18
+         Name            =   "Showcard Gothic"
+         Size            =   26.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   495
-      Left            =   2160
+      Height          =   615
+      Left            =   2640
       TabIndex        =   9
-      Top             =   4320
-      Width           =   3855
+      Top             =   4440
+      Width           =   5535
    End
    Begin VB.TextBox Txtp 
+      Appearance      =   0  'Flat
       BeginProperty Font 
-         Name            =   "Verdana"
-         Size            =   18
+         Name            =   "Showcard Gothic"
+         Size            =   26.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   525
-      Left            =   2760
+      Height          =   645
+      Left            =   3360
       TabIndex        =   8
-      Top             =   3600
-      Width           =   4455
+      Top             =   3720
+      Width           =   4815
    End
    Begin MSDataGridLib.DataGrid DataGrid1 
       Height          =   1815
-      Left            =   1680
+      Left            =   240
       TabIndex        =   1
-      Top             =   1680
+      Top             =   1800
       Width           =   7935
       _ExtentX        =   13996
       _ExtentY        =   3201
@@ -454,23 +467,26 @@ Begin VB.Form ModificarProducto
       EndProperty
    End
    Begin VB.Label Label11 
+      Appearance      =   0  'Flat
       AutoSize        =   -1  'True
-      BackColor       =   &H80000004&
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
       Caption         =   "Tipo:"
       BeginProperty Font 
-         Name            =   "Unispace"
-         Size            =   21.75
+         Name            =   "Showcard Gothic"
+         Size            =   26.25
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   525
+      ForeColor       =   &H000080FF&
+      Height          =   660
       Left            =   240
       TabIndex        =   17
-      Top             =   7920
-      Width           =   1350
+      Top             =   8040
+      Width           =   1425
    End
    Begin VB.Label lblIdTipo 
       BackColor       =   &H80000005&
@@ -507,136 +523,158 @@ Begin VB.Form ModificarProducto
       Width           =   1095
    End
    Begin VB.Label Label9 
+      Appearance      =   0  'Flat
       AutoSize        =   -1  'True
-      BackColor       =   &H80000004&
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
       Caption         =   "Descripción:"
       BeginProperty Font 
-         Name            =   "Unispace"
-         Size            =   21.75
+         Name            =   "Showcard Gothic"
+         Size            =   26.25
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   525
+      ForeColor       =   &H000080FF&
+      Height          =   660
       Left            =   240
       TabIndex        =   7
-      Top             =   6480
-      Width           =   3240
+      Top             =   6600
+      Width           =   3540
    End
    Begin VB.Label Label8 
+      Appearance      =   0  'Flat
       AutoSize        =   -1  'True
-      BackColor       =   &H80000004&
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
       Caption         =   "Precio:"
       BeginProperty Font 
-         Name            =   "Unispace"
-         Size            =   21.75
+         Name            =   "Showcard Gothic"
+         Size            =   26.25
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   525
+      ForeColor       =   &H000080FF&
+      Height          =   660
       Left            =   240
       TabIndex        =   6
-      Top             =   7200
-      Width           =   1890
+      Top             =   7320
+      Width           =   2055
    End
    Begin VB.Label Label7 
+      Appearance      =   0  'Flat
       AutoSize        =   -1  'True
-      BackColor       =   &H80000004&
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
       Caption         =   "Tamaño:"
       BeginProperty Font 
-         Name            =   "Unispace"
-         Size            =   21.75
+         Name            =   "Showcard Gothic"
+         Size            =   26.25
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   525
+      ForeColor       =   &H000080FF&
+      Height          =   660
       Left            =   240
       TabIndex        =   5
-      Top             =   4320
-      Width           =   1890
+      Top             =   4440
+      Width           =   2310
    End
    Begin VB.Label Label6 
+      Appearance      =   0  'Flat
       AutoSize        =   -1  'True
-      BackColor       =   &H80000004&
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
       Caption         =   "Color:"
       BeginProperty Font 
-         Name            =   "Unispace"
-         Size            =   21.75
+         Name            =   "Showcard Gothic"
+         Size            =   26.25
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   525
+      ForeColor       =   &H000080FF&
+      Height          =   660
       Left            =   240
       TabIndex        =   4
-      Top             =   5760
-      Width           =   1620
+      Top             =   5880
+      Width           =   1890
    End
    Begin VB.Label Label5 
+      Appearance      =   0  'Flat
       AutoSize        =   -1  'True
-      BackColor       =   &H80000004&
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
       Caption         =   "Stock:"
       BeginProperty Font 
-         Name            =   "Unispace"
-         Size            =   21.75
+         Name            =   "Showcard Gothic"
+         Size            =   26.25
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   525
+      ForeColor       =   &H000080FF&
+      Height          =   660
       Left            =   240
       TabIndex        =   3
-      Top             =   5040
-      Width           =   1620
+      Top             =   5160
+      Width           =   1860
    End
    Begin VB.Label Label4 
+      Appearance      =   0  'Flat
       AutoSize        =   -1  'True
-      BackColor       =   &H80000004&
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
       Caption         =   "Producto:"
       BeginProperty Font 
-         Name            =   "Unispace"
-         Size            =   21.75
+         Name            =   "Showcard Gothic"
+         Size            =   26.25
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   525
+      ForeColor       =   &H000080FF&
+      Height          =   660
       Left            =   240
       TabIndex        =   2
-      Top             =   3600
-      Width           =   2430
+      Top             =   3720
+      Width           =   3030
    End
    Begin VB.Label Label1 
-      BackColor       =   &H80000016&
-      Caption         =   "Modificar producto"
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
+      Caption         =   "Control de productos"
       BeginProperty Font 
-         Name            =   "Unispace"
-         Size            =   12
+         Name            =   "Showcard Gothic"
+         Size            =   26.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   375
-      Left            =   2640
+      ForeColor       =   &H000080FF&
+      Height          =   660
+      Left            =   360
       TabIndex        =   0
-      Top             =   120
-      Width           =   2775
+      Top             =   0
+      Width           =   6660
    End
 End
 Attribute VB_Name = "ModificarProducto"
@@ -759,6 +797,7 @@ Private Sub Form_Activate()
 End Sub
 
 Private Sub Form_Load()
+    ModificarProducto.Picture = LoadPicture(App.Path & "\IMG\Fondo1.jpg")
     Producto
     TipoProducto
     Adodc1.CursorLocation = adUseClient

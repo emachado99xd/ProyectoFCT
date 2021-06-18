@@ -3,28 +3,28 @@ Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form Anular 
    Caption         =   "Form2"
-   ClientHeight    =   8670
+   ClientHeight    =   9780
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   11460
+   ClientWidth     =   7440
    LinkTopic       =   "Form2"
-   ScaleHeight     =   8670
-   ScaleWidth      =   11460
+   ScaleHeight     =   9780
+   ScaleWidth      =   7440
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton Command2 
       Caption         =   "Validar"
       Height          =   735
-      Left            =   5280
+      Left            =   2880
       TabIndex        =   10
-      Top             =   6120
+      Top             =   6840
       Width           =   1335
    End
    Begin VB.CommandButton Command1 
       Caption         =   "Anular"
       Height          =   735
-      Left            =   3360
+      Left            =   1200
       TabIndex        =   8
-      Top             =   6120
+      Top             =   6840
       Width           =   1455
    End
    Begin MSAdodcLib.Adodc Adodc2 
@@ -75,11 +75,11 @@ Begin VB.Form Anular
    End
    Begin MSDataGridLib.DataGrid DataGrid2 
       Height          =   1575
-      Left            =   1080
+      Left            =   120
       TabIndex        =   7
-      Top             =   4200
-      Width           =   8415
-      _ExtentX        =   14843
+      Top             =   5040
+      Width           =   5535
+      _ExtentX        =   9763
       _ExtentY        =   2778
       _Version        =   393216
       HeadLines       =   1
@@ -185,11 +185,11 @@ Begin VB.Form Anular
    End
    Begin MSDataGridLib.DataGrid DataGrid1 
       Height          =   2055
-      Left            =   1080
+      Left            =   120
       TabIndex        =   4
-      Top             =   2040
-      Width           =   8415
-      _ExtentX        =   14843
+      Top             =   2280
+      Width           =   5535
+      _ExtentX        =   9763
       _ExtentY        =   3625
       _Version        =   393216
       HeadLines       =   1
@@ -249,12 +249,31 @@ Begin VB.Form Anular
    End
    Begin VB.Frame Frame1 
       Caption         =   "Buscar facturas"
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H000080FF&
       Height          =   1095
-      Left            =   3240
+      Left            =   840
       TabIndex        =   0
-      Top             =   720
+      Top             =   960
       Width           =   3855
       Begin VB.TextBox txtcedula 
+         BeginProperty Font 
+            Name            =   "Showcard Gothic"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   375
          Left            =   1440
          TabIndex        =   3
@@ -263,6 +282,16 @@ Begin VB.Form Anular
       End
       Begin VB.Label Label2 
          Caption         =   "Cédula:"
+         BeginProperty Font 
+            Name            =   "Showcard Gothic"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H000080FF&
          Height          =   255
          Left            =   360
          TabIndex        =   2
@@ -270,22 +299,48 @@ Begin VB.Form Anular
          Width           =   855
       End
    End
-   Begin VB.Label l 
+   Begin VB.Label Label3 
+      Appearance      =   0  'Flat
       AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
+      Caption         =   "Productos de la factura"
       BeginProperty Font 
-         Name            =   "Unispace"
-         Size            =   14.25
+         Name            =   "Showcard Gothic"
+         Size            =   18
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H000080FF&
+      Height          =   450
+      Left            =   360
+      TabIndex        =   11
+      Top             =   4440
+      Width           =   4815
+   End
+   Begin VB.Label l 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   12
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   345
-      Left            =   9840
+      ForeColor       =   &H000080FF&
+      Height          =   300
+      Left            =   4800
       TabIndex        =   9
-      Top             =   3240
-      Width           =   180
+      Top             =   1320
+      Width           =   60
    End
    Begin VB.Label lblfactura 
       AutoSize        =   -1  'True
@@ -304,22 +359,26 @@ Begin VB.Form Anular
       Width           =   45
    End
    Begin VB.Label Label1 
+      Appearance      =   0  'Flat
       AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
       Caption         =   "Facturas"
       BeginProperty Font 
-         Name            =   "Unispace"
-         Size            =   15.75
+         Name            =   "Showcard Gothic"
+         Size            =   26.25
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   375
-      Left            =   4440
+      ForeColor       =   &H000080FF&
+      Height          =   660
+      Left            =   1440
       TabIndex        =   1
-      Top             =   240
-      Width           =   1560
+      Top             =   120
+      Width           =   2595
    End
 End
 Attribute VB_Name = "Anular"
@@ -342,7 +401,7 @@ Private Sub Command1_Click()
     Adodc2.Refresh
     Set RsDetalleFactura.DataSource = Adodc2
     With RsDetalleFactura
-        For x = 1 To .RecordCount
+        For X = 1 To .RecordCount
             IdProducto = !Id_Producto
             Cantidad = !Cantidad
             With RsProductos
@@ -360,13 +419,15 @@ Private Sub Command1_Click()
         .Find "Id_Factura='" & Trim(f) & "'"
         If .BOF Or .EOF Then Exit Sub
         If !Validar = True Then
-            l.Caption = "Valida"
+            l.Caption = "Factura Valida"
         Else
-            l.Caption = "No válida"
+            l.Caption = "Factura No válida"
         End If
         .Requery
     End With
     MsgBox "La factura a sido anulada", vbInformation, "Aviso"
+    DataGrid
+    DataGrida
 End Sub
 
 Private Sub Command2_Click()
@@ -383,7 +444,7 @@ Private Sub Command2_Click()
     Adodc2.Refresh
     Set RsDetalleFactura.DataSource = Adodc2
     With RsDetalleFactura
-        For x = 1 To .RecordCount
+        For X = 1 To .RecordCount
             IdProducto = !Id_Producto
             Cantidad = !Cantidad
             With RsProductos
@@ -401,13 +462,15 @@ Private Sub Command2_Click()
         .Find "Id_Factura='" & Trim(f) & "'"
         If .BOF Or .EOF Then Exit Sub
         If !Validar = True Then
-            l.Caption = "Valida"
+            l.Caption = "Factura Valida"
         Else
-            l.Caption = "No válida"
+            l.Caption = "Factura No válida"
         End If
         .Requery
     End With
     MsgBox "La factura a sido validada", vbInformation, "Aviso"
+    DataGrid
+    DataGrida
 End Sub
 
 Private Sub DataGrid1_Click()
@@ -423,16 +486,21 @@ Private Sub DataGrid1_Click()
         .Find "Id_Factura='" & Trim(f) & "'"
         If .BOF Or .EOF Then Exit Sub
         If !Validar = True Then
-            l.Caption = "Valida"
+            l.Caption = "Factura Valida"
         Else
-            l.Caption = "No válida"
+            l.Caption = "Factura No válida"
         End If
         .Requery
     End With
     DataGrid2.Enabled = True
+    DataGrid
+    DataGrida
 End Sub
 
+
+
 Private Sub Form_Load()
+    Anular.Picture = LoadPicture(App.Path & "\IMG\Fondo1.jpg")
     Clientes
     Factura
     DetalleFactura
@@ -448,6 +516,7 @@ Private Sub Form_Load()
     Adodc2.Refresh
     DataGrid1.Enabled = False
     DataGrid2.Enabled = False
+    DataGrid
 End Sub
 
 
@@ -456,12 +525,34 @@ Private Sub txtcedula_KeyPress(KeyAscii As Integer)
         With RsCliente
             .Requery
             .Find "Cedula='" & Trim(txtcedula.Text) & "'"
+            If .BOF Or .EOF Then Exit Sub
             lblid.Caption = !Id_Cliente
         End With
-    End If
     Dim buscar As String
     buscar = "%" & lblid.Caption & "%"
     Adodc1.RecordSource = "SELECT *FROM Factura Where [Id_Cliente]Like '" & buscar & "'"
     Adodc1.Refresh
     DataGrid1.Enabled = True
+    DataGrid
+    End If
+End Sub
+
+Sub DataGrid()
+    DataGrid1.Columns(0).Width = 0
+    DataGrid1.Columns(1).Width = 0
+    DataGrid1.Columns(2).Width = 1000
+    DataGrid1.Columns(3).Width = 1300
+    DataGrid1.Columns(4).Width = 800
+    DataGrid1.Columns(5).Width = 800
+    DataGrid1.Columns(6).Width = 1068
+    DataGrid1.Columns(7).Width = 0
+End Sub
+Sub DataGrida()
+    DataGrid2.Columns(0).Width = 0
+    DataGrid2.Columns(1).Width = 0
+    DataGrid2.Columns(2).Width = 0
+    DataGrid2.Columns(3).Width = 2200
+    DataGrid2.Columns(4).Width = 994
+    DataGrid2.Columns(5).Width = 994
+    DataGrid2.Columns(6).Width = 994
 End Sub

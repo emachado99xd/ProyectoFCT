@@ -3,67 +3,130 @@ Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form ProductosFactura 
    Caption         =   "Form2"
-   ClientHeight    =   7935
+   ClientHeight    =   8175
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   11595
+   ClientWidth     =   10860
    LinkTopic       =   "Form2"
-   ScaleHeight     =   7935
-   ScaleWidth      =   11595
+   ScaleHeight     =   8175
+   ScaleWidth      =   10860
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton Command1 
       Caption         =   "Cerrar"
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   495
-      Left            =   7080
+      Left            =   0
       TabIndex        =   21
-      Top             =   6720
+      Top             =   0
       Width           =   1215
    End
    Begin VB.TextBox txttotal 
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
-      Left            =   7560
+      Left            =   8280
       Locked          =   -1  'True
       TabIndex        =   18
-      Top             =   4680
+      Top             =   5640
       Width           =   1815
    End
    Begin VB.TextBox txtdescripcion 
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
-      Left            =   1680
+      Left            =   1920
       Locked          =   -1  'True
       TabIndex        =   15
-      Top             =   5880
+      Top             =   6480
       Width           =   1575
    End
    Begin VB.CommandButton cmdagregar 
       Caption         =   "Agregar"
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   735
-      Left            =   3960
+      Left            =   4680
       TabIndex        =   14
-      Top             =   6600
+      Top             =   7200
       Width           =   1455
    End
    Begin VB.TextBox txtcantidad 
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
-      Left            =   4800
+      Left            =   5400
       TabIndex        =   13
-      Top             =   5880
+      Top             =   6480
       Width           =   1575
    End
    Begin VB.TextBox txtprecio 
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
-      Left            =   4680
+      Left            =   5160
       Locked          =   -1  'True
       TabIndex        =   11
-      Top             =   4560
+      Top             =   5160
       Width           =   1575
    End
    Begin VB.TextBox txtp 
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
-      Left            =   1560
+      Left            =   1920
       Locked          =   -1  'True
       TabIndex        =   10
-      Top             =   4560
+      Top             =   5160
       Width           =   1815
    End
    Begin MSAdodcLib.Adodc Adodc1 
@@ -113,37 +176,68 @@ Begin VB.Form ProductosFactura
       _Version        =   393216
    End
    Begin VB.TextBox txtproducto 
+      Appearance      =   0  'Flat
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
-      Left            =   4920
+      Left            =   5160
       TabIndex        =   7
-      Top             =   840
+      Top             =   1440
       Width           =   2055
    End
    Begin VB.TextBox txttipo 
+      Appearance      =   0  'Flat
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
-      Left            =   8760
+      Left            =   8520
       TabIndex        =   6
-      Top             =   840
+      Top             =   1440
       Width           =   1815
    End
    Begin VB.TextBox txtid 
+      Appearance      =   0  'Flat
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
-      Left            =   720
+      Left            =   1800
       TabIndex        =   5
-      Top             =   840
+      Top             =   1440
       Width           =   855
    End
    Begin MSDataGridLib.DataGrid DataGrid1 
       Height          =   2775
       Left            =   240
       TabIndex        =   0
-      Top             =   1440
+      Top             =   2040
       Width           =   10335
       _ExtentX        =   18230
       _ExtentY        =   4895
       _Version        =   393216
+      BackColor       =   12632256
       HeadLines       =   1
-      RowHeight       =   15
+      RowHeight       =   23
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -154,8 +248,8 @@ Begin VB.Form ProductosFactura
          Strikethrough   =   0   'False
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Name            =   "MS Serif"
+         Size            =   12
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -200,9 +294,9 @@ Begin VB.Form ProductosFactura
    Begin VB.Label lblfactura 
       AutoSize        =   -1  'True
       Height          =   195
-      Left            =   240
+      Left            =   12960
       TabIndex        =   20
-      Top             =   0
+      Top             =   2640
       Width           =   45
    End
    Begin VB.Label lblidproducto 
@@ -215,165 +309,177 @@ Begin VB.Form ProductosFactura
    End
    Begin VB.Label Label7 
       AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
       Caption         =   "Total:"
       BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   12.75
+         Name            =   "Showcard Gothic"
+         Size            =   14.25
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   285
-      Left            =   6840
+      Height          =   345
+      Left            =   7200
       TabIndex        =   17
-      Top             =   4680
-      Width           =   675
+      Top             =   5640
+      Width           =   1020
    End
    Begin VB.Label Label6 
       AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
       Caption         =   "Descripción:"
       BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   12.75
+         Name            =   "Showcard Gothic"
+         Size            =   14.25
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   285
+      Height          =   345
       Left            =   120
       TabIndex        =   16
-      Top             =   5880
-      Width           =   1485
+      Top             =   6480
+      Width           =   1935
    End
    Begin VB.Label Label9 
       AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
       Caption         =   "Cantidad:"
       BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   12.75
+         Name            =   "Showcard Gothic"
+         Size            =   14.25
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   285
-      Left            =   3600
+      Height          =   345
+      Left            =   3840
       TabIndex        =   12
-      Top             =   5880
-      Width           =   1140
+      Top             =   6480
+      Width           =   1515
    End
    Begin VB.Label Label8 
       AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
       Caption         =   "Producto:"
       BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   12.75
+         Name            =   "Showcard Gothic"
+         Size            =   14.25
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   285
+      Height          =   345
       Left            =   240
       TabIndex        =   9
-      Top             =   4560
-      Width           =   1185
+      Top             =   5160
+      Width           =   1665
    End
    Begin VB.Label Label2 
       AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
       Caption         =   "Precio:"
       BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   12.75
+         Name            =   "Showcard Gothic"
+         Size            =   14.25
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   285
-      Left            =   3720
+      Height          =   345
+      Left            =   3960
       TabIndex        =   8
-      Top             =   4560
-      Width           =   840
+      Top             =   5160
+      Width           =   1125
    End
    Begin VB.Label Label5 
       AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
       Caption         =   "Id:"
       BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   12.75
+         Name            =   "Showcard Gothic"
+         Size            =   14.25
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   300
-      Left            =   240
+      Height          =   345
+      Left            =   1320
       TabIndex        =   4
-      Top             =   840
-      Width           =   450
+      Top             =   1440
+      Width           =   405
    End
    Begin VB.Label Label4 
       AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
       Caption         =   "Producto:"
       BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   12.75
+         Name            =   "Showcard Gothic"
+         Size            =   14.25
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   285
-      Left            =   3720
+      Height          =   345
+      Left            =   3360
       TabIndex        =   3
-      Top             =   840
-      Width           =   1185
+      Top             =   1440
+      Width           =   1665
    End
    Begin VB.Label Label3 
       AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
       Caption         =   "Tipo:"
       BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   12.75
+         Name            =   "Showcard Gothic"
+         Size            =   14.25
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   285
-      Left            =   7680
+      Height          =   345
+      Left            =   7560
       TabIndex        =   2
-      Top             =   840
-      Width           =   600
+      Top             =   1440
+      Width           =   795
    End
    Begin VB.Label Label1 
+      Appearance      =   0  'Flat
       AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
       Caption         =   "Productos para la Factura"
       BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   15.75
+         Name            =   "Showcard Gothic"
+         Size            =   26.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   360
-      Left            =   3000
+      ForeColor       =   &H80000008&
+      Height          =   660
+      Left            =   1320
       TabIndex        =   1
-      Top             =   120
-      Width           =   3930
+      Top             =   240
+      Width           =   8115
    End
 End
 Attribute VB_Name = "ProductosFactura"
@@ -430,6 +536,7 @@ Private Sub DataGrid1_Click()
     End Sub
 
 Private Sub Form_Load()
+    ProductosFactura.Picture = LoadPicture(App.Path & "\IMG\Fondo2.jpg")
     Producto
     Temporal
     Adodc1.CursorLocation = adUseClient

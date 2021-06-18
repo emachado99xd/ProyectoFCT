@@ -4,61 +4,129 @@ Begin VB.Form Cliente
    ClientHeight    =   6435
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   9390
+   ClientWidth     =   6180
    LinkTopic       =   "Form2"
    ScaleHeight     =   6435
-   ScaleWidth      =   9390
+   ScaleWidth      =   6180
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton Command1 
       Caption         =   "Cerrar"
-      Height          =   615
-      Left            =   7680
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   2400
       TabIndex        =   13
-      Top             =   4920
+      Top             =   5520
       Width           =   1095
    End
    Begin VB.TextBox txttelefono 
-      Height          =   375
-      Left            =   3480
+      Appearance      =   0  'Flat
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   2880
       TabIndex        =   11
-      Top             =   3480
-      Width           =   2535
+      Top             =   2400
+      Width           =   2655
    End
    Begin VB.TextBox txtdireccion 
-      Height          =   375
-      Left            =   6720
+      Appearance      =   0  'Flat
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   3000
       TabIndex        =   10
-      Top             =   2640
+      Top             =   3840
       Width           =   2535
    End
    Begin VB.TextBox txtapellido 
-      Height          =   375
-      Left            =   6600
+      Appearance      =   0  'Flat
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   2880
       TabIndex        =   9
-      Top             =   1560
-      Width           =   2295
+      Top             =   1680
+      Width           =   2655
    End
    Begin VB.TextBox txtcedula 
-      Height          =   375
-      Left            =   1680
+      Appearance      =   0  'Flat
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   2520
       TabIndex        =   8
-      Top             =   2640
-      Width           =   2175
+      Top             =   3120
+      Width           =   3015
    End
    Begin VB.TextBox txtnombre 
-      Height          =   375
-      Left            =   1800
+      Appearance      =   0  'Flat
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   2640
       TabIndex        =   7
-      Top             =   1560
-      Width           =   2295
+      Top             =   960
+      Width           =   2895
    End
    Begin VB.CommandButton cmdguardar 
       Caption         =   "Guardar Cliente"
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   735
-      Left            =   3960
+      Left            =   2160
       TabIndex        =   5
-      Top             =   4800
-      Width           =   1455
+      Top             =   4560
+      Width           =   1695
    End
    Begin VB.Label lblidcliente 
       AutoSize        =   -1  'True
@@ -72,16 +140,19 @@ Begin VB.Form Cliente
          Strikethrough   =   0   'False
       EndProperty
       Height          =   570
-      Left            =   7440
+      Left            =   10800
       TabIndex        =   12
-      Top             =   360
+      Top             =   2280
       Width           =   120
    End
    Begin VB.Label Label6 
+      Appearance      =   0  'Flat
       AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
       Caption         =   "Nuevo cliente"
       BeginProperty Font 
-         Name            =   "Trebuchet MS"
+         Name            =   "Showcard Gothic"
          Size            =   27.75
          Charset         =   0
          Weight          =   700
@@ -89,101 +160,122 @@ Begin VB.Form Cliente
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00000000&
       Height          =   690
-      Left            =   2400
+      Left            =   1080
       TabIndex        =   6
-      Top             =   360
-      Width           =   3600
+      Top             =   120
+      Width           =   4260
    End
    Begin VB.Label Label5 
+      Appearance      =   0  'Flat
       AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
       Caption         =   "Dirección:"
       BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   15.75
+         Name            =   "Showcard Gothic"
+         Size            =   18
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   375
-      Left            =   4800
+      ForeColor       =   &H00000000&
+      Height          =   450
+      Left            =   720
       TabIndex        =   4
-      Top             =   2640
-      Width           =   1950
+      Top             =   3840
+      Width           =   2100
    End
    Begin VB.Label Label4 
+      Appearance      =   0  'Flat
       AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
       Caption         =   "APELLIDO:"
       BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   15.75
+         Name            =   "Showcard Gothic"
+         Size            =   18
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   375
-      Left            =   4800
+      ForeColor       =   &H00000000&
+      Height          =   450
+      Left            =   720
       TabIndex        =   3
-      Top             =   1560
-      Width           =   1755
+      Top             =   1680
+      Width           =   1935
    End
    Begin VB.Label Label3 
+      Appearance      =   0  'Flat
       AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
       Caption         =   "Teléfono:"
       BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   15.75
+         Name            =   "Showcard Gothic"
+         Size            =   18
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   375
-      Left            =   1680
+      ForeColor       =   &H00000000&
+      Height          =   450
+      Left            =   720
       TabIndex        =   2
-      Top             =   3480
-      Width           =   1755
+      Top             =   2400
+      Width           =   2010
    End
    Begin VB.Label Label2 
+      Appearance      =   0  'Flat
       AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
       Caption         =   "Cédula:"
       BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   15.75
+         Name            =   "Showcard Gothic"
+         Size            =   18
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   375
-      Left            =   240
+      ForeColor       =   &H00000000&
+      Height          =   450
+      Left            =   720
       TabIndex        =   1
-      Top             =   2640
-      Width           =   1365
+      Top             =   3120
+      Width           =   1560
    End
    Begin VB.Label Label1 
+      Appearance      =   0  'Flat
       AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
       Caption         =   "Nombre:"
       BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   15.75
+         Name            =   "Showcard Gothic"
+         Size            =   18
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   375
-      Left            =   240
+      ForeColor       =   &H00000000&
+      Height          =   450
+      Left            =   720
       TabIndex        =   0
-      Top             =   1560
-      Width           =   1365
+      Top             =   960
+      Width           =   1695
    End
 End
 Attribute VB_Name = "Cliente"
@@ -217,6 +309,7 @@ End Sub
 
 Private Sub Form_Load()
     Clientes
+    Cliente.Picture = LoadPicture(App.Path & "\IMG\Fondo2.jpg")
 End Sub
 
 Sub limpiar()
