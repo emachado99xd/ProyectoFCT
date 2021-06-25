@@ -10,7 +10,8 @@ Sub main()
     With Base
         .CursorLocation = adUseClient
         .Open "Provider = Microsoft.ACE.OLEDB.12.0; Data Source= " & App.Path & "\Base\Base.accdb;Persist Security Info=False"
-        Inicio.Show
+        'Inicio.Show
+        Form2.Show
     End With
 End Sub
 Sub Clientes()
