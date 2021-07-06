@@ -19,6 +19,7 @@ Form=Anular.frm
 Designer=DataReport1.Dsr
 Designer=DataReport2.Dsr
 Form=Form2.frm
+Designer=DataReport3.Dsr
 IconForm="Form1"
 Startup="Sub Main"
 HelpFile=""

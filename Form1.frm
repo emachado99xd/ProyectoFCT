@@ -599,13 +599,14 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+
 Dim IdProducto, Cantidad As Integer
 Private Sub cmdguardar_Click()
 Dim Productos As Integer
     With RsFactura
         .Requery
         .Find "Id_Factura='" & Trim(lblfactura.Caption) & "'"
-        !Fecha = Date
+        !fecha = Date
         !Hora = Time
         !Subtotal = Val(txtsubtotal.Text)
         !Iva = Val(txtiva.Text)
