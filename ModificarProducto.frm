@@ -8,7 +8,7 @@ Begin VB.Form ModificarProducto
    ClientHeight    =   9255
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   9945
+   ClientWidth     =   12360
    BeginProperty Font 
       Name            =   "MV Boli"
       Size            =   9.75
@@ -20,8 +20,79 @@ Begin VB.Form ModificarProducto
    EndProperty
    LinkTopic       =   "Form2"
    ScaleHeight     =   9255
-   ScaleWidth      =   9945
+   ScaleWidth      =   12360
    StartUpPosition =   3  'Windows Default
+   Begin VB.TextBox Text1 
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Left            =   9840
+      TabIndex        =   33
+      Top             =   5040
+      Visible         =   0   'False
+      Width           =   615
+   End
+   Begin VB.ComboBox Combo2 
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      ItemData        =   "ModificarProducto.frx":0000
+      Left            =   9360
+      List            =   "ModificarProducto.frx":000D
+      TabIndex        =   32
+      Text            =   "Opciones"
+      Top             =   5160
+      Width           =   1575
+   End
+   Begin VB.CommandButton Command2 
+      Cancel          =   -1  'True
+      Caption         =   "Mostrar Reporte"
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   855
+      Left            =   8880
+      TabIndex        =   31
+      Top             =   6120
+      Width           =   2415
+   End
+   Begin VB.Frame Frame2 
+      Caption         =   "Reportes"
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   24
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   3495
+      Left            =   8280
+      TabIndex        =   30
+      Top             =   3720
+      Width           =   3735
+   End
    Begin VB.CommandButton Command1 
       Caption         =   "Cerrar"
       BeginProperty Font 
@@ -260,8 +331,8 @@ Begin VB.Form ModificarProducto
       ForeColor       =   -2147483640
       Orientation     =   0
       Enabled         =   -1
-      Connect         =   $"ModificarProducto.frx":0000
-      OLEDBString     =   $"ModificarProducto.frx":0094
+      Connect         =   $"ModificarProducto.frx":002D
+      OLEDBString     =   $"ModificarProducto.frx":00C1
       OLEDBFile       =   ""
       DataSourceName  =   ""
       OtherAttributes =   ""
@@ -465,6 +536,22 @@ Begin VB.Form ModificarProducto
          BeginProperty Column01 
          EndProperty
       EndProperty
+   End
+   Begin VB.Label la 
+      AutoSize        =   -1  'True
+      Height          =   255
+      Left            =   13080
+      TabIndex        =   35
+      Top             =   7080
+      Width           =   90
+   End
+   Begin VB.Label l 
+      AutoSize        =   -1  'True
+      Height          =   195
+      Left            =   360
+      TabIndex        =   34
+      Top             =   1920
+      Width           =   45
    End
    Begin VB.Label Label11 
       Appearance      =   0  'Flat
@@ -685,11 +772,11 @@ Attribute VB_Exposed = False
 
 
 Private Sub cmdeliminar_Click()
-    If Txtp.Text = "" Then MsgBox "Seleccione un producto", vbInformation, "Aviso": Exit Sub
+    If txtp.Text = "" Then MsgBox "Seleccione un producto", vbInformation, "Aviso": Exit Sub
     If cmdeliminar.Caption = "Eliminar" Then
         With RsProductos
             .Requery
-            .Find "Id_Producto='" & Trim(lblIdProducto.Caption) & "'"
+            .Find "Id_Producto='" & Trim(lblidproducto.Caption) & "'"
             If .EOF Then Exit Sub
             .Delete
             .UpdateBatch
@@ -717,14 +804,14 @@ End Sub
 Private Sub cmdguardar_Click()
     With RsProductos
         .Requery
-        .Find "Id_producto ='" & Trim(lblIdProducto.Caption) & "'"
-        !Producto = Txtp.Text
+        .Find "Id_producto ='" & Trim(lblidproducto.Caption) & "'"
+        !Producto = txtp.Text
         !Tipo = DataCombo1.Text
-        !Stock = Val(Txtstock.Text)
-        !Color = Txtcolor.Text
-        !Tamaño = Txttamaño.Text
-        !Descripcion = Txtdescripcion.Text
-        !Precio = Val(Txtprecio.Text)
+        !Stock = Val(txtstock.Text)
+        !Color = txtcolor.Text
+        !Tamaño = txttamaño.Text
+        !Descripcion = txtdescripcion.Text
+        !Precio = Val(txtprecio.Text)
         With RsTipoProducto
             .Requery
             .Find "Tipo='" & Trim(DataCombo1.Text) & "'"
@@ -747,7 +834,7 @@ Private Sub cmdguardar_Click()
 End Sub
 
 Private Sub cmdmodificar_Click()
-    If Txtp.Text = "" Then MsgBox "Seleccione un producto", vbInformation, "Aviso": Exit Sub
+    If txtp.Text = "" Then MsgBox "Seleccione un producto", vbInformation, "Aviso": Exit Sub
     bloquear False
     txtid.Locked = True
     txtproducto.Locked = True
@@ -763,18 +850,99 @@ Private Sub cmdnuevo_Click()
     limpiar
 End Sub
 
+
+
+
+Private Sub Combo2_Click()
+    If Combo2.Text = "Stock" Then
+        Text1.Text = ""
+        Combo2.Top = 4460
+        Text1.Visible = True
+    Else
+        If Combo2.Text = "Precio" Then
+            Text1.Text = ""
+            Combo2.Top = 4460
+            Text1.Visible = True
+        Else
+            If Combo2.Text = "Más vendido" Then
+                Combo2.Top = 5160
+                Text1.Visible = False
+            End If
+        End If
+    End If
+End Sub
+
 Private Sub Command1_Click()
     Unload Me
 End Sub
 
+
+
+Private Sub Command2_Click()
+     If Combo2.Text = "Stock" Then
+        With RsProductos
+            If .State = 1 Then .Close
+            Dim buscar As Integer
+            buscar = Val(Text1.Text)
+            .Open "Select * From Producto Where ((Producto.[Stock])<= " & buscar & ")", Base, adOpenStatic, adLockBatchOptimistic
+            Set DataReport3.DataSource = RsProductos
+            DataReport3.Show
+        End With
+    Else
+        If Combo2.Text = "Más vendido" Then
+            Dim a, b, c, d, e(100), f(100), g, h, i As Integer
+            h = 0
+            With RsDetalleFactura
+                a = .RecordCount
+                .MoveFirst
+                For b = 1 To a
+                    c = !Producto
+                    d = !Id_Detalle
+                    If .State = 1 Then .Close
+                    .Open "Select * From Detalle_Factura Where [Producto]Like '" & c & "'", Base, adOpenStatic, adLockBatchOptimistic
+                    For g = 1 To .RecordCount
+                        e(b) = e(b) + !Cantidad
+                        .MoveNext
+                    Next g
+                    If e(b) > e(b - 1) Then
+                        If e(b) > h Then
+                            h = e(b)
+                            la.Caption = c
+                        End If
+                    End If
+                    If .State = 1 Then .Close
+                    .Open "Select * From Detalle_Factura"
+                    .Find "Id_Detalle='" & Trim(d) & "'"
+                    .MoveNext
+                Next b
+                If .State = 1 Then .Close
+                .Open "Select * From Detalle_Factura Where [Producto]Like '" & la.Caption & "'", Base, adOpenStatic, adLockBatchOptimistic
+                Set DataReport4.DataSource = RsDetalleFactura
+                DataReport4.Show
+            End With
+        Else
+            If Combo2.Text = "Precio" Then
+                With RsProductos
+                    If .State = 1 Then .Close
+                    Dim r As Integer
+                    r = Val(Text1.Text)
+                    .Open "Select * From Producto Where ((Producto.[Precio])<= " & r & ")", Base, adOpenStatic, adLockBatchOptimistic
+                    Set DataReport3.DataSource = RsProductos
+                    DataReport3.Show
+                End With
+            End If
+        End If
+    End If
+End Sub
+
 Private Sub DataGrid1_Click()
-    Txtp.Text = DataGrid1.Columns(2).Text
-    Txtstock.Text = DataGrid1.Columns(4).Text
-    Txtcolor.Text = DataGrid1.Columns(5).Text
-    Txttamaño.Text = DataGrid1.Columns(6).Text
-    Txtdescripcion.Text = DataGrid1.Columns(7).Text
-    Txtprecio.Text = DataGrid1.Columns(8).Text
-    lblIdProducto.Caption = DataGrid1.Columns(0).Text
+    txtp.Text = DataGrid1.Columns(2).Text
+    txtstock.Text = DataGrid1.Columns(4).Text
+    txtcolor.Text = DataGrid1.Columns(5).Text
+    txttamaño.Text = DataGrid1.Columns(6).Text
+    txtdescripcion.Text = DataGrid1.Columns(7).Text
+    txtprecio.Text = DataGrid1.Columns(8).Text
+    lblidproducto.Caption = DataGrid1.Columns(0).Text
     lblIdTipo.Caption = DataGrid1.Columns(1).Text
     With RsTipoProducto
         .Requery
@@ -794,6 +962,7 @@ End Sub
 Private Sub Form_Activate()
     Adodc1.Refresh
     DataGrid
+    DetalleFactura
 End Sub
 
 Private Sub Form_Load()
@@ -842,24 +1011,24 @@ Sub DataGrid()
 End Sub
 
 Sub bloquear(estado As Boolean)
-    Txtp.Locked = estado
-    Txttamaño.Locked = estado
-    Txtstock.Locked = estado
-    Txtcolor.Locked = estado
-    Txtdescripcion.Locked = estado
-    Txtprecio.Locked = estado
+    txtp.Locked = estado
+    txttamaño.Locked = estado
+    txtstock.Locked = estado
+    txtcolor.Locked = estado
+    txtdescripcion.Locked = estado
+    txtprecio.Locked = estado
     DataCombo1.Locked = estado
 End Sub
 
 Sub limpiar()
     txtproducto.Text = ""
     txtid.Text = ""
-    Txtp.Text = ""
-    Txttamaño.Text = ""
-    Txtstock.Text = ""
-    Txtcolor.Text = ""
-    Txtdescripcion.Text = ""
-    Txtprecio.Text = ""
+    txtp.Text = ""
+    txttamaño.Text = ""
+    txtstock.Text = ""
+    txtcolor.Text = ""
+    txtdescripcion.Text = ""
+    txtprecio.Text = ""
     DataCombo1.Text = ""
 End Sub
 

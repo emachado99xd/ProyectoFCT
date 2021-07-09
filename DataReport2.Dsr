@@ -169,14 +169,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport2
    BeginProperty Section2 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "Sección1"
-      Object.Height          =   4170
+      Object.Height          =   345
       NumControls     =   7
       ItemType0       =   4
       BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Texto1"
          Object.Left            =   2268
-         Object.Top             =   567
          Object.Width           =   1440
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -195,7 +194,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport2
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
-            LCID            =   22538
+            LCID            =   12298
             SubFormatType   =   0
          EndProperty
       EndProperty
@@ -203,7 +202,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport2
       BeginProperty Item1 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Texto2"
-         Object.Top             =   567
          Object.Width           =   1440
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -222,7 +220,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport2
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
-            LCID            =   22538
+            LCID            =   12298
             SubFormatType   =   0
          EndProperty
       EndProperty
@@ -231,7 +229,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport2
          _Version        =   393216
          Name            =   "Texto3"
          Object.Left            =   1134
-         Object.Top             =   567
          Object.Width           =   1440
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -250,7 +247,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport2
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
-            LCID            =   22538
+            LCID            =   12298
             SubFormatType   =   0
          EndProperty
       EndProperty
@@ -259,7 +256,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport2
          _Version        =   393216
          Name            =   "Texto4"
          Object.Left            =   3402
-         Object.Top             =   567
          Object.Width           =   1440
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -278,7 +274,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport2
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
-            LCID            =   22538
+            LCID            =   12298
             SubFormatType   =   0
          EndProperty
       EndProperty
@@ -287,7 +283,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport2
          _Version        =   393216
          Name            =   "Texto5"
          Object.Left            =   4535
-         Object.Top             =   567
          Object.Width           =   1440
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -306,7 +301,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport2
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
-            LCID            =   22538
+            LCID            =   12298
             SubFormatType   =   0
          EndProperty
       EndProperty
@@ -315,7 +310,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport2
          _Version        =   393216
          Name            =   "Texto6"
          Object.Left            =   6236
-         Object.Top             =   567
          Object.Width           =   1440
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -334,7 +328,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport2
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
-            LCID            =   22538
+            LCID            =   12298
             SubFormatType   =   0
          EndProperty
       EndProperty
@@ -343,7 +337,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport2
          _Version        =   393216
          Name            =   "Texto7"
          Object.Left            =   5669
-         Object.Top             =   567
          Object.Width           =   1440
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -362,7 +355,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport2
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
-            LCID            =   22538
+            LCID            =   12298
             SubFormatType   =   0
          EndProperty
       EndProperty
@@ -371,7 +364,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport2
    BeginProperty Section3 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "Sección3"
-      Object.Height          =   360
+      Object.Height          =   1980
       NumControls     =   0
    EndProperty
    SectionCode4    =   8

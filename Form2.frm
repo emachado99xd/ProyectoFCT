@@ -5,15 +5,15 @@ Begin VB.Form Form2
    ClientHeight    =   5535
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   10710
+   ClientWidth     =   6540
    LinkTopic       =   "Form2"
    ScaleHeight     =   5535
-   ScaleWidth      =   10710
+   ScaleWidth      =   6540
    StartUpPosition =   3  'Windows Default
    Begin VB.TextBox Text4 
       Height          =   495
       Left            =   1920
-      TabIndex        =   6
+      TabIndex        =   4
       Top             =   3480
       Width           =   1575
    End
@@ -22,7 +22,7 @@ Begin VB.Form Form2
       ItemData        =   "Form2.frx":0000
       Left            =   1440
       List            =   "Form2.frx":000D
-      TabIndex        =   5
+      TabIndex        =   3
       Text            =   "Opciones"
       Top             =   2880
       Width           =   2655
@@ -39,7 +39,7 @@ Begin VB.Form Form2
       EndProperty
       Height          =   645
       Left            =   3000
-      TabIndex        =   4
+      TabIndex        =   2
       Top             =   2040
       Width           =   2175
    End
@@ -55,25 +55,9 @@ Begin VB.Form Form2
       EndProperty
       Height          =   615
       Left            =   600
-      TabIndex        =   3
+      TabIndex        =   1
       Top             =   2040
       Width           =   1935
-   End
-   Begin VB.TextBox Text1 
-      Height          =   735
-      Left            =   8760
-      TabIndex        =   2
-      Top             =   2040
-      Width           =   855
-   End
-   Begin VB.CommandButton Command2 
-      Cancel          =   -1  'True
-      Caption         =   "Producto"
-      Height          =   735
-      Left            =   7440
-      TabIndex        =   1
-      Top             =   720
-      Width           =   2415
    End
    Begin VB.CommandButton Command1 
       Caption         =   "Factura"
@@ -133,7 +117,7 @@ Private Sub Command1_Click()
                     o = Val(Text4.Text)
                     If .State = 1 Then .Close
                     '.Open "Select * From Factura Where ((Factura.[Fecha])>= " & a & ") AND ((Factura.[Fecha])<= " & b & ") AND (Factura.[Total])> " & o & ")", Base, adOpenStatic, adLockBatchOptimistic
-                    .Open "Select * From Factura Where ((Factura.[Total])> " & o & ")", Base, adOpenStatic, adLockBatchOptimistic
+                    .Open "Select * From Factura Where ((Factura.[Total])> " & o & ") AND ((Factura.[Validar])= True)", Base, adOpenStatic, adLockBatchOptimistic
                     Set DataReport2.DataSource = RsFactura
                     DataReport2.Show
                 End With
@@ -143,19 +127,65 @@ Private Sub Command1_Click()
 End Sub
 
 Private Sub Command2_Click()
-    With RsProductos
-        If .State = 1 Then .Close
-        Dim buscar As String
-        buscar = Val(Text1.Text)
-        .Open "SELECT *FROM Producto Where [Stock] <= '" & buscar & "'"
-        Set DataReport3.DataSource = RsProductos
-        DataReport3.Show
-    End With
+    If Combo2.Text = "Stock" Then
+        With RsProductos
+            If .State = 1 Then .Close
+            Dim buscar As Integer
+            buscar = Val(Text1.Text)
+            .Open "Select * From Producto Where ((Producto.[Stock])<= " & buscar & ")", Base, adOpenStatic, adLockBatchOptimistic
+            Set DataReport3.DataSource = RsProductos
+            DataReport3.Show
+        End With
+    Else
+        If Combo2.Text = "Más vendido" Then
+            Dim a, b, c, d, e(100), f(100), g, h, i As Integer
+            h = 0
+            With RsDetalleFactura
+                a = .RecordCount
+                .MoveFirst
+                For b = 1 To a
+                    c = !Producto
+                    d = !Id_Detalle
+                    If .State = 1 Then .Close
+                    .Open "Select * From Detalle_Factura Where [Producto]Like '" & c & "'", Base, adOpenStatic, adLockBatchOptimistic
+                    For g = 1 To .RecordCount
+                        e(b) = e(b) + !Cantidad
+                        .MoveNext
+                    Next g
+                    If e(b) > e(b - 1) Then
+                        If e(b) > h Then
+                            h = e(b)
+                            l.Caption = c
+                        End If
+                    End If
+                    If .State = 1 Then .Close
+                    .Open "Select * From Detalle_Factura"
+                    .Find "Id_Detalle='" & Trim(d) & "'"
+                    .MoveNext
+                Next b
+                If .State = 1 Then .Close
+                .Open "Select * From Detalle_Factura Where [Producto]Like '" & l.Caption & "'", Base, adOpenStatic, adLockBatchOptimistic
+                Set DataReport4.DataSource = RsDetalleFactura
+                DataReport4.Show
+            End With
+        Else
+            If Combo2.Text = "Precio" Then
+                With RsProductos
+                    If .State = 1 Then .Close
+                    Dim r As Integer
+                    r = Val(Text1.Text)
+                    .Open "Select * From Producto Where ((Producto.[Precio])<= " & r & ")", Base, adOpenStatic, adLockBatchOptimistic
+                    Set DataReport3.DataSource = RsProductos
+                    DataReport3.Show
+                End With
+            End If
+        End If
+    End If
 End Sub
 
 Private Sub Form_Load()
     Factura
     Producto
-    
+    DetalleFactura
 End Sub
 
