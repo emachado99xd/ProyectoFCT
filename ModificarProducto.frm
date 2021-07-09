@@ -35,7 +35,7 @@ Begin VB.Form ModificarProducto
       Height          =   615
       Left            =   9840
       TabIndex        =   33
-      Top             =   5040
+      Top             =   5280
       Visible         =   0   'False
       Width           =   615
    End
@@ -772,11 +772,11 @@ Attribute VB_Exposed = False
 
 
 Private Sub cmdeliminar_Click()
-    If txtp.Text = "" Then MsgBox "Seleccione un producto", vbInformation, "Aviso": Exit Sub
+    If Txtp.Text = "" Then MsgBox "Seleccione un producto", vbInformation, "Aviso": Exit Sub
     If cmdeliminar.Caption = "Eliminar" Then
         With RsProductos
             .Requery
-            .Find "Id_Producto='" & Trim(lblidproducto.Caption) & "'"
+            .Find "Id_Producto='" & Trim(lblIdProducto.Caption) & "'"
             If .EOF Then Exit Sub
             .Delete
             .UpdateBatch
@@ -804,14 +804,14 @@ End Sub
 Private Sub cmdguardar_Click()
     With RsProductos
         .Requery
-        .Find "Id_producto ='" & Trim(lblidproducto.Caption) & "'"
-        !Producto = txtp.Text
+        .Find "Id_producto ='" & Trim(lblIdProducto.Caption) & "'"
+        !Producto = Txtp.Text
         !Tipo = DataCombo1.Text
-        !Stock = Val(txtstock.Text)
-        !Color = txtcolor.Text
-        !Tamaño = txttamaño.Text
-        !Descripcion = txtdescripcion.Text
-        !Precio = Val(txtprecio.Text)
+        !Stock = Val(Txtstock.Text)
+        !Color = Txtcolor.Text
+        !Tamaño = Txttamaño.Text
+        !Descripcion = Txtdescripcion.Text
+        !Precio = Val(Txtprecio.Text)
         With RsTipoProducto
             .Requery
             .Find "Tipo='" & Trim(DataCombo1.Text) & "'"
@@ -834,7 +834,7 @@ Private Sub cmdguardar_Click()
 End Sub
 
 Private Sub cmdmodificar_Click()
-    If txtp.Text = "" Then MsgBox "Seleccione un producto", vbInformation, "Aviso": Exit Sub
+    If Txtp.Text = "" Then MsgBox "Seleccione un producto", vbInformation, "Aviso": Exit Sub
     bloquear False
     txtid.Locked = True
     txtproducto.Locked = True
@@ -936,13 +936,13 @@ Private Sub Command2_Click()
 End Sub
 
 Private Sub DataGrid1_Click()
-    txtp.Text = DataGrid1.Columns(2).Text
-    txtstock.Text = DataGrid1.Columns(4).Text
-    txtcolor.Text = DataGrid1.Columns(5).Text
-    txttamaño.Text = DataGrid1.Columns(6).Text
-    txtdescripcion.Text = DataGrid1.Columns(7).Text
-    txtprecio.Text = DataGrid1.Columns(8).Text
-    lblidproducto.Caption = DataGrid1.Columns(0).Text
+    Txtp.Text = DataGrid1.Columns(2).Text
+    Txtstock.Text = DataGrid1.Columns(4).Text
+    Txtcolor.Text = DataGrid1.Columns(5).Text
+    Txttamaño.Text = DataGrid1.Columns(6).Text
+    Txtdescripcion.Text = DataGrid1.Columns(7).Text
+    Txtprecio.Text = DataGrid1.Columns(8).Text
+    lblIdProducto.Caption = DataGrid1.Columns(0).Text
     lblIdTipo.Caption = DataGrid1.Columns(1).Text
     With RsTipoProducto
         .Requery
@@ -1011,24 +1011,24 @@ Sub DataGrid()
 End Sub
 
 Sub bloquear(estado As Boolean)
-    txtp.Locked = estado
-    txttamaño.Locked = estado
-    txtstock.Locked = estado
-    txtcolor.Locked = estado
-    txtdescripcion.Locked = estado
-    txtprecio.Locked = estado
+    Txtp.Locked = estado
+    Txttamaño.Locked = estado
+    Txtstock.Locked = estado
+    Txtcolor.Locked = estado
+    Txtdescripcion.Locked = estado
+    Txtprecio.Locked = estado
     DataCombo1.Locked = estado
 End Sub
 
 Sub limpiar()
     txtproducto.Text = ""
     txtid.Text = ""
-    txtp.Text = ""
-    txttamaño.Text = ""
-    txtstock.Text = ""
-    txtcolor.Text = ""
-    txtdescripcion.Text = ""
-    txtprecio.Text = ""
+    Txtp.Text = ""
+    Txttamaño.Text = ""
+    Txtstock.Text = ""
+    Txtcolor.Text = ""
+    Txtdescripcion.Text = ""
+    Txtprecio.Text = ""
     DataCombo1.Text = ""
 End Sub
 

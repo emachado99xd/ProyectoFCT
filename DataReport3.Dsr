@@ -4,9 +4,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport3
    ClientHeight    =   7410
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   8535
+   ClientWidth     =   9270
    StartUpPosition =   3  'Windows Default
-   _ExtentX        =   15055
+   _ExtentX        =   16351
    _ExtentY        =   13070
    _Version        =   393216
    _DesignerVersion=   100684101
@@ -32,7 +32,139 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport3
       _Version        =   393216
       Name            =   "Sección4"
       Object.Height          =   1005
-      NumControls     =   0
+      NumControls     =   7
+      ItemType0       =   3
+      BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Etiqueta1"
+         Object.Left            =   1134
+         Object.Top             =   567
+         Object.Width           =   1440
+         Object.Height          =   240
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Tipo"
+      EndProperty
+      ItemType1       =   3
+      BeginProperty Item1 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Etiqueta2"
+         Object.Left            =   2268
+         Object.Top             =   567
+         Object.Width           =   1440
+         Object.Height          =   240
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Stock"
+      EndProperty
+      ItemType2       =   3
+      BeginProperty Item2 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Etiqueta3"
+         Object.Left            =   4535
+         Object.Top             =   567
+         Object.Width           =   1440
+         Object.Height          =   240
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Tamaño"
+      EndProperty
+      ItemType3       =   3
+      BeginProperty Item3 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Etiqueta4"
+         Object.Left            =   5669
+         Object.Top             =   567
+         Object.Width           =   1440
+         Object.Height          =   240
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Descripción"
+      EndProperty
+      ItemType4       =   3
+      BeginProperty Item4 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Etiqueta5"
+         Object.Top             =   567
+         Object.Width           =   1440
+         Object.Height          =   240
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Producto"
+      EndProperty
+      ItemType5       =   3
+      BeginProperty Item5 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Etiqueta6"
+         Object.Left            =   3402
+         Object.Top             =   567
+         Object.Width           =   1440
+         Object.Height          =   240
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Color"
+      EndProperty
+      ItemType6       =   3
+      BeginProperty Item6 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Etiqueta7"
+         Object.Left            =   6803
+         Object.Top             =   567
+         Object.Width           =   1440
+         Object.Height          =   240
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Precio"
+      EndProperty
    EndProperty
    SectionCode1    =   2
    BeginProperty Section1 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -44,8 +176,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport3
    BeginProperty Section2 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "Sección1"
-      Object.Height          =   1440
-      NumControls     =   7
+      Object.Height          =   315
+      NumControls     =   8
       ItemType0       =   4
       BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -69,7 +201,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport3
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
-            LCID            =   22538
+            LCID            =   12298
             SubFormatType   =   0
          EndProperty
       EndProperty
@@ -95,7 +227,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport3
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
-            LCID            =   22538
+            LCID            =   12298
             SubFormatType   =   0
          EndProperty
       EndProperty
@@ -122,7 +254,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport3
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
-            LCID            =   22538
+            LCID            =   12298
             SubFormatType   =   0
          EndProperty
       EndProperty
@@ -149,7 +281,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport3
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
-            LCID            =   22538
+            LCID            =   12298
             SubFormatType   =   0
          EndProperty
       EndProperty
@@ -176,7 +308,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport3
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
-            LCID            =   22538
+            LCID            =   12298
             SubFormatType   =   0
          EndProperty
       EndProperty
@@ -203,7 +335,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport3
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
-            LCID            =   22538
+            LCID            =   12298
             SubFormatType   =   0
          EndProperty
       EndProperty
@@ -230,9 +362,15 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport3
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
-            LCID            =   22538
+            LCID            =   12298
             SubFormatType   =   0
          EndProperty
+      EndProperty
+      ItemType7       =   5
+      BeginProperty Item7 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Línea1"
+         Object.Left            =   1134
       EndProperty
    EndProperty
    SectionCode3    =   7
