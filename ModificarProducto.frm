@@ -331,8 +331,8 @@ Begin VB.Form ModificarProducto
       ForeColor       =   -2147483640
       Orientation     =   0
       Enabled         =   -1
-      Connect         =   $"ModificarProducto.frx":002D
-      OLEDBString     =   $"ModificarProducto.frx":00C1
+      Connect         =   $"ModificarProducto.frx":0033
+      OLEDBString     =   $"ModificarProducto.frx":00C7
       OLEDBFile       =   ""
       DataSourceName  =   ""
       OtherAttributes =   ""
@@ -772,11 +772,11 @@ Attribute VB_Exposed = False
 
 
 Private Sub cmdeliminar_Click()
-    If Txtp.Text = "" Then MsgBox "Seleccione un producto", vbInformation, "Aviso": Exit Sub
+    If txtp.Text = "" Then MsgBox "Seleccione un producto", vbInformation, "Aviso": Exit Sub
     If cmdeliminar.Caption = "Eliminar" Then
         With RsProductos
             .Requery
-            .Find "Id_Producto='" & Trim(lblIdProducto.Caption) & "'"
+            .Find "Id_Producto='" & Trim(lblidproducto.Caption) & "'"
             If .EOF Then Exit Sub
             .Delete
             .UpdateBatch
@@ -804,14 +804,14 @@ End Sub
 Private Sub cmdguardar_Click()
     With RsProductos
         .Requery
-        .Find "Id_producto ='" & Trim(lblIdProducto.Caption) & "'"
-        !Producto = Txtp.Text
+        .Find "Id_producto ='" & Trim(lblidproducto.Caption) & "'"
+        !Producto = txtp.Text
         !Tipo = DataCombo1.Text
-        !Stock = Val(Txtstock.Text)
-        !Color = Txtcolor.Text
-        !Tamaño = Txttamaño.Text
-        !Descripcion = Txtdescripcion.Text
-        !Precio = Val(Txtprecio.Text)
+        !Stock = Val(txtstock.Text)
+        !Color = txtcolor.Text
+        !Tamaño = txttamaño.Text
+        !Descripcion = txtdescripcion.Text
+        !Precio = Val(txtprecio.Text)
         With RsTipoProducto
             .Requery
             .Find "Tipo='" & Trim(DataCombo1.Text) & "'"
@@ -834,7 +834,7 @@ Private Sub cmdguardar_Click()
 End Sub
 
 Private Sub cmdmodificar_Click()
-    If Txtp.Text = "" Then MsgBox "Seleccione un producto", vbInformation, "Aviso": Exit Sub
+    If txtp.Text = "" Then MsgBox "Seleccione un producto", vbInformation, "Aviso": Exit Sub
     bloquear False
     txtid.Locked = True
     txtproducto.Locked = True
@@ -859,10 +859,9 @@ Private Sub Combo2_Click()
         Combo2.Top = 4460
         Text1.Visible = True
     Else
-        If Combo2.Text = "Precio" Then
-            Text1.Text = ""
-            Combo2.Top = 4460
-            Text1.Visible = True
+        If Combo2.Text = "Mayor Precio" Then
+            Combo2.Top = 5160
+            Text1.Visible = False
         Else
             If Combo2.Text = "Más vendido" Then
                 Combo2.Top = 5160
@@ -921,12 +920,15 @@ Private Sub Command2_Click()
                 DataReport4.Show
             End With
         Else
-            If Combo2.Text = "Precio" Then
+            If Combo2.Text = "Mayor Precio" Then
                 With RsProductos
                     If .State = 1 Then .Close
                     Dim r As Integer
-                    r = Val(Text1.Text)
-                    .Open "Select * From Producto Where ((Producto.[Precio])<= " & r & ")", Base, adOpenStatic, adLockBatchOptimistic
+                    .Open "Select * From Producto Order By [Precio] DESC", Base, adOpenStatic, adLockBatchOptimistic
+                    .MoveFirst
+                    r = !Precio
+                    If .State = 1 Then .Close
+                    .Open "Select * From Producto Where ((Producto.[Precio])LIKE " & r & ")", Base, adOpenStatic, adLockBatchOptimistic
                     Set DataReport3.DataSource = RsProductos
                     DataReport3.Show
                 End With
@@ -936,13 +938,13 @@ Private Sub Command2_Click()
 End Sub
 
 Private Sub DataGrid1_Click()
-    Txtp.Text = DataGrid1.Columns(2).Text
-    Txtstock.Text = DataGrid1.Columns(4).Text
-    Txtcolor.Text = DataGrid1.Columns(5).Text
-    Txttamaño.Text = DataGrid1.Columns(6).Text
-    Txtdescripcion.Text = DataGrid1.Columns(7).Text
-    Txtprecio.Text = DataGrid1.Columns(8).Text
-    lblIdProducto.Caption = DataGrid1.Columns(0).Text
+    txtp.Text = DataGrid1.Columns(2).Text
+    txtstock.Text = DataGrid1.Columns(4).Text
+    txtcolor.Text = DataGrid1.Columns(5).Text
+    txttamaño.Text = DataGrid1.Columns(6).Text
+    txtdescripcion.Text = DataGrid1.Columns(7).Text
+    txtprecio.Text = DataGrid1.Columns(8).Text
+    lblidproducto.Caption = DataGrid1.Columns(0).Text
     lblIdTipo.Caption = DataGrid1.Columns(1).Text
     With RsTipoProducto
         .Requery
@@ -1011,24 +1013,24 @@ Sub DataGrid()
 End Sub
 
 Sub bloquear(estado As Boolean)
-    Txtp.Locked = estado
-    Txttamaño.Locked = estado
-    Txtstock.Locked = estado
-    Txtcolor.Locked = estado
-    Txtdescripcion.Locked = estado
-    Txtprecio.Locked = estado
+    txtp.Locked = estado
+    txttamaño.Locked = estado
+    txtstock.Locked = estado
+    txtcolor.Locked = estado
+    txtdescripcion.Locked = estado
+    txtprecio.Locked = estado
     DataCombo1.Locked = estado
 End Sub
 
 Sub limpiar()
     txtproducto.Text = ""
     txtid.Text = ""
-    Txtp.Text = ""
-    Txttamaño.Text = ""
-    Txtstock.Text = ""
-    Txtcolor.Text = ""
-    Txtdescripcion.Text = ""
-    Txtprecio.Text = ""
+    txtp.Text = ""
+    txttamaño.Text = ""
+    txtstock.Text = ""
+    txtcolor.Text = ""
+    txtdescripcion.Text = ""
+    txtprecio.Text = ""
     DataCombo1.Text = ""
 End Sub
 

@@ -20,7 +20,7 @@ Begin VB.Form Form2
    Begin VB.ComboBox Combo1 
       Height          =   315
       ItemData        =   "Form2.frx":0000
-      Left            =   1440
+      Left            =   1560
       List            =   "Form2.frx":000D
       TabIndex        =   3
       Text            =   "Opciones"

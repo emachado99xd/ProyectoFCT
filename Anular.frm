@@ -3,14 +3,194 @@ Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form Anular 
    Caption         =   "Form2"
-   ClientHeight    =   9780
+   ClientHeight    =   10935
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   7440
+   ClientWidth     =   7365
    LinkTopic       =   "Form2"
-   ScaleHeight     =   9780
-   ScaleWidth      =   7440
+   ScaleHeight     =   10935
+   ScaleWidth      =   7365
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton Command3 
+      Caption         =   "Mostrar Reporte"
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   855
+      Left            =   1320
+      TabIndex        =   14
+      Top             =   9840
+      Width           =   2535
+   End
+   Begin VB.Frame Frame2 
+      Caption         =   "Reportes"
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   20.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   3015
+      Left            =   120
+      TabIndex        =   12
+      Top             =   7800
+      Width           =   5295
+      Begin VB.TextBox Text4 
+         BeginProperty Font 
+            Name            =   "Showcard Gothic"
+            Size            =   21.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   615
+         Left            =   2040
+         TabIndex        =   17
+         Top             =   1080
+         Visible         =   0   'False
+         Width           =   855
+      End
+      Begin VB.TextBox Text3 
+         BeginProperty DataFormat 
+            Type            =   1
+            Format          =   "d/M/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   22538
+            SubFormatType   =   3
+         EndProperty
+         BeginProperty Font 
+            Name            =   "Showcard Gothic"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   435
+         Left            =   2760
+         TabIndex        =   16
+         Top             =   1080
+         Visible         =   0   'False
+         Width           =   2175
+      End
+      Begin VB.TextBox Text2 
+         BeginProperty DataFormat 
+            Type            =   1
+            Format          =   "d/M/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   22538
+            SubFormatType   =   3
+         EndProperty
+         BeginProperty Font 
+            Name            =   "Showcard Gothic"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   435
+         Left            =   360
+         TabIndex        =   15
+         Top             =   1080
+         Visible         =   0   'False
+         Width           =   2175
+      End
+      Begin VB.ComboBox Combo1 
+         BeginProperty Font 
+            Name            =   "Showcard Gothic"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         ItemData        =   "Anular.frx":0000
+         Left            =   1200
+         List            =   "Anular.frx":000D
+         TabIndex        =   13
+         Text            =   "Opciones"
+         Top             =   1080
+         Width           =   2655
+      End
+      Begin VB.Label Label7 
+         AutoSize        =   -1  'True
+         Caption         =   "Precio"
+         BeginProperty Font 
+            Name            =   "Showcard Gothic"
+            Size            =   14.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   345
+         Left            =   1920
+         TabIndex        =   21
+         Top             =   1680
+         Visible         =   0   'False
+         Width           =   1035
+      End
+      Begin VB.Label Label5 
+         AutoSize        =   -1  'True
+         Caption         =   "Hasta"
+         BeginProperty Font 
+            Name            =   "Showcard Gothic"
+            Size            =   14.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   345
+         Left            =   3120
+         TabIndex        =   19
+         Top             =   1560
+         Visible         =   0   'False
+         Width           =   930
+      End
+      Begin VB.Label Label4 
+         AutoSize        =   -1  'True
+         Caption         =   "Desde"
+         BeginProperty Font 
+            Name            =   "Showcard Gothic"
+            Size            =   14.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   345
+         Left            =   840
+         TabIndex        =   18
+         Top             =   1560
+         Visible         =   0   'False
+         Width           =   900
+      End
+   End
    Begin VB.CommandButton Command2 
       Caption         =   "Validar"
       Height          =   735
@@ -53,8 +233,8 @@ Begin VB.Form Anular
       ForeColor       =   -2147483640
       Orientation     =   0
       Enabled         =   -1
-      Connect         =   $"Anular.frx":0000
-      OLEDBString     =   $"Anular.frx":0098
+      Connect         =   $"Anular.frx":002A
+      OLEDBString     =   $"Anular.frx":00C2
       OLEDBFile       =   ""
       DataSourceName  =   ""
       OtherAttributes =   ""
@@ -163,8 +343,8 @@ Begin VB.Form Anular
       ForeColor       =   -2147483640
       Orientation     =   0
       Enabled         =   -1
-      Connect         =   $"Anular.frx":0130
-      OLEDBString     =   $"Anular.frx":01C8
+      Connect         =   $"Anular.frx":015A
+      OLEDBString     =   $"Anular.frx":01F2
       OLEDBFile       =   ""
       DataSourceName  =   ""
       OtherAttributes =   ""
@@ -299,6 +479,25 @@ Begin VB.Form Anular
          Width           =   855
       End
    End
+   Begin VB.Label Label6 
+      AutoSize        =   -1  'True
+      Caption         =   "Hasta"
+      BeginProperty Font 
+         Name            =   "Showcard Gothic"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   345
+      Left            =   2160
+      TabIndex        =   20
+      Top             =   9360
+      Visible         =   0   'False
+      Width           =   930
+   End
    Begin VB.Label Label3 
       Appearance      =   0  'Flat
       AutoSize        =   -1  'True
@@ -387,6 +586,52 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim IdProducto, Cantidad, f As Integer
+Dim fecha, Inicio As Date
+
+
+
+Private Sub Combo1_Click()
+    If Combo1.Text = "Fecha" Then
+        Text2.Visible = True
+        Text3.Visible = True
+        Text4.Visible = False
+        Combo1.Top = 600
+        Command3.Enabled = True
+        Text2.Text = ""
+        Text3.Text = ""
+        Text4.Text = ""
+        Label4.Visible = True
+        Label5.Visible = True
+        Label7.Visible = False
+    Else
+        If Combo1.Text = "Anuladas" Then
+            Text2.Visible = True
+            Text3.Visible = True
+            Text4.Visible = False
+            Combo1.Top = 600
+            Command3.Enabled = True
+            Text2.Text = ""
+            Text3.Text = ""
+            Text4.Text = ""
+            Label4.Visible = True
+            Label5.Visible = True
+            Label7.Visible = False
+        Else
+            Text2.Visible = False
+            Text3.Visible = False
+            Text4.Visible = True
+            Combo1.Top = 600
+            Command3.Enabled = True
+            Text2.Text = ""
+            Text3.Text = ""
+            Text4.Text = ""
+            Label4.Visible = False
+            Label5.Visible = False
+            Label7.Visible = True
+        End If
+    End If
+End Sub
+
 Private Sub Command1_Click()
     With RsFactura
         .Requery
@@ -471,6 +716,58 @@ Private Sub Command2_Click()
     MsgBox "La factura a sido validada", vbInformation, "Aviso"
     DataGrid
     DataGrida
+End Sub
+
+Private Sub Command3_Click()
+    If Combo1.Text = "Fecha" Then
+    If Text2.Text = "" Or Text3.Text = "" Then Exit Sub
+    Inicio = Text2.Text
+    fecha = Text3.Text
+    a = "#" & Inicio & "#"
+    b = "#" & fecha & "#"
+        With RsFactura
+           ' If .State = 1 Then .Close
+           ' a = "#" & Inicio & "#"
+           ' .Open "Select * From Factura Where ((Factura.[Fecha])= " & a & ")", Base, adOpenStatic, adLockBatchOptimistic
+           ' If .EOF Or .BOF Then MsgBox "Fecha(a) no hay": Exit Sub
+            'b = "#" & fecha & "#"
+           ' If .State = 1 Then .Close
+             '   .Open "Select * From Factura Where ((Factura.[Fecha])= " & b & ")", Base, adOpenStatic, adLockBatchOptimistic
+           ' If .EOF Or .BOF Then MsgBox "Fecha(b) no hay": Exit Sub
+            If .State = 1 Then .Close
+                .Open "Select * From Factura Where ((Factura.[Fecha])>= " & a & ") AND ((Factura.[Fecha])<= " & b & ") AND ((Factura.[Validar])= TRUE) ", Base, adOpenStatic, adLockBatchOptimistic
+            Set DataReport2.DataSource = RsFactura
+            DataReport2.Show
+        End With
+    Else
+        If Combo1.Text = "Anuladas" Then
+        If Text2.Text = "" Or Text3.Text = "" Then Exit Sub
+        Inicio = Text2.Text
+    fecha = Text3.Text
+    a = "#" & Inicio & "#"
+    b = "#" & fecha & "#"
+            With RsFactura
+                If .State = 1 Then .Close
+               
+                .Open "Select * From Factura Where ((Factura.[Fecha])>= " & a & ") AND ((Factura.[Fecha])<= " & b & ") AND ((Factura.[Validar])= False) ", Base, adOpenStatic, adLockBatchOptimistic
+                
+                '.Open "Select * From Factura Where ((Factura.[Validar])= False)", Base, adOpenStatic, adLockBatchOptimistic
+                Set DataReport2.DataSource = RsFactura
+                DataReport2.Show
+            End With
+        Else
+            If Combo1.Text = "Precio" Then
+                With RsFactura
+                    o = Val(Text4.Text)
+                    If .State = 1 Then .Close
+                    '.Open "Select * From Factura Where ((Factura.[Fecha])>= " & a & ") AND ((Factura.[Fecha])<= " & b & ") AND (Factura.[Total])> " & o & ")", Base, adOpenStatic, adLockBatchOptimistic
+                    .Open "Select * From Factura Where ((Factura.[Total])> " & o & ") AND ((Factura.[Validar])= True)", Base, adOpenStatic, adLockBatchOptimistic
+                    Set DataReport2.DataSource = RsFactura
+                    DataReport2.Show
+                End With
+            End If
+        End If
+    End If
 End Sub
 
 Private Sub DataGrid1_Click()
